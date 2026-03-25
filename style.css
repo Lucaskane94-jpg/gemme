@@ -1,715 +1,183 @@
-:root {
-  --bg: #05070a;
-  --text: #e8ecf3;
-  --muted: #8b95a7;
-  --line: #18212b;
-  --accent: #67ffd4;
-  --accent-strong: #7fffe0;
-  --accent-soft: rgba(103, 255, 212, 0.08);
-  --panel: rgba(255, 255, 255, 0.025);
-  --panel-strong: rgba(255, 255, 255, 0.035);
-  --nothing-line: rgba(255, 255, 255, 0.14);
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background:
-    radial-gradient(circle at top left, rgba(124, 92, 255, 0.14), transparent 30%),
-    radial-gradient(circle at top right, rgba(103, 255, 212, 0.08), transparent 25%),
-    linear-gradient(180deg, #040608 0%, #06080d 100%);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: inherit;
-}
-
-.container {
-  width: min(100% - 32px, 1120px);
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* BACKGROUND */
-
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.14;
-  background-image:
-    linear-gradient(rgba(103, 255, 212, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(103, 255, 212, 0.04) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 92%);
-}
-
-.bg-grid::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(103, 255, 212, 0.04) 48%,
-    transparent 52%,
-    transparent 100%
-  );
-  animation: scanline 8s linear infinite;
-}
-
-.bg-glow {
-  position: fixed;
-  border-radius: 999px;
-  filter: blur(90px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bg-glow-1 {
-  width: 300px;
-  height: 300px;
-  background: rgba(103, 255, 212, 0.08);
-  top: 120px;
-  right: -60px;
-  animation: floatGlow 8s ease-in-out infinite;
-}
-
-.bg-glow-2 {
-  width: 240px;
-  height: 240px;
-  background: rgba(124, 92, 255, 0.09);
-  bottom: 120px;
-  left: -40px;
-  animation: floatGlow 10s ease-in-out infinite reverse;
-}
-
-/* HEADER */
-
-.topbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 18px 0;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  backdrop-filter: blur(12px);
-  background: rgba(5, 7, 10, 0.74);
-}
-
-.topbar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  font-size: 18px;
-  text-shadow: 0 0 12px rgba(103, 255, 212, 0.2);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 14px rgba(103, 255, 212, 0.7);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  position: relative;
-  transition: color 0.2s ease;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.25s ease;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* HERO */
-
-.hero {
-  padding: 96px 0 72px;
-  position: relative;
-}
-
-.hero-meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-}
-
-.eyebrow {
-  display: inline-block;
-  color: var(--accent);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  opacity: 0.95;
-}
-
-.nothing-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--nothing-line);
-  background: rgba(255, 255, 255, 0.02);
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #cfd6e2;
-}
-
-.chip-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px rgba(103, 255, 212, 0.65);
-  animation: pulseDot 1.8s ease-in-out infinite;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 7vw, 80px);
-  line-height: 0.94;
-  margin: 0;
-  max-width: 980px;
-  letter-spacing: -0.045em;
-  text-wrap: balance;
-}
-
-.hero-copy {
-  margin-top: 22px;
-  color: #c7cfdb;
-  max-width: 760px;
-  font-size: 20px;
-}
-
-.hero-actions {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.hero-panel {
-  margin-top: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
-  position: relative;
-  overflow: hidden;
-}
-
-.panel-topline {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(103,255,212,0.55), transparent);
-}
-
-.panel-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-.panel-cell {
-  padding: 18px;
-  border-right: 1px solid rgba(255,255,255,0.05);
-}
-
-.panel-cell:last-child {
-  border-right: 0;
-}
-
-.panel-cell strong {
-  display: block;
-  margin-top: 4px;
-  font-size: 15px;
-  color: #f0f4fb;
-}
-
-/* BUTTONS */
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px 16px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: 1px solid var(--line);
-  transition: 0.25s ease;
-}
-
-.btn-primary {
-  color: var(--accent);
-  border-color: rgba(103, 255, 212, 0.32);
-  background: rgba(103, 255, 212, 0.04);
-  box-shadow: inset 0 0 20px rgba(103, 255, 212, 0.02);
-}
-
-.btn-primary:hover {
-  background: rgba(103, 255, 212, 0.1);
-  border-color: rgba(103, 255, 212, 0.52);
-  box-shadow:
-    0 0 0 1px rgba(103, 255, 212, 0.08),
-    0 0 24px rgba(103, 255, 212, 0.08);
-}
-
-.btn-secondary {
-  color: var(--muted);
-}
-
-.btn-secondary:hover {
-  color: var(--accent);
-  border-color: rgba(103, 255, 212, 0.22);
-}
-
-/* SECTIONS */
-
-section {
-  padding: 44px 0;
-}
-
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 18px;
-}
-
-.section-title {
-  color: var(--accent);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font-size: 13px;
-}
-
-.section-code {
-  color: rgba(255,255,255,0.28);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.section-intro {
-  max-width: 760px;
-  color: #bcc6d3;
-  margin: 0 0 30px;
-}
-
-/* ABOUT */
-
-.about-layout {
-  display: grid;
-  grid-template-columns: 1.5fr 0.9fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.about-copy p {
-  max-width: 760px;
-  color: #c5ceda;
-  margin-top: 0;
-}
-
-.about-side-card,
-.card,
-.focus-card,
-.skill-card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: var(--panel);
-}
-
-.about-side-card {
-  padding: 22px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-topline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(103,255,212,0.4), transparent);
-}
-
-.about-side-card h3 {
-  margin-top: 8px;
-  margin-bottom: 10px;
-}
-
-.about-side-card p {
-  color: #c3cad6;
-}
-
-.mini-label {
-  color: var(--muted);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-/* GRIDS */
-
-.focus-grid,
-.blog-grid,
-.skills-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.focus-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.blog-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.skills-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* FOCUS */
-
-.focus-card {
-  padding: 22px;
-  transition: 0.24s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.focus-card:hover,
-.card:hover {
-  border-color: rgba(103, 255, 212, 0.34);
-  transform: translateY(-4px);
-}
-
-.focus-icon {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(103, 255, 212, 0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  margin-bottom: 16px;
-  font-size: 20px;
-  background: rgba(103, 255, 212, 0.04);
-  box-shadow: inset 0 0 18px rgba(103,255,212,0.03);
-}
-
-.focus-card h3 {
-  margin: 0 0 10px;
-}
-
-.focus-card p {
-  margin: 0;
-  color: #b8c2cf;
-}
-
-/* BLOG CARDS */
-
-.card {
-  padding: 22px;
-  transition: 0.24s ease;
-  background: var(--panel);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-tag {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.card p {
-  margin-bottom: 0;
-  color: #bcc5d1;
-}
-
-/* SKILLS */
-
-.skill-card {
-  padding: 22px;
-  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015)),
-    var(--panel);
-}
-
-.skill-topline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(103,255,212,0.48), transparent);
-  z-index: 1;
-}
-
-.skill-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-6px);
-  box-shadow:
-    0 0 0 1px rgba(103, 255, 212, 0.14),
-    0 0 28px rgba(103, 255, 212, 0.08);
-}
-
-.skill-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      120deg,
-      transparent 0%,
-      rgba(103, 255, 212, 0.05) 48%,
-      rgba(103, 255, 212, 0.11) 50%,
-      rgba(103, 255, 212, 0.05) 52%,
-      transparent 100%
-    );
-  transform: translateX(-120%);
-  transition: transform 0.8s ease;
-  pointer-events: none;
-}
-
-.skill-card:hover::before {
-  transform: translateX(120%);
-}
-
-.skill-noise {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(103, 255, 212, 0.03) 48%,
-      transparent 50%,
-      transparent 100%
-    );
-  transition: opacity 0.25s ease;
-}
-
-.skill-card:hover .skill-noise {
-  opacity: 1;
-  animation: flicker 1.2s linear infinite;
-}
-
-.skill-card h3,
-.skill-card p,
-.skill-cta {
-  position: relative;
-  z-index: 2;
-}
-
-.skill-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.skill-card p {
-  color: #b9c2cf;
-  margin: 0 0 14px;
-}
-
-.skill-cta {
-  font-size: 12px;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.capabilities-footer {
-  margin-top: 30px;
-  padding-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.capabilities-footer p {
-  margin: 0;
-  color: #bcc5d1;
-}
-
-/* LINKS */
-
-p a,
-.footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-p a:hover,
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* FOOTER */
-
-.footer {
-  padding: 40px 0 50px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  color: var(--muted);
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  position: relative;
-  z-index: 2;
-}
-
-/* ANIMATIONS */
-
-@keyframes pulseDot {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.95;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 1;
-  }
-}
-
-@keyframes scanline {
-  0% {
-    transform: translateY(-20%);
-  }
-  100% {
-    transform: translateY(120%);
-  }
-}
-
-@keyframes floatGlow {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px);
-  }
-  50% {
-    transform: translateY(18px) translateX(8px);
-  }
-}
-
-@keyframes flicker {
-  0%, 100% {
-    opacity: 0.28;
-  }
-  20% {
-    opacity: 0.16;
-  }
-  40% {
-    opacity: 0.34;
-  }
-  60% {
-    opacity: 0.18;
-  }
-  80% {
-    opacity: 0.3;
-  }
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 980px) {
-  .about-layout,
-  .focus-grid,
-  .blog-grid,
-  .skills-grid,
-  .panel-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero {
-    padding: 68px 0 46px;
-  }
-
-  .hero-copy {
-    font-size: 18px;
-  }
-
-  .footer {
-    flex-direction: column;
-  }
-
-  .panel-cell {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .panel-cell:last-child {
-    border-bottom: 0;
-  }
-  }
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gianmarco Monaco | Digital Systems</title>
+  <meta name="description" content="Sito personale di Gianmarco Monaco: martech, CRO, analytics, personalization.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+
+      <a href="index.html" class="brand premium-brand" aria-label="GM home">
+        <span class="gm-mark">
+          <span class="gm-ring"></span>
+          <span class="gm-core"></span>
+          <span class="gm-line gm-line-1"></span>
+          <span class="gm-line gm-line-2"></span>
+        </span>
+
+        <span class="gm-wordmark">
+          <span class="gm-letter g">G</span>
+          <span class="gm-letter m">M</span>
+        </span>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#projects">Capabilities</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <span class="eyebrow">Digital systems / martech / CRO</span>
+
+      <h1>
+        Intervengo sui sistemi digitali tra interfaccia,
+        dati e comportamento per migliorare le conversioni.
+      </h1>
+
+      <p class="hero-copy">
+        Lavoro tra DOM, tracking, CRO e personalizzazione.
+        Analizzo le journey, individuo opportunità e le porto a terra direttamente,
+        dal test all’implementazione.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Cosa faccio</a>
+        <a class="btn btn-secondary" href="blog.html">Blog</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+
+      <div class="about-layout">
+        <div class="about-copy">
+          <p>
+            Lavoro nel digitale occupandomi di ottimizzazione delle esperienze e delle conversioni,
+            tra marketing, tecnologia e analisi del comportamento.
+          </p>
+
+          <p>
+            Non ho un approccio da marketer classico: nel tempo ho sviluppato competenze
+            trasversali che vanno dalla manipolazione del DOM con HTML, CSS e JavaScript,
+            all’uso di tag manager, fino alla gestione del tracking e alla lettura dei dati.
+          </p>
+
+          <p>
+            Questo mi permette di individuare opportunità nei funnel e intervenire direttamente,
+            testando soluzioni in modo rapido e collaborando con i team tecnici quando serve.
+          </p>
+
+          <p>
+            Ho lavorato su progetti legati a <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <h2 class="section-title">What I do</h2>
+
+      <div class="focus-grid">
+        <article class="focus-card">
+          <div class="focus-icon">⌬</div>
+          <h3>Personalization</h3>
+          <p>Contenuti dinamici e targeting orientato alla conversione.</p>
+        </article>
+
+        <article class="focus-card">
+          <div class="focus-icon">◫</div>
+          <h3>Analytics</h3>
+          <p>Tracking e analisi dei comportamenti reali.</p>
+        </article>
+
+        <article class="focus-card">
+          <div class="focus-icon">△</div>
+          <h3>CRO</h3>
+          <p>Test veloci e miglioramento continuo dei funnel.</p>
+        </article>
+
+        <article class="focus-card">
+          <div class="focus-icon">✦</div>
+          <h3>Systems</h3>
+          <p>Connessione tra strumenti, dati e interfacce.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Capabilities</h2>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>DOM Manipulation</h3>
+          <p>
+            Intervengo direttamente sulle interfacce modificando componenti, CTA e flussi.
+            Creo varianti rapide lato frontend per testare senza passare da IT.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <h3>Tag Manager</h3>
+          <p>
+            Imposto eventi, traccio i funnel e collego strumenti tra loro.
+            Uso GTM sia per misurare sia per attivare test.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <h3>CRO</h3>
+          <p>
+            Analizzo i funnel, individuo frizioni e costruisco test concreti.
+            Valido rapidamente prima di scalare.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <h3>Advertising</h3>
+          <p>
+            Esperienza su Meta e Google Ads con focus sulla qualità del traffico
+            e comportamento onsite.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <h3>Personalization</h3>
+          <p>
+            Uso Dynamic Yield per attivare contenuti personalizzati e test rapidi.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <h3>Experience Analytics</h3>
+          <p>
+            Uso Contentsquare per leggere il comportamento reale
+            e validare ciò che implemento.
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+  </footer>
+
+</body>
+</html>
