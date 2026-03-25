@@ -4,282 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gianmarco Monaco | Digital Systems</title>
-  <meta name="description" content="Sito personale di Gianmarco Monaco: marketing, martech, CRO, progetti e blog.">
-  <style>
-    :root {
-      --bg: #06070a;
-      --panel: #0d1016;
-      --text: #e8ecf3;
-      --muted: #8b95a7;
-      --line: #1c2230;
-      --accent: #67ffd4;
-      --accent-2: #7c5cff;
-      --max: 1120px;
-    }
+  <meta name="description" content="Sito personale di Gianmarco Monaco">
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at top left, rgba(124, 92, 255, 0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(103, 255, 212, 0.10), transparent 24%),
-        var(--bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(6, 7, 10, 0.75);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 72px;
-    }
-
-    .brand {
-      font-size: 14px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-shadow: 0 0 16px rgba(103, 255, 212, 0.25);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      padding: 84px 0 40px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 6px 10px;
-      border: 1px solid rgba(103, 255, 212, 0.25);
-      color: var(--accent);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(103, 255, 212, 0.04);
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 900px;
-      font-size: clamp(42px, 8vw, 88px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-copy {
-      max-width: 760px;
-      margin-top: 22px;
-      font-size: 20px;
-      color: #c7d0dd;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: 28px;
-      align-items: end;
-      margin-top: 34px;
-    }
-
-    .hero-panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border: 1px solid var(--line);
-      padding: 18px;
-    }
-
-    .hero-panel small {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 11px;
-    }
-
-    .hero-panel strong {
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    section {
-      padding: 34px 0;
-    }
-
-    .section-title {
-      margin: 0 0 18px;
-      font-size: 14px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .about p,
-    .experience p,
-    .blog-intro p {
-      max-width: 820px;
-      color: #c0c7d4;
-      font-size: 18px;
-    }
-
-    .projects-grid,
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      min-height: 220px;
-      padding: 22px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--line);
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(103, 255, 212, 0.35);
-      box-shadow: 0 0 0 1px rgba(103, 255, 212, 0.08), 0 12px 40px rgba(0,0,0,0.28);
-    }
-
-    .card-tag {
-      display: inline-block;
-      margin-bottom: 12px;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.05;
-    }
-
-    .card p {
-      margin: 0;
-      color: #b8c1ce;
-    }
-
-    .blog-card {
-      min-height: 250px;
-    }
-
-    .blog-card h3 {
-      font-size: 28px;
-    }
-
-    .cta-row {
-      margin-top: 20px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 16px;
-      border: 1px solid var(--line);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 12px;
-    }
-
-    .btn-primary {
-      border-color: rgba(103, 255, 212, 0.35);
-      color: var(--accent);
-      box-shadow: inset 0 0 20px rgba(103, 255, 212, 0.03);
-    }
-
-    .btn-secondary {
-      color: var(--muted);
-    }
-
-    footer {
-      margin-top: 22px;
-      padding: 28px 0 56px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .projects-grid,
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 58px;
-      }
-
-      .hero-copy,
-      .about p,
-      .experience p,
-      .blog-intro p {
-        font-size: 17px;
-      }
-
-      nav {
-        gap: 12px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- MATRIX BACKGROUND -->
+  <canvas id="matrix-rain"></canvas>
+
   <header class="topbar">
     <div class="container topbar-inner">
-      <a href="#" class="brand">GM / SIGNAL</a>
+      <div class="brand">GM / SIGNAL</div>
       <nav>
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#blog">Blog</a>
       </nav>
@@ -287,95 +26,96 @@
   </header>
 
   <main class="container">
+
     <section class="hero">
-      <span class="eyebrow">Digital systems / marketing / cybernetic drift</span>
-      <h1>Costruisco esperienze digitali tra martech, conversione e immaginari tecnologici.</h1>
+      <h1>Gianmarco Monaco</h1>
       <p class="hero-copy">
-        Lavoro tra marketing, tecnologia, analytics e sperimentazione. Mi interessa il punto in cui il sistema smette di essere solo uno stack di tool e diventa una macchina narrativa, commerciale e comportamentale.
-      </p>
-
-      <div class="hero-grid">
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#projects">Vedi i progetti</a>
-          <a class="btn btn-secondary" href="#blog">Esplora il blog</a>
-        </div>
-
-        <div class="hero-panel">
-          <small>Current focus</small>
-          <strong>Martech / CRO / Analytics / Personalization</strong>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <h2 class="section-title">About</h2>
-      <p>
-        Mi occupo di personalizzazione onsite, analytics, ottimizzazione dei funnel e integrazione tra dati, UX e prodotto. Lavoro su esperienze digitali in cui tecnologia e marketing non sono mondi separati, ma parti della stessa architettura.
+        Martech, CRO, sistemi digitali.<br>
+        Costruisco e ottimizzo esperienze.
       </p>
     </section>
 
-    <section id="experience" class="experience">
-      <h2 class="section-title">Experience</h2>
+    <section id="about">
+      <h2>About</h2>
       <p>
-        Negli anni ho lavorato su progetti legati a CRO, tracking, data layer, A/B test, attivazioni onsite e strategie di crescita. Mi interessa costruire strutture misurabili, scalabili e abbastanza flessibili da reggere il cambiamento.
+        Lavoro tra marketing e tecnologia con focus su personalizzazione,
+        analytics e conversione.
       </p>
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <article class="card">
-          <span class="card-tag">Personalization</span>
-          <h3>Onsite activation systems</h3>
-          <p>Esperimenti, componenti e logiche di targeting per migliorare conversione, UX e rilevanza dei messaggi.</p>
-        </article>
+      <h2>Progetti</h2>
 
-        <article class="card">
-          <span class="card-tag">Analytics</span>
-          <h3>Tracking architecture</h3>
-          <p>Data layer, GA4, eventi, misurazione dei funnel e continuità tra prodotto, marketing e reporting.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-tag">Experimentation</span>
-          <h3>CRO frameworks</h3>
-          <p>Test, ipotesi, redesign e ottimizzazione di flussi critici con approccio pragmatico e misurabile.</p>
-        </article>
+      <div class="card">
+        <h3>Personalizzazione</h3>
+        <p>Dynamic Yield, CRM e targeting avanzato.</p>
       </div>
+
+      <div class="card">
+        <h3>Tracking</h3>
+        <p>GA4, data layer e funnel analysis.</p>
+      </div>
+
     </section>
 
     <section id="blog">
-      <div class="blog-intro">
-        <h2 class="section-title">From the blog</h2>
-        <p>
-          Qui pubblicherò articoli su marketing, sistemi, tecnologia, cultura digitale e derive cyberpunk. La parte editoriale avrà una sezione dedicata, più ordinata e pensata per leggere davvero.
-        </p>
-      </div>
-
-      <div class="blog-grid">
-        <article class="card blog-card">
-          <span class="card-tag">Essay</span>
-          <h3>Personalizzazione oltre il marketing classico</h3>
-          <p>Quando il contenuto smette di essere solo comunicazione e diventa struttura, comportamento e interfaccia.</p>
-        </article>
-
-        <article class="card blog-card">
-          <span class="card-tag">Notes</span>
-          <h3>Tracking nel mondo post-cookie</h3>
-          <p>Misurare senza illudersi di controllare tutto: limiti tecnici, compromessi e nuove forme di lettura.</p>
-        </article>
-
-        <article class="card blog-card">
-          <span class="card-tag">Culture</span>
-          <h3>Cyberpunk, accelerazione, sistemi</h3>
-          <p>Perché certi immaginari continuano a dire qualcosa di utile sul presente digitale.</p>
-        </article>
-      </div>
+      <h2>Blog</h2>
+      <p>Articoli in arrivo...</p>
     </section>
+
   </main>
 
   <footer class="container">
     © 2026 Gianmarco Monaco
   </footer>
+
+  <!-- MATRIX SCRIPT -->
+  <script>
+    const canvas = document.getElementById("matrix-rain");
+    const ctx = canvas.getContext("2d");
+
+    let width = window.innerWidth;
+    let height = document.body.scrollHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    const chars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const fontSize = 14;
+    let columns = Math.floor(width / fontSize);
+    let drops = Array(columns).fill(0);
+
+    function resizeCanvas() {
+      width = window.innerWidth;
+      height = document.body.scrollHeight;
+      canvas.width = width;
+      canvas.height = height;
+      columns = Math.floor(width / fontSize);
+      drops = Array(columns).fill(0);
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(6,7,10,0.05)";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = "rgba(0,255,180,0.15)";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.99) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    setInterval(draw, 80);
+  </script>
+
 </body>
 </html>
