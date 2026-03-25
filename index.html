@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gianmarco Monacoo | Digital Systems</title>
-  <meta name="description" content="Sito personale di Gianmarco Monaco">
+  <title>Gianmarco Monaco | Digital Systems</title>
+  <meta name="description" content="Sito personale di Gianmarco Monaco: marketing, martech, CRO, progetti e blog.">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- MATRIX BACKGROUND -->
-  <canvas id="matrix-rain"></canvas>
-
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">GM / SIGNAL</div>
       <nav>
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#blog">Blog</a>
       </nav>
@@ -28,39 +26,70 @@
   <main class="container">
 
     <section class="hero">
-      <h1>Gianmarco Monaco</h1>
+      <span class="eyebrow">Digital systems / marketing / cybernetic drift</span>
+
+      <h1>
+        Costruisco esperienze digitali tra martech,
+        conversione e immaginari tecnologici.
+      </h1>
+
       <p class="hero-copy">
-        Martech, CRO, sistemi digitali.<br>
-        Costruisco e ottimizzo esperienze.
+        Lavoro tra marketing, tecnologia, analytics e sperimentazione.
+        Mi interessa il punto in cui il sistema smette di essere solo uno stack
+        di tool e diventa una macchina narrativa e comportamentale.
       </p>
     </section>
 
     <section id="about">
-      <h2>About</h2>
+      <h2 class="section-title">About</h2>
       <p>
-        Lavoro tra marketing e tecnologia con focus su personalizzazione,
-        analytics e conversione.
+        Mi occupo di personalizzazione onsite, analytics, ottimizzazione dei funnel
+        e integrazione tra dati, UX e prodotto.
+      </p>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p>
+        Ho lavorato su CRO, tracking, data layer, A/B test e strategie di crescita.
       </p>
     </section>
 
     <section id="projects">
-      <h2>Progetti</h2>
+      <h2 class="section-title">Projects</h2>
 
-      <div class="card">
-        <h3>Personalizzazione</h3>
-        <p>Dynamic Yield, CRM e targeting avanzato.</p>
+      <div class="projects-grid">
+        <div class="card">
+          <h3>Personalization</h3>
+          <p>Dynamic Yield, CRM e targeting avanzato.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tracking</h3>
+          <p>GA4, data layer e funnel analysis.</p>
+        </div>
+
+        <div class="card">
+          <h3>CRO</h3>
+          <p>Test, UX e ottimizzazione conversioni.</p>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Tracking</h3>
-        <p>GA4, data layer e funnel analysis.</p>
-      </div>
-
     </section>
 
     <section id="blog">
-      <h2>Blog</h2>
-      <p>Articoli in arrivo...</p>
+      <h2 class="section-title">From the blog</h2>
+
+      <div class="blog-grid">
+        <div class="card">
+          <h3>Personalizzazione avanzata</h3>
+          <p>Oltre il marketing classico.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tracking post-cookie</h3>
+          <p>Nuovi limiti e approcci.</p>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -68,54 +97,6 @@
   <footer class="container">
     © 2026 Gianmarco Monaco
   </footer>
-
-  <!-- MATRIX SCRIPT -->
-  <script>
-    const canvas = document.getElementById("matrix-rain");
-    const ctx = canvas.getContext("2d");
-
-    let width = window.innerWidth;
-    let height = document.body.scrollHeight;
-
-    canvas.width = width;
-    canvas.height = height;
-
-    const chars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const fontSize = 14;
-    let columns = Math.floor(width / fontSize);
-    let drops = Array(columns).fill(0);
-
-    function resizeCanvas() {
-      width = window.innerWidth;
-      height = document.body.scrollHeight;
-      canvas.width = width;
-      canvas.height = height;
-      columns = Math.floor(width / fontSize);
-      drops = Array(columns).fill(0);
-    }
-
-    function draw() {
-      ctx.fillStyle = "rgba(6,7,10,0.05)";
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.fillStyle = "rgba(0,255,180,0.15)";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > height && Math.random() > 0.99) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    }
-
-    window.addEventListener("resize", resizeCanvas);
-    setInterval(draw, 80);
-  </script>
 
 </body>
 </html>
