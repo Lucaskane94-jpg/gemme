@@ -1,117 +1,63 @@
-:root {
-  --bg: #06070a;
-  --text: #e8ecf3;
-  --muted: #8b95a7;
-  --line: #1c2230;
-  --accent: #67ffd4;
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Gianmarco Monaco</title>
+  <meta name="description" content="Articoli su marketing, martech, CRO, tecnologia e cultura digitale.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background:
-    radial-gradient(circle at top left, rgba(124, 92, 255, 0.16), transparent 30%),
-    radial-gradient(circle at top right, rgba(103, 255, 212, 0.10), transparent 25%),
-    var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-}
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM / SIGNAL</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </div>
+  </header>
 
-/* CONTAINER */
-.container {
-  width: min(100% - 32px, 1100px);
-  margin: 0 auto;
-}
+  <main class="container">
+    <section class="hero blog-hero">
+      <span class="eyebrow">Blog / notes / systems / culture</span>
+      <h1>Blog</h1>
+      <p class="hero-copy">
+        Appunti, articoli e riflessioni su marketing, tecnologia, sistemi digitali,
+        personalizzazione, tracking e immaginari cyberpunk.
+      </p>
+    </section>
 
-/* HEADER */
-.topbar {
-  border-bottom: 1px solid var(--line);
-  padding: 20px 0;
-}
+    <section>
+      <h2 class="section-title">Latest posts</h2>
 
-.topbar-inner {
-  display: flex;
-  justify-content: space-between;
-}
+      <div class="blog-grid">
+        <article class="card blog-card">
+          <span class="card-tag">Essay</span>
+          <h3><a href="#">Personalizzazione oltre il marketing classico</a></h3>
+          <p>Quando il contenuto smette di essere solo messaggio e diventa architettura comportamentale.</p>
+        </article>
 
-.brand {
-  color: var(--accent);
-  letter-spacing: 2px;
-}
+        <article class="card blog-card">
+          <span class="card-tag">Notes</span>
+          <h3><a href="#">Tracking nel mondo post-cookie</a></h3>
+          <p>Nuovi limiti, compromessi tecnici e modi diversi di leggere i dati.</p>
+        </article>
 
-nav a {
-  margin-left: 15px;
-  color: var(--muted);
-  text-decoration: none;
-}
+        <article class="card blog-card">
+          <span class="card-tag">Culture</span>
+          <h3><a href="#">Cyberpunk e sistemi</a></h3>
+          <p>Perché certi immaginari continuano a parlare bene del presente digitale.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-nav a:hover {
-  color: var(--accent);
-}
+  <footer class="container">
+    © 2026 Gianmarco Monaco
+  </footer>
 
-/* HERO */
-.hero {
-  padding: 80px 0;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin: 0;
-}
-
-.hero-copy {
-  margin-top: 20px;
-  color: #bbb;
-  max-width: 700px;
-}
-
-.eyebrow {
-  color: var(--accent);
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-/* SECTIONS */
-section {
-  padding: 40px 0;
-}
-
-.section-title {
-  color: var(--accent);
-  margin-bottom: 15px;
-}
-
-/* GRID */
-.projects-grid,
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* CARD */
-.card {
-  border: 1px solid var(--line);
-  padding: 20px;
-  transition: 0.2s;
-}
-
-.card:hover {
-  border-color: var(--accent);
-  transform: translateY(-5px);
-}
-
-/* FOOTER */
-footer {
-  padding: 40px 0;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .projects-grid,
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-}
+</body>
+</html>
