@@ -3,58 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gianmarco Monaco | Personal Site</title>
-  <meta name="description" content="Sito personale di Gianmarco Monaco: esperienza, progetti e articoli sul digitale, marketing e tecnologia.">
+  <title>Gianmarco Monaco</title>
+  <meta name="description" content="Digital, martech, cyberpunk thinking.">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: #eaeaea;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #222;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00ffcc;
+    }
+
+    .hero {
+      padding: 80px 40px;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+      color: #fff;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #bbb;
+    }
+
+    section {
+      padding: 60px 40px;
+      max-width: 900px;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+
+    .projects article {
+      margin-bottom: 30px;
+      border-left: 2px solid #00ffcc;
+      padding-left: 15px;
+    }
+
+    .blog-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #222;
+      padding: 20px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: #00ffcc;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      padding: 40px;
+      border-top: 1px solid #222;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
 
   <header>
-    <h1>Gianmarco Monaco</h1>
-    <p>Digital marketing, martech, CRO e progetti digitali.</p>
+    <div><strong>GM</strong></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Progetti</a>
+      <a href="#">Blog</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Chi sono</h2>
-      <p>
-        Lavoro nel mondo del digital marketing e della tecnologia, con focus su martech,
-        conversion rate optimization, analytics e customer experience.
-      </p>
-      <p>
-        Mi occupo di progetti digitali, sperimentazione, ottimizzazione dei funnel
-        e integrazione tra marketing, dati e prodotto.
-      </p>
-    </section>
+  <div class="hero">
+    <h1>Gianmarco Monaco</h1>
+    <p>
+      Digital marketing, martech, CRO.<br>
+      Esploro sistemi, ottimizzo flussi, costruisco esperienze.
+    </p>
+  </div>
 
-    <section>
-      <h2>Esperienza</h2>
-      <p>
-        Negli anni ho lavorato su iniziative legate a personalizzazione onsite, tracking,
-        analytics, A/B test, UX e sviluppo di soluzioni per migliorare performance e conversione.
-      </p>
-    </section>
+  <section>
+    <h2>Chi sono</h2>
+    <p>
+      Lavoro tra marketing e tecnologia, con focus su personalizzazione,
+      analytics e ottimizzazione delle conversioni.
+    </p>
+    <p>
+      Mi interessano sistemi complessi, automazione e tutto ciò che connette
+      dati, comportamento e prodotto.
+    </p>
+  </section>
 
-    <section>
-      <h2>Progetti</h2>
-      <article>
-        <h3>Progetto 1</h3>
-        <p>Breve descrizione del progetto, obiettivo e risultato ottenuto.</p>
-      </article>
+  <section class="projects">
+    <h2>Progetti</h2>
 
-      <article>
-        <h3>Progetto 2</h3>
-        <p>Breve descrizione del progetto, stack usato o valore creato.</p>
-      </article>
-    </section>
+    <article>
+      <h3>Personalizzazione onsite</h3>
+      <p>Strategie e implementazioni con Dynamic Yield e integrazione CRM.</p>
+    </article>
 
-    <section>
-      <h2>Blog</h2>
-      <p>
-        In questa sezione pubblicherò articoli su marketing digitale, tecnologia,
-        ottimizzazione, prodotti e idee.
-      </p>
-    </section>
-  </main>
+    <article>
+      <h3>Tracking & Analytics</h3>
+      <p>Architetture data layer, GA4 e analisi funnel.</p>
+    </article>
+
+    <article>
+      <h3>CRO & Experimentation</h3>
+      <p>A/B test, UX e ottimizzazione conversioni.</p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Dal blog</h2>
+
+    <div class="blog-preview">
+      <div class="card">
+        <h3>Il futuro della personalizzazione</h3>
+        <p>Come i sistemi stanno evolvendo oltre il marketing tradizionale.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tracking nel mondo post-cookie</h3>
+        <p>Nuovi approcci e limiti della misurazione.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Gianmarco Monaco</p>
+  </footer>
 
 </body>
 </html>
