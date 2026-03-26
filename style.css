@@ -124,7 +124,7 @@ nav a:hover {
   background: rgba(103, 255, 212, 0.09);
 }
 
-/* HERO */
+/* GENERAL */
 .hero {
   padding: 42px 0 34px;
 }
@@ -138,7 +138,8 @@ nav a:hover {
   letter-spacing: 0.16em;
 }
 
-.hero h1 {
+.hero h1,
+.blog-hero h1 {
   margin: 0;
   font-size: clamp(38px, 11vw, 78px);
   line-height: 0.96;
@@ -198,7 +199,6 @@ nav a:hover {
   width: 100%;
 }
 
-/* SECTIONS */
 section {
   padding: 26px 0;
 }
@@ -225,6 +225,47 @@ section {
 .blog-lead {
   margin: 0;
   max-width: 760px;
+}
+
+.premium-block {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.mini-label {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.meta-list li {
+  padding: 8px 0;
+  color: #c3ccd8;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.meta-list li:last-child {
+  border-bottom: 0;
 }
 
 /* ABOUT */
@@ -255,14 +296,6 @@ section {
 .about-side-card p {
   margin-top: 0;
   color: #c2cad5;
-}
-
-.mini-label {
-  display: inline-block;
-  color: var(--muted);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
 }
 
 /* TOOLS */
@@ -366,7 +399,7 @@ section {
   color: #bcc5d1;
 }
 
-/* PROJECTS / BLOG */
+/* PROJECTS / BLOG CARDS */
 .projects-grid,
 .blog-grid {
   display: grid;
@@ -402,6 +435,14 @@ section {
   line-height: 1.06;
 }
 
+.card h3 a {
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: var(--accent);
+}
+
 .card p {
   margin: 0;
   color: #bcc5d1;
@@ -418,6 +459,90 @@ section {
   text-decoration: underline;
 }
 
+/* BLOG PREMIUM */
+.blog-hero {
+  padding: 22px;
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.blog-hero-side {
+  padding-top: 4px;
+}
+
+.blog-hero-side p {
+  margin: 10px 0 0;
+  color: #c3ccd8;
+}
+
+.featured-post {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.featured-label-row {
+  margin-bottom: 14px;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.featured-card-copy h2 {
+  margin: 0 0 12px;
+  font-size: 30px;
+  line-height: 1.02;
+}
+
+.featured-card-copy h2 a {
+  text-decoration: none;
+}
+
+.featured-card-copy h2 a:hover {
+  color: var(--accent);
+}
+
+.featured-card-copy p {
+  margin-top: 0;
+  color: #c3ccd8;
+}
+
+.featured-card-panel {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  background: rgba(255,255,255,0.02);
+}
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.blog-grid-premium {
+  grid-template-columns: 1fr;
+}
+
+.blog-sidebar {
+  display: grid;
+  gap: 14px;
+}
+
+.sidebar-card {
+  padding: 18px;
+}
+
+.sidebar-card p {
+  margin: 10px 0 0;
+  color: #c3ccd8;
+}
+
 /* FOOTER */
 .footer {
   margin-top: 28px;
@@ -427,6 +552,19 @@ section {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+/* POST CONTENT */
+.post-content {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+
+.post-content p {
+  max-width: 760px;
+  font-size: 19px;
+  color: #cfd6e2;
+  margin-bottom: 22px;
 }
 
 /* TABLET */
@@ -481,8 +619,20 @@ section {
   }
 
   .projects-grid,
-  .blog-grid {
+  .blog-grid,
+  .blog-grid-premium {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-hero {
+    grid-template-columns: 1.5fr 0.8fr;
+    align-items: end;
+    padding: 28px;
+  }
+
+  .featured-card {
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: start;
   }
 
   .footer {
@@ -511,5 +661,14 @@ section {
   .projects-grid,
   .blog-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .blog-layout {
+    grid-template-columns: 1.5fr 0.55fr;
+    align-items: start;
+  }
+
+  .blog-grid-premium {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
