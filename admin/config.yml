@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: LucasKane94-jpg/gemme
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Descrizione", name: "description", widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
