@@ -1,0 +1,22 @@
+media:
+  input: images/uploads
+  output: /images/uploads
+
+content:
+  - name: blog
+    label: Blog
+    path: posts
+    type: collection
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+      - name: date
+        label: Data
+        type: date
+      - name: description
+        label: Descrizione
+        type: string
+      - name: body
+        label: Contenuto
+        type: rich-text
