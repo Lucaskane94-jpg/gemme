@@ -1,91 +1,160 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog</title>
-
   <style>
-    body {
-      background: #0a0a0a;
-      color: #eaeaea;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    .post {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #333;
-    }
-
-    .post h2 {
-      margin: 0;
-      color: #fff;
-    }
-
-    .post p {
-      color: #aaa;
-    }
-
-    a {
-      color: #00ffcc;
-      text-decoration: none;
-    }
+    body { font-family: sans-serif; max-width: 780px; margin: 0 auto; padding: 2rem 1rem; }
+    .post-card { border-bottom: 1px solid #eee; padding: 1.5rem 0; }
+    .post-card h2 { margin: 0 0 .4rem; }
+    .post-card .meta { color: #888; font-size: .85rem; margin-bottom: .6rem; }
+    .post-card .desc { color: #444; }
+    #error { color: red; padding: 1rem; background: #fff0f0; border-radius: 6px; }
+    #loading { color: #888; }
   </style>
 </head>
-
 <body>
-
   <h1>Blog</h1>
-
+  <div id="loading">Caricamento post...</div>
+  <div id="error" style="display:none"></div>
   <div id="posts"></div>
 
   <script>
-    async function loadPosts() {
-      try {
-        const res = await fetch('https://api.github.com/repos/LucasKane94-jpg/gemme/contents/posts?ref=main');
-        const files = await res.json();
+  const REPO   = 'Lucaskane94-jpg/gemme';
+  const BRANCH = 'main';
+  const ROOT   = 'posts';  // cartella radice da leggere
 
-        const container = document.getElementById('posts');
-        container.innerHTML = '';
+  // ─── Fetch ricorsivo: gestisce sia file che sottocartelle ───────────────────
+  async function fetchMdFiles(path) {
+    const url = `https://api.github.com/repos/${REPO}/contents/${path}?ref=${BRANCH}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`GitHub API error ${res.status} su ${path}`);
+    const items = await res.json();
 
-        for (const file of files) {
-          if (file.name.endsWith('.md')) {
+    let files = [];
+    for (const item of items) {
+      if (item.type === 'file' && item.name.endsWith('.md')) {
+        files.push(item);
+      } else if (item.type === 'dir') {
+        // Ricorsione: scende nella sottocartella
+        const sub = await fetchMdFiles(item.path);
+        files = files.concat(sub);
+      }
+    }
+    return files;
+  }
 
-            const raw = await fetch(file.download_url);
-            const text = await raw.text();
+  // ─── Scarica contenuto raw (evita il campo "content" base64 dell'API) ───────
+  async function fetchRaw(filePath) {
+    const url = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${filePath}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Impossibile scaricare ${filePath}`);
+    return res.text();
+  }
 
-            const title = text.match(/title:\s*"(.*?)"/)?.[1] || "No title";
-            const description = text.match(/description:\s*"(.*?)"/)?.[1] || "";
-            const date = text.match(/date:\s*(.*)/)?.[1] || "";
+  // ─── Parser frontmatter YAML minimale ───────────────────────────────────────
+  function parseFrontmatter(raw) {
+    const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+    if (!match) return { data: {}, content: raw };
 
-            const div = document.createElement('div');
-            div.classList.add('post');
+    const yamlBlock = match[1];
+    const content   = match[2].trim();
+    const data = {};
 
-            div.innerHTML = `
-              <h2>${title}</h2>
-              <p>${description}</p>
-              <small>${date}</small><br><br>
-              <a href="#">Leggi articolo</a>
-            `;
+    for (const line of yamlBlock.split('\n')) {
+      const sep = line.indexOf(':');
+      if (sep === -1) continue;
+      const key = line.slice(0, sep).trim();
+      let   val = line.slice(sep + 1).trim();
 
-            container.appendChild(div);
-          }
-        }
+      // Rimuove virgolette opzionali
+      val = val.replace(/^["']|["']$/g, '');
 
-      } catch (error) {
-        console.error(error);
-        document.getElementById('posts').innerHTML = 'Errore nel caricamento dei post';
+      // Converte date ISO in oggetto Date
+      if (/^\d{4}-\d{2}-\d{2}/.test(val)) {
+        data[key] = new Date(val);
+      } else {
+        data[key] = val;
       }
     }
 
-    loadPosts();
-  </script>
+    return { data, content };
+  }
 
+  // ─── Markdown → HTML minimale (bold, italic, links, headings, paragrafi) ────
+  function md2html(md) {
+    return md
+      .replace(/^#{3} (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^#{2} (.+)$/gm, '<h2>$1</h2>')
+      .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
+      .replace(/\n\n+/g, '</p><p>')
+      .replace(/^(?!<[hpa])(.+)$/gm, '<p>$1</p>')
+      .trim();
+  }
+
+  // ─── Formatta data in italiano ───────────────────────────────────────────────
+  function fmtDate(d) {
+    if (!(d instanceof Date) || isNaN(d)) return '';
+    return d.toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' });
+  }
+
+  // ─── Main ────────────────────────────────────────────────────────────────────
+  async function loadBlog() {
+    const container = document.getElementById('posts');
+    const loading   = document.getElementById('loading');
+    const errorDiv  = document.getElementById('error');
+
+    try {
+      const files = await fetchMdFiles(ROOT);
+
+      if (files.length === 0) {
+        loading.textContent = 'Nessun post trovato in ' + ROOT + '/';
+        return;
+      }
+
+      // Scarica tutti i contenuti in parallelo
+      const posts = await Promise.all(
+        files.map(async (file) => {
+          const raw = await fetchRaw(file.path);
+          const { data, content } = parseFrontmatter(raw);
+          return { ...data, content, path: file.path };
+        })
+      );
+
+      // Ordina per data decrescente
+      posts.sort((a, b) => {
+        const da = a.date instanceof Date ? a.date : new Date(0);
+        const db = b.date instanceof Date ? b.date : new Date(0);
+        return db - da;
+      });
+
+      loading.style.display = 'none';
+      container.innerHTML = posts.map(post => `
+        <div class="post-card">
+          <h2>${post.title || 'Senza titolo'}</h2>
+          <div class="meta">${fmtDate(post.date)}</div>
+          ${post.description ? `<div class="desc">${post.description}</div>` : ''}
+          <div class="body">${md2html(post.content)}</div>
+        </div>
+      `).join('');
+
+    } catch (err) {
+      loading.style.display = 'none';
+      errorDiv.style.display = 'block';
+      errorDiv.innerHTML = `
+        <strong>Errore caricamento blog:</strong><br>
+        ${err.message}<br><br>
+        <small>Controlla: repo pubblica? Cartella <code>${ROOT}/</code> esiste? Rate limit GitHub API?</small>
+      `;
+      console.error(err);
+    }
+  }
+
+  loadBlog();
+  </script>
 </body>
 </html>
