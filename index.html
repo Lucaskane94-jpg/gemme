@@ -9,10 +9,13 @@
 </head>
 <body>
 
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursor"></div>
+
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="index.html" class="brand">GM</a>
-
       <nav>
         <a href="#about">About</a>
         <a href="#tools">Tools</a>
@@ -20,9 +23,8 @@
         <a href="#experiments">Experiments</a>
         <a href="blog.html">Blog</a>
       </nav>
-
       <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">
-        LinkedIn
+        LinkedIn ↗
       </a>
     </div>
   </header>
@@ -31,20 +33,23 @@
 
     <!-- HERO -->
     <section class="hero">
-      <span class="eyebrow">Digital systems / marketing / cybernetic drift</span>
+      <span class="eyebrow reveal" style="transition-delay:0.1s">
+        Digital systems / marketing / cybernetic drift
+      </span>
 
-      <h1>
-        Costruisco esperienze digitali tra martech,
-        conversione e immaginari tecnologici.
+      <h1 class="reveal" style="transition-delay:0.25s">
+        Costruisco<br>
+        esperienze<br>
+        digitali.
       </h1>
 
-      <p class="hero-copy">
+      <p class="hero-copy reveal" style="transition-delay:0.4s">
         Lavoro tra marketing, tecnologia, analytics e sperimentazione.
         Mi interessa il punto in cui il sistema smette di essere solo uno stack
         di tool e diventa una macchina narrativa, commerciale e comportamentale.
       </p>
 
-      <div class="hero-actions">
+      <div class="hero-actions reveal" style="transition-delay:0.55s">
         <a class="btn btn-primary" href="#experiments">View experiments</a>
         <a class="btn btn-secondary" href="blog.html">Read the blog</a>
       </div>
@@ -52,36 +57,31 @@
 
     <!-- ABOUT -->
     <section id="about">
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title reveal">About</h2>
 
       <div class="about-layout">
-        <div class="about-copy">
+        <div class="about-copy reveal reveal-delay-1">
           <p>
             Lavoro nel mondo del digital marketing e della tecnologia, con focus su
             personalizzazione onsite, analytics, CRO e sistemi martech.
           </p>
-
           <p>
             Nel mio percorso ho lavorato su progetti e iniziative legati a
             <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>,
             costruendo esperienze digitali orientate a performance, misurazione e ottimizzazione.
           </p>
-
           <p>
             Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia,
             marketing, sistemi e cultura digitale.
           </p>
         </div>
 
-        <aside class="about-side-card">
+        <aside class="about-side-card reveal reveal-delay-2">
           <span class="mini-label">Profile</span>
           <h3>Experience snapshot</h3>
-          <p>
-            Martech, CRO, personalization, analytics, UX and digital experimentation.
-          </p>
-
+          <p>Martech, CRO, personalization, analytics, UX and digital experimentation.</p>
           <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">
-            Visit LinkedIn
+            Visit LinkedIn ↗
           </a>
         </aside>
       </div>
@@ -89,7 +89,7 @@
 
     <!-- TOOLS -->
     <section id="tools">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2 class="section-title">Tools & Platforms</h2>
         <p class="section-intro">
           Una selezione dei principali strumenti e ambiti operativi su cui ho lavorato.
@@ -97,9 +97,9 @@
       </div>
 
       <div class="tools-strip">
-        <article class="tool-tab">
+        <article class="tool-tab reveal reveal-delay-1">
           <span class="tool-label">01</span>
-          <h3>GTM & Front-end Manipulation</h3>
+          <h3>GTM & Front-end</h3>
           <p>
             Utilizzo <strong>Google Tag Manager</strong> per manipolazione del DOM,
             injection di <strong>CSS</strong>, <strong>JavaScript</strong> e <strong>HTML</strong>,
@@ -107,26 +107,26 @@
           </p>
           <p>
             Ho lavorato con <strong>GTM</strong> anche su contesti
-            <strong>Single Page Application in Angular</strong>, gestendo trigger,
-            variazioni di stato e adattamenti legati a navigazioni dinamiche.
+            <strong>SPA Angular</strong>, gestendo trigger, variazioni di stato
+            e adattamenti legati a navigazioni dinamiche.
           </p>
         </article>
 
-        <article class="tool-tab">
+        <article class="tool-tab reveal reveal-delay-2">
           <span class="tool-label">02</span>
-          <h3>Analytics Tools</h3>
+          <h3>Analytics</h3>
           <p>
             Lavoro con strumenti di analisi quantitativa e qualitativa per leggere funnel,
             comportamenti, attriti e pattern di navigazione.
           </p>
           <p>
-            Tra i tool utilizzati: <strong>Contentsquare</strong>, <strong>GA4</strong>,
-            <strong>Hotjar</strong>, <strong>Mouseflow</strong>, <strong>Glassbox</strong>
-            e <strong>FullStory</strong>.
+            Tool: <strong>Contentsquare</strong>, <strong>GA4</strong>,
+            <strong>Hotjar</strong>, <strong>Mouseflow</strong>, <strong>Glassbox</strong>,
+            <strong>FullStory</strong>.
           </p>
         </article>
 
-        <article class="tool-tab">
+        <article class="tool-tab reveal reveal-delay-3">
           <span class="tool-label">03</span>
           <h3>Advertising</h3>
           <p>
@@ -136,13 +136,13 @@
           </p>
         </article>
 
-        <article class="tool-tab">
+        <article class="tool-tab reveal reveal-delay-4">
           <span class="tool-label">04</span>
-          <h3>User Experience Personalization</h3>
+          <h3>Personalization</h3>
           <p>
             Mi occupo di personalizzazione dell'esperienza utente attraverso
             <strong>Dynamic Yield</strong>, costruendo logiche di targeting,
-            contenuti dinamici, test e attivazioni onsite orientate a conversione e rilevanza.
+            contenuti dinamici, test e attivazioni onsite orientate a conversione.
           </p>
         </article>
       </div>
@@ -150,30 +150,30 @@
 
     <!-- FOCUS -->
     <section id="focus">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2 class="section-title">What I do</h2>
       </div>
 
       <div class="focus-grid">
-        <article class="focus-card">
+        <article class="focus-card reveal reveal-delay-1">
           <div class="focus-icon">⌬</div>
           <h3>Personalization</h3>
           <p>Targeting, onsite activation, dynamic content e logiche di rilevanza.</p>
         </article>
 
-        <article class="focus-card">
+        <article class="focus-card reveal reveal-delay-2">
           <div class="focus-icon">◫</div>
           <h3>Analytics</h3>
           <p>Tracking, data layer, funnel analysis e lettura dei comportamenti.</p>
         </article>
 
-        <article class="focus-card">
+        <article class="focus-card reveal reveal-delay-3">
           <div class="focus-icon">△</div>
           <h3>CRO</h3>
           <p>Test, ipotesi, redesign e ottimizzazione dei flussi critici.</p>
         </article>
 
-        <article class="focus-card">
+        <article class="focus-card reveal reveal-delay-4">
           <div class="focus-icon">✦</div>
           <h3>Martech Systems</h3>
           <p>Integrazioni tra tool, processi, CRM, piattaforme e customer journey.</p>
@@ -183,7 +183,7 @@
 
     <!-- EXPERIMENTS -->
     <section id="experiments">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2 class="section-title">Experiments</h2>
         <p class="section-intro">
           Build personali, tool e sperimentazioni fuori dal contesto aziendale.
@@ -191,53 +191,51 @@
       </div>
 
       <div class="projects-grid">
-
-        <article class="card">
+        <article class="card reveal reveal-delay-1">
           <span class="card-tag">Web / Static site</span>
           <h3>Questo sito</h3>
           <p>
             Costruito a mano in HTML, CSS e vanilla JS. Nessun framework, nessun builder.
-            Hosting su Vercel, contenuti gestiti via Pages CMS su GitHub,
+            Hosting su Vercel, contenuti via Pages CMS su GitHub,
             blog con fetch dinamica da API GitHub e parsing Markdown lato client.
           </p>
         </article>
 
-        <article class="card">
+        <article class="card reveal reveal-delay-2">
           <span class="card-tag">Finance / Tool</span>
           <h3>Mortgage rate tracker</h3>
           <p>
-            Applicazione browser-based per il monitoraggio dei tassi ipotecari.
+            Applicazione browser-based per monitoraggio tassi ipotecari.
             Calcolo ammortamento alla francese, scenari Euribor multipli
-            e tab di confronto. Persistenza locale via localStorage, zero dipendenze esterne.
+            e tab di confronto. Persistenza via localStorage, zero dipendenze.
           </p>
         </article>
 
-        <article class="card">
+        <article class="card reveal reveal-delay-3">
           <span class="card-tag">Trading / Automation</span>
-          <h3>Polymarket monitoring bot</h3>
+          <h3>Polymarket bot</h3>
           <p>
             Bot di osservazione per mercati predittivi su Polymarket.
             Setup su Replit con py-clob-client, wallet MetaMask su Polygon,
-            logica di monitoraggio quote e posizionamento in observation mode.
+            logica di monitoraggio quote in observation mode.
           </p>
         </article>
-
       </div>
     </section>
 
     <!-- BLOG PREVIEW -->
     <section id="blog">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2 class="section-title">From the blog</h2>
       </div>
 
-      <p class="blog-lead">
+      <p class="blog-lead reveal reveal-delay-1">
         Una selezione di articoli su marketing, sistemi, tecnologia e cultura digitale.
         <a href="blog.html">Vai al blog completo →</a>
       </p>
 
-      <div class="blog-grid">
-        <a href="post-1.html" class="card-link" style="text-decoration:none;color:inherit;">
+      <div class="blog-grid" style="margin-top:20px">
+        <a href="post-1.html" class="card-link reveal reveal-delay-2">
           <article class="card">
             <span class="card-tag">Politics / Systems</span>
             <h3>Il "no" vince sempre. E non è una vittoria</h3>
@@ -256,28 +254,79 @@
   <footer class="container footer">
     <div>© 2026 Gianmarco Monaco</div>
 
-    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;">
-      <!-- Badge "built by hand" -->
-      <span style="
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border: 1px solid rgba(103,255,212,0.18);
-        border-radius: 999px;
-        padding: 5px 12px;
-        font-size: 11px;
-        color: var(--accent);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: rgba(103,255,212,0.04);
-      ">
-        <span style="font-size:13px;">✦</span>
-        No WordPress. No Webflow. Just code.
-      </span>
-    </div>
+    <span class="footer-badge">
+      <span class="footer-badge-icon">✦</span>
+      No WordPress. No Webflow. Just code.
+    </span>
 
-    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">
+      LinkedIn ↗
+    </a>
   </footer>
+
+  <!-- ── JAVASCRIPT ── -->
+  <script>
+    // ── Custom cursor ──────────────────────────────────────────
+    const cursor = document.getElementById('cursor');
+    let mx = -100, my = -100;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top  = my + 'px';
+    });
+
+    document.querySelectorAll('a, button, .card, .tool-tab, .focus-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+    document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+
+    // ── Scroll reveal (IntersectionObserver) ───────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -48px 0px'
+    });
+
+    // Hero elements reveal immediately on load
+    document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 100 + i * 150);
+    });
+
+    // Other elements via scroll
+    revealEls.forEach(el => {
+      if (!el.closest('.hero')) observer.observe(el);
+    });
+
+    // ── Active nav on scroll ───────────────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => navObserver.observe(s));
+  </script>
 
 </body>
 </html>
