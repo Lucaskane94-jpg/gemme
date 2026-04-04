@@ -308,18 +308,20 @@ Sono tutti progetti personali al di fuori del contesto lavorativo.`
   }
 
   function formatText(text) {
-    return text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/^- (.+)$/gm, '<li>$1</li>')
-      .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
-      .replace(/
-
-/g, '<br><br>')
-      .replace(/
-/g, '<br>');
+    // Bold: **text**
+    var parts = text.split('**');
+    var result = '';
+    for (var i = 0; i < parts.length; i++) {
+      if (i % 2 === 1) result += '<strong>' + parts[i] + '</strong>';
+      else result += parts[i];
+    }
+    // Newlines
+    result = result.split('\n\n').join('<br><br>');
+    result = result.split('\n').join('<br>');
+    return result;
   }
 
-  function showTyping() {
+    function showTyping() {
     const container = document.getElementById('messages');
     const div = document.createElement('div');
     div.className = 'msg assistant'; div.id = 'typing-indicator';
