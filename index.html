@@ -7,7 +7,10 @@
   <meta name="description" content="Sito personale di Gianmarco Monaco: marketing, martech, CRO, progetti e blog.">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* ── CARD VISUALS shared ── */
     .card-visual{height:155px;border-radius:10px;margin-bottom:18px;overflow:hidden;background:rgba(0,0,0,0.32);border:1px solid rgba(103,255,212,0.08);position:relative;font-family:var(--font-mono);font-size:12px}
+
+    /* ── TERMINAL (Questo sito) ── */
     .term-bar{display:flex;align-items:center;gap:5px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.05)}
     .tdot{width:9px;height:9px;border-radius:50%;display:inline-block}
     .tfile{margin-left:auto;color:rgba(103,255,212,0.42);font-size:10px;letter-spacing:0.05em}
@@ -20,6 +23,8 @@
     .term-foot{position:absolute;bottom:0;left:0;right:0;padding:5px 12px;font-size:9px;color:rgba(103,255,212,0.52);letter-spacing:0.15em;text-transform:uppercase;display:flex;align-items:center;gap:7px;border-top:1px solid rgba(103,255,212,0.07)}
     .tping{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px var(--accent);animation:ping-dot 1.5s ease infinite}
     @keyframes ping-dot{0%,100%{opacity:1}50%{opacity:0.25}}
+
+    /* ── CHART (Mortgage) ── */
     .cv-chart svg{width:100%;height:130px;display:block}
     .chart-grid line{stroke:rgba(103,255,212,0.06);stroke-width:1}
     .chart-grid-v line{stroke:rgba(255,255,255,0.03);stroke-width:1}
@@ -32,6 +37,8 @@
     .chart-labels{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:4px 12px;font-size:9px;color:rgba(103,255,212,0.42);letter-spacing:0.12em;text-transform:uppercase}
     .cl-val{color:var(--accent);font-size:11px;animation:val-pulse 2s ease-in-out infinite}
     @keyframes val-pulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+    /* ── MARKET (Polymarket) ── */
     .cv-market{padding:10px 14px;display:flex;flex-direction:column}
     .mkt-header{display:flex;align-items:center;gap:7px;font-size:9px;color:rgba(103,255,212,0.45);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px}
     .mkt-reddot{width:6px;height:6px;border-radius:50%;background:#ff5757;box-shadow:0 0 8px rgba(255,80,80,0.65);animation:ping-dot 1s ease infinite;flex-shrink:0}
@@ -48,16 +55,103 @@
     @keyframes bar-no{0%,100%{width:32%}50%{width:27%}}
     .mkt-pct{font-size:10px;color:rgba(255,255,255,0.42);width:26px;text-align:right;flex-shrink:0}
     .mkt-foot{margin-top:auto;font-size:9px;color:rgba(103,255,212,0.26);letter-spacing:0.16em;text-transform:uppercase;padding-top:4px;border-top:1px solid rgba(103,255,212,0.06)}
+
+    /* ── RESULTS (ADV) ── */
     .cv-results{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:12px}
     .cv-stat{background:rgba(0,0,0,0.3);border:1px solid rgba(103,255,212,0.08);border-radius:7px;padding:8px 10px}
     .cv-stat-l{font-size:8px;color:rgba(103,255,212,0.5);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:3px}
     .cv-stat-v{font-size:16px;color:#dce8f5;font-family:var(--font-mono)}
     .cv-stat-d{font-size:10px;color:#67ffd4}
+    .gallery-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;background:rgba(0,0,0,0.55);border-radius:10px;pointer-events:none}
+
+    /* ══ TOOL VISUALS ══ */
+
+    /* GTM — DOM injection */
+    .cv-gtm{padding:12px 14px}
+    .dom-tree{display:flex;flex-direction:column;gap:0}
+    .dom-node{display:flex;align-items:center;gap:6px;padding:3px 0;font-size:10px;color:rgba(255,255,255,0.25)}
+    .dom-node.hl{color:rgba(103,255,212,0.85)}
+    .dom-indent{width:12px;flex-shrink:0;border-left:1px solid rgba(255,255,255,0.07);margin-left:6px}
+    .dom-tag{color:rgba(103,255,212,0.7)}
+    .dom-tag.injected{color:var(--accent);animation:inject-flash 2.4s ease infinite}
+    @keyframes inject-flash{0%,100%{opacity:0.7}40%{opacity:1;text-shadow:0 0 8px rgba(103,255,212,0.6)}60%{opacity:1}}
+    .dom-attr{color:rgba(255,200,100,0.6)}
+    .inject-badge{position:absolute;top:10px;right:12px;font-size:8px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;border:1px solid rgba(103,255,212,0.18);padding:2px 7px;border-radius:4px;background:rgba(103,255,212,0.05);animation:inject-flash 2.4s ease infinite}
+    .gtm-foot{position:absolute;bottom:0;left:0;right:0;padding:5px 12px;font-size:9px;color:rgba(103,255,212,0.45);letter-spacing:0.14em;text-transform:uppercase;border-top:1px solid rgba(103,255,212,0.07);display:flex;align-items:center;gap:6px}
+    .cursor-blink{animation:blink 0.9s step-end infinite;color:var(--accent)}
+
+    /* Analytics — Funnel */
+    .cv-analytics{padding:10px 14px;display:flex;flex-direction:column;gap:8px}
+    .funnel-row{display:flex;align-items:center;gap:8px}
+    .funnel-label{font-size:9px;color:rgba(255,255,255,0.35);width:54px;flex-shrink:0;letter-spacing:0.06em}
+    .funnel-bar-wrap{flex:1;height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden}
+    .funnel-bar{height:100%;border-radius:4px;transition:width 0.8s ease}
+    .fb-1{background:rgba(103,255,212,0.75);animation:fb-pulse1 4s ease-in-out infinite}
+    .fb-2{background:rgba(103,255,212,0.55);animation:fb-pulse2 4s ease-in-out infinite}
+    .fb-3{background:rgba(103,255,212,0.38);animation:fb-pulse3 4s ease-in-out infinite}
+    .fb-4{background:rgba(103,255,212,0.22);animation:fb-pulse4 4s ease-in-out infinite}
+    @keyframes fb-pulse1{0%,100%{width:92%}50%{width:96%}}
+    @keyframes fb-pulse2{0%,100%{width:64%}50%{width:70%}}
+    @keyframes fb-pulse3{0%,100%{width:38%}50%{width:44%}}
+    @keyframes fb-pulse4{0%,100%{width:14%}50%{width:18%}}
+    .funnel-pct{font-size:9px;color:rgba(103,255,212,0.55);width:28px;text-align:right;flex-shrink:0;font-family:var(--font-mono)}
+    .funnel-foot{position:absolute;bottom:0;left:0;right:0;padding:5px 12px;font-size:9px;color:rgba(103,255,212,0.4);letter-spacing:0.14em;text-transform:uppercase;border-top:1px solid rgba(103,255,212,0.07);display:flex;justify-content:space-between}
+    .funnel-foot span{color:var(--accent);animation:val-pulse 2s ease-in-out infinite}
+
+    /* Advertising — ROAS bars */
+    .cv-adv{padding:10px 14px;display:flex;flex-direction:column;gap:0}
+    .adv-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .adv-title{font-size:9px;color:rgba(103,255,212,0.45);letter-spacing:0.15em;text-transform:uppercase}
+    .adv-live{font-size:9px;color:rgba(255,87,87,0.7);display:flex;align-items:center;gap:5px}
+    .adv-dot{width:5px;height:5px;border-radius:50%;background:#ff5757;animation:ping-dot 1s ease infinite}
+    .adv-row{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+    .adv-camp{font-size:9px;color:rgba(255,255,255,0.35);width:40px;flex-shrink:0;letter-spacing:0.05em;text-transform:uppercase}
+    .adv-bar-wrap{flex:1;height:7px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden}
+    .adv-bar{height:100%;border-radius:4px}
+    .ab-1{background:linear-gradient(90deg,rgba(103,255,212,0.5),rgba(103,255,212,0.9));animation:ab1 5s ease-in-out infinite}
+    .ab-2{background:linear-gradient(90deg,rgba(126,184,255,0.5),rgba(126,184,255,0.9));animation:ab2 5s ease-in-out infinite}
+    .ab-3{background:linear-gradient(90deg,rgba(255,200,87,0.5),rgba(255,200,87,0.85));animation:ab3 5s ease-in-out infinite}
+    @keyframes ab1{0%,100%{width:85%}50%{width:92%}}
+    @keyframes ab2{0%,100%{width:60%}50%{width:68%}}
+    @keyframes ab3{0%,100%{width:34%}50%{width:42%}}
+    .adv-val{font-size:10px;width:30px;text-align:right;flex-shrink:0;font-family:var(--font-mono)}
+    .av-1{color:rgba(103,255,212,0.8)}.av-2{color:rgba(126,184,255,0.8)}.av-3{color:rgba(255,200,87,0.8)}
+    .adv-foot{position:absolute;bottom:0;left:0;right:0;padding:5px 12px;font-size:9px;color:rgba(103,255,212,0.4);letter-spacing:0.14em;text-transform:uppercase;border-top:1px solid rgba(103,255,212,0.07);display:flex;justify-content:space-between;align-items:center}
+    .adv-roas{color:var(--accent);animation:val-pulse 2s ease-in-out infinite}
+
+    /* Personalization — A/B split */
+    .cv-ab{padding:10px 14px;display:flex;flex-direction:column}
+    .ab-header{display:flex;justify-content:space-between;margin-bottom:10px}
+    .ab-label{font-size:9px;color:rgba(103,255,212,0.45);letter-spacing:0.15em;text-transform:uppercase}
+    .ab-variants{display:flex;gap:8px;flex:1}
+    .ab-var{flex:1;border-radius:7px;padding:8px;border:1px solid rgba(103,255,212,0.1);background:rgba(0,0,0,0.3);display:flex;flex-direction:column;gap:4px}
+    .ab-var.winner{border-color:rgba(103,255,212,0.3);background:rgba(103,255,212,0.05)}
+    .ab-var-name{font-size:8px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+    .ab-var-name.w{color:var(--accent)}
+    .ab-cr{font-size:18px;color:#dce8f5;font-family:var(--font-mono);line-height:1}
+    .ab-cr.w{color:var(--accent)}
+    .ab-delta{font-size:9px;color:rgba(255,255,255,0.3)}
+    .ab-delta.up{color:var(--accent)}
+    .ab-bar-row{display:flex;gap:4px;margin-top:6px;align-items:flex-end;height:24px}
+    .ab-mini-bar{flex:1;border-radius:2px;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-duration:4s}
+    .ambar-a{background:rgba(255,255,255,0.12);animation-name:ambar-a}
+    .ambar-b{background:rgba(103,255,212,0.5);box-shadow:0 0 6px rgba(103,255,212,0.2);animation-name:ambar-b}
+    @keyframes ambar-a{0%,100%{height:55%}50%{height:60%}}
+    @keyframes ambar-b{0%,100%{height:78%}50%{height:85%}}
+    .ab-winner-badge{font-size:8px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(103,255,212,0.2);padding:1px 6px;border-radius:3px;margin-top:4px;background:rgba(103,255,212,0.06);width:fit-content}
+    .ab-foot{position:absolute;bottom:0;left:0;right:0;padding:5px 12px;font-size:9px;color:rgba(103,255,212,0.4);letter-spacing:0.14em;text-transform:uppercase;border-top:1px solid rgba(103,255,212,0.07);display:flex;justify-content:space-between}
+    .ab-confidence{color:var(--accent);animation:val-pulse 3s ease-in-out infinite}
+
+    /* ── SCOPRI button ── */
     .card-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
     .btn-scopri{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border:1px solid rgba(103,255,212,0.22);border-radius:999px;background:rgba(103,255,212,0.06);color:var(--accent);font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none}
     .btn-scopri:hover{background:rgba(103,255,212,0.14);box-shadow:0 0 18px rgba(103,255,212,0.12)}
+
+    /* ── DISCLAIMER ── */
     .disclaimer{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:rgba(103,255,212,0.04);border:1px solid rgba(103,255,212,0.1);border-radius:10px;margin-bottom:20px;font-size:13px;color:#8a9ab0;line-height:1.65}
     .disclaimer-icon{color:var(--accent);font-size:16px;flex-shrink:0;margin-top:2px}
+
+    /* ── MODALS ── */
     .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:5000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(8px)}
     .modal-overlay.open{opacity:1;pointer-events:all}
     .modal-box{background:#080b12;border:1px solid #1b2230;border-radius:16px;width:min(96vw,1000px);max-height:92vh;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,0.7);transform:translateY(20px);transition:transform 0.3s}
@@ -79,7 +173,6 @@
     .lb-prev{left:16px}.lb-next{right:16px}
     .lb-prev:hover,.lb-next:hover,.lb-close:hover{background:rgba(103,255,212,0.12);border-color:rgba(103,255,212,0.25);color:var(--accent)}
     .lb-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em}
-    .gallery-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;background:rgba(0,0,0,0.55);border-radius:10px;pointer-events:none}
   </style>
 </head>
 <body>
@@ -90,10 +183,9 @@
   <div class="container topbar-inner">
     <a href="index.html" class="brand">GM</a>
     <nav>
-      <a href="#about">About</a>
-      <a href="#tools">Tools</a>
-      <a href="#focus">Focus</a>
       <a href="#experiments">Experiments</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
       <a href="blog.html">Blog</a>
     </nav>
     <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -102,6 +194,7 @@
 
 <main class="container">
 
+  <!-- HERO -->
   <section class="hero">
     <span class="eyebrow reveal" style="transition-delay:.1s">Digital systems / marketing / cybernetic drift</span>
     <h1 class="reveal" style="transition-delay:.25s">Costruisco<br>esperienze<br>digitali.</h1>
@@ -112,60 +205,7 @@
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="section-title reveal">About</h2>
-    <div class="about-layout">
-      <div class="about-copy reveal reveal-delay-1">
-        <p>Lavoro nel mondo del digital marketing e della tecnologia, con focus su personalizzazione onsite, analytics, CRO e sistemi martech.</p>
-        <p>Nel mio percorso ho lavorato su progetti e iniziative legati a <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>, costruendo esperienze digitali orientate a performance, misurazione e ottimizzazione.</p>
-        <p>Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia, marketing, sistemi e cultura digitale.</p>
-      </div>
-      <aside class="about-side-card reveal reveal-delay-2">
-        <span class="mini-label">Profile</span>
-        <h3>Experience snapshot</h3>
-        <p>Martech, CRO, personalization, analytics, UX and digital experimentation.</p>
-        <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">Visit LinkedIn ↗</a>
-      </aside>
-    </div>
-  </section>
-
-  <section id="tools">
-    <div class="section-heading reveal">
-      <h2 class="section-title">Tools & Platforms</h2>
-      <p class="section-intro">Una selezione dei principali strumenti e ambiti operativi su cui ho lavorato.</p>
-    </div>
-    <div class="tools-strip">
-      <article class="tool-tab reveal reveal-delay-1">
-        <span class="tool-label">01</span><h3>GTM & Front-end</h3>
-        <p>Utilizzo <strong>Google Tag Manager</strong> per manipolazione del DOM, injection di <strong>CSS</strong>, <strong>JS</strong> e <strong>HTML</strong>, gestione attivatori e interventi rapidi su flussi digitali.</p>
-        <p>Ho lavorato su contesti <strong>SPA Angular</strong>, gestendo trigger e variazioni di stato su navigazioni dinamiche.</p>
-      </article>
-      <article class="tool-tab reveal reveal-delay-2">
-        <span class="tool-label">02</span><h3>Analytics</h3>
-        <p>Strumenti di analisi quantitativa e qualitativa per leggere funnel, comportamenti, attriti e pattern di navigazione.</p>
-        <p>Tool: <strong>Contentsquare</strong>, <strong>GA4</strong>, <strong>Hotjar</strong>, <strong>Mouseflow</strong>, <strong>Glassbox</strong>, <strong>FullStory</strong>.</p>
-      </article>
-      <article class="tool-tab reveal reveal-delay-3">
-        <span class="tool-label">03</span><h3>Advertising</h3>
-        <p>Attivazioni e gestione campagne con focus su <strong>Meta ADV</strong>, in coordinamento con obiettivi di acquisizione, misurazione e ottimizzazione delle performance.</p>
-      </article>
-      <article class="tool-tab reveal reveal-delay-4">
-        <span class="tool-label">04</span><h3>Personalization</h3>
-        <p>Personalizzazione dell'esperienza utente attraverso <strong>Dynamic Yield</strong>: targeting, contenuti dinamici, test e attivazioni onsite orientate a conversione e rilevanza.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="focus">
-    <div class="section-heading reveal"><h2 class="section-title">What I do</h2></div>
-    <div class="focus-grid">
-      <article class="focus-card reveal reveal-delay-1"><div class="focus-icon">⌬</div><h3>Personalization</h3><p>Targeting, onsite activation, dynamic content e logiche di rilevanza.</p></article>
-      <article class="focus-card reveal reveal-delay-2"><div class="focus-icon">◫</div><h3>Analytics</h3><p>Tracking, data layer, funnel analysis e lettura dei comportamenti.</p></article>
-      <article class="focus-card reveal reveal-delay-3"><div class="focus-icon">△</div><h3>CRO</h3><p>Test, ipotesi, redesign e ottimizzazione dei flussi critici.</p></article>
-      <article class="focus-card reveal reveal-delay-4"><div class="focus-icon">✦</div><h3>Martech Systems</h3><p>Integrazioni tra tool, processi, CRM, piattaforme e customer journey.</p></article>
-    </div>
-  </section>
-
+  <!-- EXPERIMENTS -->
   <section id="experiments">
     <div class="section-heading reveal">
       <h2 class="section-title">Experiments</h2>
@@ -173,12 +213,13 @@
     </div>
 
     <div class="disclaimer reveal reveal-delay-1">
-      <span class="disclaimer-icon">ⓘ</span>
+      <span class="disclaimer-icon">&#9432;</span>
       <span>Questa sezione raccoglie esclusivamente <strong style="color:#c8d4e0">progetti personali e sperimentazioni indipendenti</strong>. Il lavoro svolto in ambito professionale — campagne, strategie e attivazioni per i clienti — è coperto da accordi di riservatezza e non è qui rappresentato. I risultati mostrati nella sezione ADV si riferiscono ad attività condotte in contesti non coperti da NDA.</span>
     </div>
 
     <div class="projects-grid">
 
+      <!-- Questo sito -->
       <article class="card reveal reveal-delay-1">
         <div class="card-visual cv-terminal">
           <div class="term-bar">
@@ -198,11 +239,10 @@
         <span class="card-tag">Web / Static site</span>
         <h3>Questo sito</h3>
         <p>Costruito a mano in HTML, CSS e vanilla JS. Nessun framework, nessun builder. Hosting su Vercel, contenuti via Pages CMS su GitHub, blog con fetch dinamica da API GitHub e parsing Markdown lato client.</p>
-        <div class="card-actions">
-          <a class="btn-scopri" href="blog.html">Scopri →</a>
-        </div>
+        <div class="card-actions"><a class="btn-scopri" href="blog.html">Scopri &#8594;</a></div>
       </article>
 
+      <!-- Mortgage tracker -->
       <article class="card reveal reveal-delay-2">
         <div class="card-visual cv-chart">
           <svg viewBox="0 0 280 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,19 +251,17 @@
             <g class="chart-grid-v"><line x1="70" y1="0" x2="70" y2="130"/><line x1="140" y1="0" x2="140" y2="130"/><line x1="210" y1="0" x2="210" y2="130"/></g>
             <path class="chart-area" d="M0,108 C30,100 55,90 85,82 S125,58 155,50 S205,32 245,26 L280,24 L280,130 L0,130 Z"/>
             <path class="chart-line" d="M0,108 C30,100 55,90 85,82 S125,58 155,50 S205,32 245,26 L280,24"/>
-            <circle class="chart-dot" cx="155" cy="50" r="3.5"/>
-            <circle class="chart-dot" cx="245" cy="26" r="3.5" style="animation-delay:.18s"/>
+            <circle class="chart-dot" cx="155" cy="50" r="3.5"/><circle class="chart-dot" cx="245" cy="26" r="3.5" style="animation-delay:.18s"/>
           </svg>
-          <div class="chart-labels"><span>Euribor 3M</span><span class="cl-val">3.2% ↓</span></div>
+          <div class="chart-labels"><span>Euribor 3M</span><span class="cl-val">3.2% &#8595;</span></div>
         </div>
         <span class="card-tag">Finance / Tool</span>
         <h3>Mortgage rate tracker</h3>
         <p>Applicazione browser-based per monitoraggio tassi ipotecari. Calcolo ammortamento alla francese, scenari Euribor multipli e tab di confronto. Persistenza via localStorage, zero dipendenze.</p>
-        <div class="card-actions">
-          <button class="btn-scopri" onclick="openIframe('mortgage-tracker.html','Mortgage Rate Tracker')">Scopri →</button>
-        </div>
+        <div class="card-actions"><button class="btn-scopri" onclick="openIframe('mortgage-tracker.html','Mortgage Rate Tracker')">Scopri &#8594;</button></div>
       </article>
 
+      <!-- Polymarket -->
       <article class="card reveal reveal-delay-3">
         <div class="card-visual cv-market">
           <div class="mkt-header"><span class="mkt-reddot"></span><span class="mkt-title">Polymarket</span><span class="mkt-live">LIVE <span class="mkt-blink">&#9679;</span></span></div>
@@ -234,35 +272,139 @@
         <span class="card-tag">Trading / Automation</span>
         <h3>Polymarket bot</h3>
         <p>Bot di osservazione per mercati predittivi su Polymarket. Setup su Replit con py-clob-client, wallet MetaMask su Polygon, logica di monitoraggio quote in observation mode.</p>
-        <div class="card-actions">
-          <button class="btn-scopri" onclick="openIframe('polymarket-demo.html','Polymarket Bot — Demo')">Scopri →</button>
-        </div>
+        <div class="card-actions"><button class="btn-scopri" onclick="openIframe('polymarket-demo.html','Polymarket Bot — Demo')">Scopri &#8594;</button></div>
       </article>
 
-      <article class="card reveal reveal-delay-4" id="adv-card">
-        <div class="card-visual" style="cursor:pointer;" onclick="openGallery()">
+      <!-- ADV Results -->
+      <article class="card reveal reveal-delay-4">
+        <div class="card-visual" style="cursor:pointer" onclick="openGallery()">
           <div class="cv-results">
-            <div class="cv-stat"><div class="cv-stat-l">Entrate</div><div class="cv-stat-v">29.6k€</div><div class="cv-stat-d">↑ 72.63%</div></div>
-            <div class="cv-stat"><div class="cv-stat-l">ROAS</div><div class="cv-stat-v">34.2x</div><div class="cv-stat-d">↑ best camp.</div></div>
-            <div class="cv-stat"><div class="cv-stat-l">Transaz.</div><div class="cv-stat-v">255</div><div class="cv-stat-d">↑ 66.67%</div></div>
-            <div class="cv-stat"><div class="cv-stat-l">Conv. rate</div><div class="cv-stat-v">2.73%</div><div class="cv-stat-d">↑ 4.56%</div></div>
+            <div class="cv-stat"><div class="cv-stat-l">Entrate</div><div class="cv-stat-v">29.6k&#8364;</div><div class="cv-stat-d">&#8593; 72.63%</div></div>
+            <div class="cv-stat"><div class="cv-stat-l">ROAS</div><div class="cv-stat-v">34.2x</div><div class="cv-stat-d">&#8593; best camp.</div></div>
+            <div class="cv-stat"><div class="cv-stat-l">Transaz.</div><div class="cv-stat-v">255</div><div class="cv-stat-d">&#8593; 66.67%</div></div>
+            <div class="cv-stat"><div class="cv-stat-l">Conv. rate</div><div class="cv-stat-v">2.73%</div><div class="cv-stat-d">&#8593; 4.56%</div></div>
           </div>
-          <div class="gallery-hint" id="gallery-hint"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;">Visualizza risultati →</span></div>
+          <div class="gallery-hint" id="gallery-hint"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;">Visualizza risultati &#8594;</span></div>
         </div>
         <span class="card-tag">Advertising / E-commerce</span>
         <h3>Risultati e-commerce</h3>
         <p>Campagne Meta ADV su store e-commerce: ottimizzazione ROAS, scaling budget, struttura inserzioni e misurazione conversioni. Risultati da campagne non coperte da NDA.</p>
-        <div class="card-actions">
-          <button class="btn-scopri" onclick="openGallery()">Scopri →</button>
-        </div>
+        <div class="card-actions"><button class="btn-scopri" onclick="openGallery()">Scopri &#8594;</button></div>
       </article>
 
     </div>
   </section>
 
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="section-heading reveal">
+      <h2 class="section-title">Tools & Platforms</h2>
+      <p class="section-intro">Una selezione dei principali strumenti e ambiti operativi su cui ho lavorato.</p>
+    </div>
+    <div class="tools-strip">
+
+      <!-- GTM — DOM injection visual -->
+      <article class="tool-tab reveal reveal-delay-1">
+        <div class="card-visual cv-gtm">
+          <div class="inject-badge">INJECTING</div>
+          <div class="dom-tree">
+            <div class="dom-node"><span class="dom-tag">&lt;body&gt;</span></div>
+            <div class="dom-node"><span class="dom-indent"></span><span class="dom-tag">&lt;header&gt;</span></div>
+            <div class="dom-node"><span class="dom-indent"></span><span class="dom-indent"></span><span class="dom-attr">class="nav"</span></div>
+            <div class="dom-node hl"><span class="dom-indent"></span><span class="dom-tag injected">&lt;div</span> <span class="dom-attr">id="dy-popup"</span><span class="dom-tag injected">&gt;</span><span style="color:rgba(103,255,212,0.5);font-size:9px"> &#8592; injected</span></div>
+            <div class="dom-node"><span class="dom-indent"></span><span class="dom-tag">&lt;main&gt;</span></div>
+          </div>
+          <div class="gtm-foot"><span>GTM</span><span class="cursor-blink">&#9611;</span><span style="color:rgba(103,255,212,0.3)">Custom HTML tag</span></div>
+        </div>
+        <span class="tool-label">01</span>
+        <h3>GTM & Front-end</h3>
+        <p>Utilizzo <strong>Google Tag Manager</strong> per manipolazione del DOM, injection di <strong>CSS</strong>, <strong>JS</strong> e <strong>HTML</strong>, gestione attivatori e interventi rapidi su flussi digitali.</p>
+        <p>Ho lavorato su contesti <strong>SPA Angular</strong>, gestendo trigger e variazioni di stato su navigazioni dinamiche.</p>
+      </article>
+
+      <!-- Analytics — Funnel visual -->
+      <article class="tool-tab reveal reveal-delay-2">
+        <div class="card-visual cv-analytics">
+          <div class="funnel-row"><span class="funnel-label">Sessions</span><div class="funnel-bar-wrap"><div class="funnel-bar fb-1"></div></div><span class="funnel-pct">100%</span></div>
+          <div class="funnel-row"><span class="funnel-label">Engaged</span><div class="funnel-bar-wrap"><div class="funnel-bar fb-2"></div></div><span class="funnel-pct">64%</span></div>
+          <div class="funnel-row"><span class="funnel-label">Add cart</span><div class="funnel-bar-wrap"><div class="funnel-bar fb-3"></div></div><span class="funnel-pct">38%</span></div>
+          <div class="funnel-row"><span class="funnel-label">Purchase</span><div class="funnel-bar-wrap"><div class="funnel-bar fb-4"></div></div><span class="funnel-pct">14%</span></div>
+          <div class="funnel-foot"><span>Conv. rate</span><span>2.73% <span style="color:rgba(103,255,212,0.55)">&#8593; 4.56%</span></span></div>
+        </div>
+        <span class="tool-label">02</span>
+        <h3>Analytics</h3>
+        <p>Strumenti di analisi quantitativa e qualitativa per leggere funnel, comportamenti, attriti e pattern di navigazione.</p>
+        <p>Tool: <strong>Contentsquare</strong>, <strong>GA4</strong>, <strong>Hotjar</strong>, <strong>Mouseflow</strong>, <strong>Glassbox</strong>, <strong>FullStory</strong>.</p>
+      </article>
+
+      <!-- Advertising — ROAS bars -->
+      <article class="tool-tab reveal reveal-delay-3">
+        <div class="card-visual cv-adv">
+          <div class="adv-header">
+            <span class="adv-title">Meta ADV — ROAS</span>
+            <span class="adv-live"><span class="adv-dot"></span>LIVE</span>
+          </div>
+          <div class="adv-row"><span class="adv-camp">Camp.1</span><div class="adv-bar-wrap"><div class="adv-bar ab-1"></div></div><span class="adv-val av-1">34x</span></div>
+          <div class="adv-row"><span class="adv-camp">Camp.2</span><div class="adv-bar-wrap"><div class="adv-bar ab-2"></div></div><span class="adv-val av-2">10x</span></div>
+          <div class="adv-row"><span class="adv-camp">Camp.3</span><div class="adv-bar-wrap"><div class="adv-bar ab-3"></div></div><span class="adv-val av-3">8x</span></div>
+          <div class="adv-foot"><span>Avg ROAS</span><span class="adv-roas">&#8593; 17.3x</span></div>
+        </div>
+        <span class="tool-label">03</span>
+        <h3>Advertising</h3>
+        <p>Attivazioni e gestione campagne con focus su <strong>Meta ADV</strong>, in coordinamento con obiettivi di acquisizione, misurazione e ottimizzazione delle performance.</p>
+      </article>
+
+      <!-- Personalization — A/B split -->
+      <article class="tool-tab reveal reveal-delay-4">
+        <div class="card-visual cv-ab">
+          <div class="ab-header"><span class="ab-label">A/B Test — Dynamic Yield</span></div>
+          <div class="ab-variants">
+            <div class="ab-var">
+              <div class="ab-var-name">Variant A</div>
+              <div class="ab-cr">3.1%</div>
+              <div class="ab-delta">baseline</div>
+              <div class="ab-bar-row"><div class="ab-mini-bar ambar-a" style="height:55%"></div><div class="ab-mini-bar ambar-a" style="height:48%"></div><div class="ab-mini-bar ambar-a" style="height:60%"></div><div class="ab-mini-bar ambar-a" style="height:52%"></div></div>
+            </div>
+            <div class="ab-var winner">
+              <div class="ab-var-name w">Variant B</div>
+              <div class="ab-cr w">4.7%</div>
+              <div class="ab-delta up">&#8593; +51.6%</div>
+              <div class="ab-bar-row"><div class="ab-mini-bar ambar-b" style="height:78%"></div><div class="ab-mini-bar ambar-b" style="height:82%"></div><div class="ab-mini-bar ambar-b" style="height:75%"></div><div class="ab-mini-bar ambar-b" style="height:85%"></div></div>
+              <div class="ab-winner-badge">&#10003; WINNER</div>
+            </div>
+          </div>
+          <div class="ab-foot"><span>Confidence</span><span class="ab-confidence">96.2%</span></div>
+        </div>
+        <span class="tool-label">04</span>
+        <h3>Personalization</h3>
+        <p>Personalizzazione dell'esperienza utente attraverso <strong>Dynamic Yield</strong>: targeting, contenuti dinamici, test e attivazioni onsite orientate a conversione e rilevanza.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title reveal">About</h2>
+    <div class="about-layout">
+      <div class="about-copy reveal reveal-delay-1">
+        <p>Lavoro nel mondo del digital marketing e della tecnologia, con focus su personalizzazione onsite, analytics, CRO e sistemi martech.</p>
+        <p>Nel mio percorso ho lavorato su progetti e iniziative legati a <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>, costruendo esperienze digitali orientate a performance, misurazione e ottimizzazione.</p>
+        <p>Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia, marketing, sistemi e cultura digitale.</p>
+      </div>
+      <aside class="about-side-card reveal reveal-delay-2">
+        <span class="mini-label">Profile</span>
+        <h3>Experience snapshot</h3>
+        <p>Martech, CRO, personalization, analytics, UX and digital experimentation.</p>
+        <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">Visit LinkedIn &#8599;</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- BLOG -->
   <section id="blog">
     <div class="section-heading reveal"><h2 class="section-title">From the blog</h2></div>
-    <p class="blog-lead reveal reveal-delay-1">Una selezione di articoli su marketing, sistemi, tecnologia e cultura digitale. <a href="blog.html">Vai al blog completo →</a></p>
+    <p class="blog-lead reveal reveal-delay-1">Una selezione di articoli su marketing, sistemi, tecnologia e cultura digitale. <a href="blog.html">Vai al blog completo &#8594;</a></p>
     <div class="blog-grid" style="margin-top:20px">
       <a href="post-1.html" class="card-link reveal reveal-delay-2">
         <article class="card">
@@ -277,17 +419,17 @@
 </main>
 
 <footer class="container footer">
-  <div>© 2026 Gianmarco Monaco</div>
-  <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
-  <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  <div>&#169; 2026 Gianmarco Monaco</div>
+  <span class="footer-badge"><span class="footer-badge-icon">&#10022;</span>No WordPress. No Webflow. Just code.</span>
+  <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn &#8599;</a>
 </footer>
 
 <!-- IFRAME MODAL -->
 <div class="modal-overlay" id="iframe-modal">
   <div class="modal-box">
     <div class="modal-hdr">
-      <span class="modal-title" id="iframe-title">—</span>
-      <button class="modal-close" onclick="closeModal('iframe-modal')">✕</button>
+      <span class="modal-title" id="iframe-title">&#8212;</span>
+      <button class="modal-close" onclick="closeModal('iframe-modal')">&#10005;</button>
     </div>
     <div class="modal-body">
       <iframe class="modal-iframe" id="modal-iframe" src="" title="Demo"></iframe>
@@ -299,8 +441,8 @@
 <div class="modal-overlay" id="gallery-modal">
   <div class="modal-box">
     <div class="modal-hdr">
-      <span class="modal-title">Risultati e-commerce — ADV</span>
-      <button class="modal-close" onclick="closeModal('gallery-modal')">✕</button>
+      <span class="modal-title">Risultati e-commerce &#8212; ADV</span>
+      <button class="modal-close" onclick="closeModal('gallery-modal')">&#10005;</button>
     </div>
     <div class="modal-body">
       <div class="gallery-body">
@@ -317,7 +459,7 @@
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
   <button class="lb-prev" onclick="lbNav(-1)">&#8249;</button>
   <img id="lb-img" src="" alt="">
   <button class="lb-next" onclick="lbNav(1)">&#8250;</button>
@@ -325,7 +467,6 @@
 </div>
 
 <script>
-  // Cursor
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
   document.querySelectorAll('a,button,.card,.tool-tab,.focus-card').forEach(el => {
@@ -335,22 +476,19 @@
   document.addEventListener('mouseleave', () => cursor.style.opacity='0');
   document.addEventListener('mouseenter', () => cursor.style.opacity='1');
 
-  // Gallery card hover
-  const advCard = document.querySelector('.cv-results');
   const hint = document.getElementById('gallery-hint');
-  if(advCard && hint){
-    advCard.addEventListener('mouseenter', () => hint.style.opacity='1');
-    advCard.addEventListener('mouseleave', () => hint.style.opacity='0');
+  const advVis = document.querySelector('.cv-results');
+  if(advVis && hint){
+    advVis.addEventListener('mouseenter', () => hint.style.opacity='1');
+    advVis.addEventListener('mouseleave', () => hint.style.opacity='0');
   }
 
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
   document.querySelectorAll('.hero .reveal').forEach((el,i) => setTimeout(() => el.classList.add('visible'), 80+i*160));
   document.querySelectorAll('.reveal:not(.hero .reveal)').forEach(el => obs.observe(el));
 
-  // Active nav
   document.querySelectorAll('section[id]').forEach(s => {
     new IntersectionObserver(([e]) => {
       if(e.isIntersecting){
@@ -361,38 +499,31 @@
     }, { threshold:0.4 }).observe(s);
   });
 
-  // Iframe modal
   function openIframe(src, title){
     document.getElementById('modal-iframe').src = src;
     document.getElementById('iframe-title').textContent = title;
     document.getElementById('iframe-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
-  // Gallery modal
   function openGallery(){
     document.getElementById('gallery-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
   function closeModal(id){
     document.getElementById(id).classList.remove('open');
     document.body.style.overflow = '';
     if(id==='iframe-modal') setTimeout(() => document.getElementById('modal-iframe').src='', 300);
   }
-
   document.querySelectorAll('.modal-overlay').forEach(m => {
     m.addEventListener('click', e => { if(e.target===m) closeModal(m.id); });
   });
 
-  // Lightbox
   const lbImgs = ['images/risultati_1.jpg','images/risultati_2.jpg','images/risultati_3.jpg','images/risultati_4.jpg','images/risultati_5.jpg','images/risultati_6.jpg'];
   let lbIdx = 0;
   function openLightbox(i){ lbIdx=i; updateLb(); document.getElementById('lightbox').classList.add('open'); }
   function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
   function lbNav(dir){ lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length; updateLb(); }
   function updateLb(){ document.getElementById('lb-img').src=lbImgs[lbIdx]; document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbImgs.length; }
-
   document.addEventListener('keydown', e => {
     if(e.key==='Escape'){ closeLightbox(); closeModal('gallery-modal'); closeModal('iframe-modal'); }
     if(e.key==='ArrowLeft') lbNav(-1);
