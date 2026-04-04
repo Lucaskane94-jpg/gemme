@@ -173,6 +173,19 @@
     .lb-prev{left:16px}.lb-next{right:16px}
     .lb-prev:hover,.lb-next:hover,.lb-close:hover{background:rgba(103,255,212,0.12);border-color:rgba(103,255,212,0.25);color:var(--accent)}
     .lb-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em}
+
+    /* ── TOOLS MOBILE ARROWS ── */
+    .tools-nav { display:none; justify-content:flex-end; gap:8px; margin-bottom:10px; }
+    @media (max-width: 767px) { .tools-nav { display:flex; } }
+    .tools-arrow {
+      width:36px; height:36px; border-radius:50%;
+      background:rgba(103,255,212,0.06); border:1px solid rgba(103,255,212,0.18);
+      color:var(--accent); font-size:18px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:all 0.2s; flex-shrink:0;
+    }
+    .tools-arrow:hover { background:rgba(103,255,212,0.14); }
+    .tools-arrow:disabled { opacity:0.25; cursor:default; }
   </style>
 </head>
 <body>
@@ -215,9 +228,7 @@
         <p>Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia, marketing, sistemi e cultura digitale.</p>
       </div>
       <aside class="about-side-card reveal reveal-delay-2">
-        <span class="mini-label">Profile</span>
-        <h3>Experience snapshot</h3>
-        <p>Martech, CRO, personalization, analytics, UX and digital experimentation.</p>
+        <span class="mini-label">Let's connect</span>
         <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">Visit LinkedIn &#8599;</a>
       </aside>
     </div>
@@ -290,7 +301,9 @@
         <span class="card-tag">Trading / Automation</span>
         <h3>Polymarket bot</h3>
         <p>Bot di osservazione per mercati predittivi su Polymarket. Setup su Replit con py-clob-client, wallet MetaMask su Polygon, logica di monitoraggio quote in observation mode.</p>
-        <div class="card-actions"><button class="btn-scopri" onclick="openIframe('polymarket-demo.html','Polymarket Bot — Demo')">Scopri &#8594;</button></div>
+        <div class="card-actions">
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.07);padding:8px 14px;border-radius:999px;">Demo disponibile su richiesta</span>
+        </div>
       </article>
 
       <!-- ADV Results -->
@@ -319,7 +332,11 @@
       <h2 class="section-title">Tools & Platforms</h2>
       <p class="section-intro">Una selezione dei principali strumenti e ambiti operativi su cui ho lavorato.</p>
     </div>
-    <div class="tools-strip">
+    <div class="tools-nav">
+      <button class="tools-arrow" id="tools-prev" onclick="toolsScroll(-1)">&#8249;</button>
+      <button class="tools-arrow" id="tools-next" onclick="toolsScroll(1)">&#8250;</button>
+    </div>
+    <div class="tools-strip" id="tools-strip">
 
       <!-- GTM — DOM injection visual -->
       <article class="tool-tab reveal reveal-delay-1">
@@ -525,6 +542,13 @@
   function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
   function lbNav(dir){ lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length; updateLb(); }
   function updateLb(){ document.getElementById('lb-img').src=lbImgs[lbIdx]; document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbImgs.length; }
+
+  // Tools strip arrow scroll
+  function toolsScroll(dir) {
+    const strip = document.getElementById('tools-strip');
+    const cardW = strip.querySelector('.tool-tab').offsetWidth + 14;
+    strip.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+  }
   document.addEventListener('keydown', e => {
     if(e.key==='Escape'){ closeLightbox(); closeModal('gallery-modal'); closeModal('iframe-modal'); }
     if(e.key==='ArrowLeft') lbNav(-1);
