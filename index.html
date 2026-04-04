@@ -183,9 +183,9 @@
   <div class="container topbar-inner">
     <a href="index.html" class="brand">GM</a>
     <nav>
+      <a href="#about">About</a>
       <a href="#experiments">Experiments</a>
       <a href="#tools">Tools</a>
-      <a href="#about">About</a>
       <a href="blog.html">Blog</a>
     </nav>
     <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -202,6 +202,24 @@
     <div class="hero-actions reveal" style="transition-delay:.55s">
       <a class="btn btn-primary" href="#experiments">View experiments</a>
       <a class="btn btn-secondary" href="blog.html">Read the blog</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title reveal">About</h2>
+    <div class="about-layout">
+      <div class="about-copy reveal reveal-delay-1">
+        <p>Lavoro nel mondo del digital marketing e della tecnologia, con focus su personalizzazione onsite, analytics, CRO e sistemi martech.</p>
+        <p>Nel mio percorso ho lavorato su progetti e iniziative legati a <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>, costruendo esperienze digitali orientate a performance, misurazione e ottimizzazione.</p>
+        <p>Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia, marketing, sistemi e cultura digitale.</p>
+      </div>
+      <aside class="about-side-card reveal reveal-delay-2">
+        <span class="mini-label">Profile</span>
+        <h3>Experience snapshot</h3>
+        <p>Martech, CRO, personalization, analytics, UX and digital experimentation.</p>
+        <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">Visit LinkedIn &#8599;</a>
+      </aside>
     </div>
   </section>
 
@@ -383,24 +401,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 class="section-title reveal">About</h2>
-    <div class="about-layout">
-      <div class="about-copy reveal reveal-delay-1">
-        <p>Lavoro nel mondo del digital marketing e della tecnologia, con focus su personalizzazione onsite, analytics, CRO e sistemi martech.</p>
-        <p>Nel mio percorso ho lavorato su progetti e iniziative legati a <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>, costruendo esperienze digitali orientate a performance, misurazione e ottimizzazione.</p>
-        <p>Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia, marketing, sistemi e cultura digitale.</p>
-      </div>
-      <aside class="about-side-card reveal reveal-delay-2">
-        <span class="mini-label">Profile</span>
-        <h3>Experience snapshot</h3>
-        <p>Martech, CRO, personalization, analytics, UX and digital experimentation.</p>
-        <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">Visit LinkedIn &#8599;</a>
-      </aside>
-    </div>
-  </section>
-
   <!-- BLOG -->
   <section id="blog">
     <div class="section-heading reveal"><h2 class="section-title">From the blog</h2></div>
@@ -468,6 +468,7 @@
 
 <script>
   const cursor = document.getElementById('cursor');
+  if (window.matchMedia('(pointer: coarse)').matches) { cursor.style.display='none'; }
   document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
   document.querySelectorAll('a,button,.card,.tool-tab,.focus-card').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
