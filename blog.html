@@ -4,50 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Cookie Consent -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
-  <script defer src="cookie-config.js"></script>
-
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
-  <!-- End Google Tag Manager -->
 
   <title>Blog | Gianmarco Monaco</title>
-  <meta name="description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete. Riflessioni di Gianmarco Monaco.">
+  <meta name="description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete.">
   <meta name="author" content="Gianmarco Monaco">
   <link rel="canonical" href="https://gianmarcomonaco.org/blog.html">
-
   <meta property="og:title" content="Blog | Gianmarco Monaco">
   <meta property="og:description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete.">
   <meta property="og:url" content="https://gianmarcomonaco.org/blog.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Gianmarco Monaco">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog | Gianmarco Monaco">
-  <meta name="twitter:description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete.">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="cookie-config.js"></script>
 
   <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: sans-serif; max-width: 780px; margin: 0 auto; padding: 2rem 1rem; }
-    .post-card { border-bottom: 1px solid #eee; padding: 1.5rem 0; }
-    .post-card h2 { margin: 0 0 .4rem; }
-    .post-card .meta { color: #888; font-size: .85rem; margin-bottom: .6rem; }
-    .post-card .desc { color: #444; }
-    #error { color: red; padding: 1rem; background: #fff0f0; border-radius: 6px; }
-    #loading { color: #888; }
+    .blog-page-hero { padding: 48px 0 32px; }
+    .blog-section { padding: 0 0 64px; }
+    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 24px; }
+    @media(min-width:768px){ .blog-grid{ grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1100px){ .blog-grid{ grid-template-columns: repeat(3,1fr); } }
+
+    .post-card {
+      display: block; text-decoration: none; color: inherit;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, var(--panel-strong), var(--panel));
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .post-card:hover {
+      border-color: rgba(103,255,212,0.22);
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px rgba(103,255,212,0.07);
+    }
+    .post-card-img {
+      width: 100%; height: 200px; object-fit: cover;
+      display: block; border-bottom: 1px solid var(--line);
+    }
+    .post-card-img-placeholder {
+      width: 100%; height: 200px;
+      background: linear-gradient(135deg, rgba(103,255,212,0.05), rgba(120,80,255,0.08));
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--line);
+      font-size: 32px; color: rgba(103,255,212,0.2);
+    }
+    .post-card-body { padding: 20px; }
+    .post-card-date { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .post-card-title { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; margin-bottom: 10px; color: var(--text); }
+    .post-card-desc { font-size: 14px; color: #b2bfce; line-height: 1.6; margin-bottom: 16px; }
+    .post-card-read { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .state-box { padding: 40px 0; color: var(--muted); font-family: var(--font-mono); font-size: 13px; }
+    .spinner { display:inline-block; width:14px; height:14px; border:2px solid rgba(103,255,212,0.2); border-top-color:var(--accent); border-radius:50%; animation:spin 0.7s linear infinite; vertical-align:middle; margin-right:8px; }
+    @keyframes spin { to{ transform:rotate(360deg); } }
   </style>
 </head>
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="topbar">
     <div class="container topbar-inner">
@@ -58,82 +82,36 @@
         <a href="index.html#tools">Tools</a>
         <a href="blog.html" class="active">Blog</a>
       </nav>
-      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     </div>
   </header>
 
   <div class="container">
     <div class="blog-page-hero">
       <span class="eyebrow">Note & riflessioni</span>
-      <h1>Blog</h1>
-      <p>Pensieri su marketing, sistemi digitali, tool e deriva cibernetica.</p>
+      <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(48px,10vw,96px);line-height:0.92;letter-spacing:-0.01em;text-transform:uppercase;margin-top:12px;">Blog</h1>
+      <p style="margin-top:16px;color:#b2bfce;font-size:17px;max-width:520px;">Pensieri su marketing, sistemi digitali, tool e deriva cibernetica.</p>
     </div>
   </div>
 
   <div class="container">
     <div class="blog-section">
-      <div id="loading" class="state-box">
-        <span class="spinner"></span> Caricamento post…
-      </div>
+      <div id="loading" class="state-box"><span class="spinner"></span>Caricamento post…</div>
       <div id="error" style="display:none"></div>
       <div id="posts" class="blog-grid"></div>
     </div>
   </div>
 
-  <div class="container">
-    <footer class="footer">
-      <span>© 2026 Gianmarco Monaco</span>
-      <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
-      <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </footer>
-  </div>
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+    <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </footer>
 
   <script>
-    const REPO   = 'Lucaskane94-jpg/gemme';
-    const BRANCH = 'main';
-    const ROOT   = 'posts';
-
-    async function fetchMdFiles(path) {
-      const url = `https://api.github.com/repos/${REPO}/contents/${path}?ref=${BRANCH}`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`GitHub API ${res.status} — ${path}`);
-      const items = await res.json();
-      let files = [];
-      for (const item of items) {
-        if (item.type === 'file' && item.name.endsWith('.md')) files.push(item);
-        else if (item.type === 'dir') files = files.concat(await fetchMdFiles(item.path));
-      }
-      return files;
-    }
-
-    async function fetchRaw(filePath) {
-      const url = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${filePath}`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`Impossibile scaricare ${filePath}`);
-      return res.text();
-    }
-
-    function parseFrontmatter(raw) {
-      const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-      if (!match) return { data: {}, content: raw };
-      const data = {};
-      for (const line of match[1].split('\n')) {
-        const sep = line.indexOf(':');
-        if (sep === -1) continue;
-        const key = line.slice(0, sep).trim();
-        let val = line.slice(sep + 1).trim().replace(/^["']|["']$/g, '');
-        data[key] = /^\d{4}-\d{2}-\d{2}/.test(val) ? new Date(val) : val;
-      }
-      return { data, content: match[2].trim() };
-    }
-
-    function fmtDate(d) {
-      if (!(d instanceof Date) || isNaN(d)) return '';
-      return d.toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' });
-    }
-
-    function slugFromPath(path) {
-      return path.split('/').pop().replace(/\.md$/, '');
+    function fmtDate(iso) {
+      if (!iso) return '';
+      return new Date(iso).toLocaleDateString('it-IT', { day:'2-digit', month:'long', year:'numeric' });
     }
 
     async function loadBlog() {
@@ -142,38 +120,33 @@
       const grid     = document.getElementById('posts');
 
       try {
-        const files = await fetchMdFiles(ROOT);
-        if (files.length === 0) { loading.textContent = 'Nessun post trovato.'; return; }
+        // Load from static JSON generated by GitHub Actions
+        const res = await fetch('posts-index.json?v=' + Date.now());
+        if (!res.ok) throw new Error('posts-index.json non trovato (status ' + res.status + ')');
+        const posts = await res.json();
 
-        const posts = await Promise.all(
-          files.map(async (file) => {
-            const raw = await fetchRaw(file.path);
-            const { data, content } = parseFrontmatter(raw);
-            return { ...data, content, path: file.path, slug: slugFromPath(file.path) };
-          })
-        );
-
-        posts.sort((a, b) => {
-          const da = a.date instanceof Date ? a.date : new Date(0);
-          const db = b.date instanceof Date ? b.date : new Date(0);
-          return db - da;
-        });
+        if (!posts.length) { loading.textContent = 'Nessun post pubblicato.'; return; }
 
         loading.style.display = 'none';
         grid.innerHTML = posts.map(post => `
-          <a class="post-card" href="post-1.html?slug=${post.slug}" style="text-decoration:none;color:inherit;display:block;">
-            <span class="card-tag">${fmtDate(post.date)}</span>
-            <h2>${post.title || 'Senza titolo'}</h2>
-            ${post.description ? `<p class="desc">${post.description}</p>` : ''}
-            <span class="read-more" style="color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono);">Leggi →</span>
+          <a class="post-card" href="${post.slug}.html">
+            ${post.image
+              ? `<img class="post-card-img" src="${post.image}" alt="${post.title}">`
+              : `<div class="post-card-img-placeholder">✦</div>`
+            }
+            <div class="post-card-body">
+              <span class="post-card-date">${fmtDate(post.date)}</span>
+              <div class="post-card-title">${post.title}</div>
+              ${post.description ? `<div class="post-card-desc">${post.description}</div>` : ''}
+              <span class="post-card-read">Leggi →</span>
+            </div>
           </a>
         `).join('');
 
       } catch (err) {
         loading.style.display = 'none';
         errorDiv.style.display = 'block';
-        errorDiv.innerHTML = `<div style="border:1px solid rgba(255,80,80,0.2);background:rgba(255,80,80,0.05);border-radius:10px;padding:16px;color:#ff8080;font-size:13px;"><strong>Errore</strong><br>${err.message}</div>`;
-        console.error(err);
+        errorDiv.innerHTML = `<div style="padding:20px;background:rgba(255,80,80,0.05);border:1px solid rgba(255,80,80,0.15);border-radius:12px;color:#ff8080;font-family:var(--font-mono);font-size:13px;">Errore: ${err.message}</div>`;
       }
     }
 
