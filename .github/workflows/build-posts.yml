@@ -1,0 +1,31 @@
+name: Build Static Posts
+
+on:
+  push:
+    paths:
+      - 'posts/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install marked gray-matter
+
+      - name: Generate HTML posts
+        run: node scripts/build-posts.js
+
+      - name: Commit generated files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Build static posts [skip ci]"
+          git push
