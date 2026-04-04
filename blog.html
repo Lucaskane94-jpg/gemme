@@ -1,295 +1,62 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — GM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Blog | Gianmarco Monaco</title>
+  <meta name="description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete. Riflessioni di Gianmarco Monaco.">
+  <meta name="author" content="Gianmarco Monaco">
+  <link rel="canonical" href="https://gianmarcomonaco.org/blog.html">
+
+  <meta property="og:title" content="Blog | Gianmarco Monaco">
+  <meta property="og:description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete.">
+  <meta property="og:url" content="https://gianmarcomonaco.org/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gianmarco Monaco">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Gianmarco Monaco">
+  <meta name="twitter:description" content="Note su marketing, sistemi digitali, tecnologia e cultura della rete.">
+
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --bg: #06070a;
-      --bg-soft: #0b0d12;
-      --text: #edf1f7;
-      --muted: #96a0b1;
-      --line: #1b2230;
-      --accent: #67ffd4;
-      --accent-soft: rgba(103, 255, 212, 0.08);
-      --panel: rgba(255, 255, 255, 0.025);
-      --panel-strong: rgba(255, 255, 255, 0.04);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
-      --radius: 20px;
-      --radius-sm: 14px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background:
-        radial-gradient(circle at top left, rgba(124, 92, 255, 0.14), transparent 30%),
-        radial-gradient(circle at top right, rgba(103, 255, 212, 0.08), transparent 24%),
-        var(--bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    body { -webkit-font-smoothing: antialiased; }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-
-    .container {
-      width: min(100% - 24px, 1140px);
-      margin: 0 auto;
-    }
-
-    /* ── TOPBAR ── */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      padding: 14px 0;
-      backdrop-filter: blur(14px);
-      background: rgba(6, 7, 10, 0.78);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .topbar-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 14px;
-    }
-
-    .brand {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      font-size: 18px;
-      width: fit-content;
-    }
-
-    nav {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 2px;
-      scrollbar-width: none;
-    }
-    nav::-webkit-scrollbar { display: none; }
-
-    nav a {
-      flex: 0 0 auto;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 10px 12px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.015);
-      transition: 0.15s;
-    }
-    nav a:hover, nav a.active {
-      color: var(--accent);
-      border-color: rgba(103, 255, 212, 0.14);
-    }
-
-    .header-cta {
-      width: 100%;
-      text-align: center;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid rgba(103, 255, 212, 0.22);
-      background: rgba(103, 255, 212, 0.04);
-      padding: 12px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: 0.15s;
-    }
-    .header-cta:hover { background: rgba(103, 255, 212, 0.09); }
-
-    /* ── HERO ── */
-    .blog-page-hero {
-      padding: 48px 0 32px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: var(--accent);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .blog-page-hero h1 {
-      margin: 0 0 16px;
-      font-size: clamp(36px, 9vw, 72px);
-      line-height: 0.96;
-      letter-spacing: -0.04em;
-    }
-
-    .blog-page-hero p {
-      margin: 0;
-      max-width: 600px;
-      color: #c3ccd8;
-      font-size: 18px;
-    }
-
-    /* ── GRID ── */
-    .blog-section {
-      padding: 16px 0 64px;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    /* ── CARD ── */
-    .post-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: border-color 0.2s, transform 0.2s;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      color: inherit;
-    }
-    .post-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-    }
-
-    .card-tag {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .post-card h2 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      line-height: 1.1;
-    }
-
-    .post-card .desc {
-      margin: 0 0 16px;
-      color: #bcc5d1;
-      font-size: 15px;
-    }
-
-    .post-card .read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--accent);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-    }
-
-    /* ── LOADING / ERROR ── */
-    .state-box {
-      padding: 40px 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .error-box {
-      border: 1px solid rgba(255, 80, 80, 0.2);
-      background: rgba(255, 80, 80, 0.05);
-      border-radius: var(--radius-sm);
-      padding: 20px 24px;
-      color: #ff8080;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .error-box code {
-      display: block;
-      margin-top: 8px;
-      opacity: 0.7;
-      font-size: 12px;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(103, 255, 212, 0.2);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── FOOTER ── */
-    .footer {
-      margin-top: 0;
-      padding: 30px 0 42px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer a { color: var(--accent); text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
-
-    /* ── RESPONSIVE ── */
-    @media (min-width: 768px) {
-      .container { width: min(100% - 40px, 1140px); }
-      .topbar-inner {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-      nav { flex: 1; justify-content: center; overflow: visible; }
-      .header-cta { width: auto; }
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer { flex-direction: row; justify-content: space-between; align-items: center; }
-    }
-
-    @media (min-width: 1100px) {
-      .blog-grid { grid-template-columns: repeat(3, 1fr); }
-      .blog-page-hero { padding: 72px 0 44px; }
-    }
+    body { font-family: sans-serif; max-width: 780px; margin: 0 auto; padding: 2rem 1rem; }
+    .post-card { border-bottom: 1px solid #eee; padding: 1.5rem 0; }
+    .post-card h2 { margin: 0 0 .4rem; }
+    .post-card .meta { color: #888; font-size: .85rem; margin-bottom: .6rem; }
+    .post-card .desc { color: #444; }
+    #error { color: red; padding: 1rem; background: #fff0f0; border-radius: 6px; }
+    #loading { color: #888; }
   </style>
 </head>
 <body>
 
-  <!-- TOPBAR -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header class="topbar">
-    <div class="container">
-      <div class="topbar-inner">
-        <a class="brand" href="index.html">G M</a>
-        <nav>
-          <a href="index.html#about">About</a>
-          <a href="index.html#tools">Tools</a>
-          <a href="index.html#focus">Focus</a>
-          <a href="index.html#projects">Projects</a>
-          <a href="blog.html" class="active">Blog</a>
-        </nav>
-        <a class="header-cta" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn →</a>
-      </div>
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experiments">Experiments</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
     </div>
   </header>
 
-  <!-- HERO -->
   <div class="container">
     <div class="blog-page-hero">
       <span class="eyebrow">Note & riflessioni</span>
@@ -298,7 +65,6 @@
     </div>
   </div>
 
-  <!-- POSTS -->
   <div class="container">
     <div class="blog-section">
       <div id="loading" class="state-box">
@@ -309,11 +75,11 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="container">
     <footer class="footer">
-      <span>© 2026 GM — Tutti i diritti riservati</span>
-      <span><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></span>
+      <span>© 2026 Gianmarco Monaco</span>
+      <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+      <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     </footer>
   </div>
 
@@ -329,11 +95,8 @@
       const items = await res.json();
       let files = [];
       for (const item of items) {
-        if (item.type === 'file' && item.name.endsWith('.md')) {
-          files.push(item);
-        } else if (item.type === 'dir') {
-          files = files.concat(await fetchMdFiles(item.path));
-        }
+        if (item.type === 'file' && item.name.endsWith('.md')) files.push(item);
+        else if (item.type === 'dir') files = files.concat(await fetchMdFiles(item.path));
       }
       return files;
     }
@@ -353,7 +116,7 @@
         const sep = line.indexOf(':');
         if (sep === -1) continue;
         const key = line.slice(0, sep).trim();
-        let   val = line.slice(sep + 1).trim().replace(/^["']|["']$/g, '');
+        let val = line.slice(sep + 1).trim().replace(/^["']|["']$/g, '');
         data[key] = /^\d{4}-\d{2}-\d{2}/.test(val) ? new Date(val) : val;
       }
       return { data, content: match[2].trim() };
@@ -364,7 +127,6 @@
       return d.toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' });
     }
 
-    // Slug dal path: posts/mio-post.md → mio-post
     function slugFromPath(path) {
       return path.split('/').pop().replace(/\.md$/, '');
     }
@@ -376,11 +138,7 @@
 
       try {
         const files = await fetchMdFiles(ROOT);
-
-        if (files.length === 0) {
-          loading.textContent = 'Nessun post trovato.';
-          return;
-        }
+        if (files.length === 0) { loading.textContent = 'Nessun post trovato.'; return; }
 
         const posts = await Promise.all(
           files.map(async (file) => {
@@ -397,24 +155,19 @@
         });
 
         loading.style.display = 'none';
-
         grid.innerHTML = posts.map(post => `
-          <a class="post-card" href="post-1.html?slug=${post.slug}">
+          <a class="post-card" href="post-1.html?slug=${post.slug}" style="text-decoration:none;color:inherit;display:block;">
             <span class="card-tag">${fmtDate(post.date)}</span>
             <h2>${post.title || 'Senza titolo'}</h2>
             ${post.description ? `<p class="desc">${post.description}</p>` : ''}
-            <span class="read-more">Leggi →</span>
+            <span class="read-more" style="color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono);">Leggi →</span>
           </a>
         `).join('');
 
       } catch (err) {
         loading.style.display = 'none';
         errorDiv.style.display = 'block';
-        errorDiv.innerHTML = `
-          <div class="error-box">
-            <strong>Errore caricamento</strong>
-            <code>${err.message}</code>
-          </div>`;
+        errorDiv.innerHTML = `<div style="border:1px solid rgba(255,80,80,0.2);background:rgba(255,80,80,0.05);border-radius:10px;padding:16px;color:#ff8080;font-size:13px;"><strong>Errore</strong><br>${err.message}</div>`;
         console.error(err);
       }
     }
