@@ -17,6 +17,9 @@ content:
       - name: description
         label: Descrizione
         type: string
+      - name: image
+        label: Immagine copertina
+        type: image
       - name: body
         label: Contenuto
         type: rich-text
