@@ -212,6 +212,19 @@
     }
     .tools-arrow:hover { background:rgba(103,255,212,0.14); }
     .tools-arrow:disabled { opacity:0.25; cursor:default; }
+
+    /* Chatbot visual */
+    .cv-chat { padding: 10px 14px; display:flex; flex-direction:column; gap:6px; }
+    .chat-msg { display:flex; gap:8px; align-items:flex-start; }
+    .chat-msg.user { flex-direction:row-reverse; }
+    .chat-avatar { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:7px; font-family:var(--font-mono); flex-shrink:0; margin-top:2px; }
+    .ca-gm { background:rgba(103,255,212,0.12); border:1px solid rgba(103,255,212,0.2); color:var(--accent); }
+    .ca-you { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.4); }
+    .chat-bubble { padding:6px 10px; border-radius:8px; font-size:10px; line-height:1.5; max-width:140px; }
+    .cb-gm { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); color:rgba(255,255,255,0.6); border-radius:8px 8px 8px 2px; }
+    .cb-you { background:rgba(103,255,212,0.07); border:1px solid rgba(103,255,212,0.12); color:rgba(103,255,212,0.8); border-radius:8px 8px 2px 8px; }
+    .chat-cursor { display:inline-block; width:1px; height:10px; background:var(--accent); margin-left:2px; animation:blink 0.8s step-end infinite; vertical-align:middle; }
+    .chat-foot { position:absolute; bottom:0; left:0; right:0; padding:5px 12px; font-size:9px; color:rgba(103,255,212,0.4); letter-spacing:0.14em; text-transform:uppercase; border-top:1px solid rgba(103,255,212,0.07); display:flex; align-items:center; gap:6px; }
   </style>
 </head>
 <body>
@@ -258,6 +271,9 @@
         <p>Nel mio percorso ho lavorato su progetti e iniziative legati a <strong>Goldbet</strong>, <strong>Lottomatica</strong> e <strong>Planetwin365</strong>, costruendo esperienze digitali orientate a performance, misurazione e ottimizzazione.</p>
         <p>Qui troverai una selezione di esperimenti, appunti e riflessioni su tecnologia, marketing, sistemi e cultura digitale.</p>
       </div>
+      <aside class="about-side-card reveal reveal-delay-2">
+        <a class="btn btn-primary btn-full" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">Visit LinkedIn &#8599;</a>
+      </aside>
     </div>
   </section>
 
@@ -348,6 +364,29 @@
         <h3>Risultati e-commerce</h3>
         <p>Campagne Meta ADV su store e-commerce: ottimizzazione ROAS, scaling budget, struttura inserzioni e misurazione conversioni. Risultati da campagne non coperte da NDA.</p>
         <div class="card-actions"><button class="btn-scopri" onclick="openGallery()">Scopri &#8594;</button></div>
+      </article>
+
+      <!-- Chatbot card -->
+      <article class="card reveal reveal-delay-5">
+        <div class="card-visual cv-chat">
+          <div class="chat-msg">
+            <div class="chat-avatar ca-gm">GM</div>
+            <div class="chat-bubble cb-gm">Ciao! Chiedimi qualsiasi cosa sul mio percorso professionale.</div>
+          </div>
+          <div class="chat-msg user">
+            <div class="chat-avatar ca-you">Tu</div>
+            <div class="chat-bubble cb-you">Hai esperienza con Dynamic Yield?</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar ca-gm">GM</div>
+            <div class="chat-bubble cb-gm">Sì, sono certificato sia Business che Technical Expert...<span class="chat-cursor"></span></div>
+          </div>
+          <div class="chat-foot"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:0 0 6px var(--accent)"></span>AI powered · Claude</div>
+        </div>
+        <span class="card-tag">AI / Gemini Studio</span>
+        <h3>Ask GM</h3>
+        <p>Un assistente AI addestrato sul mio CV e percorso professionale. Fai domande su competenze, esperienze e progetti — risponde in prima persona.</p>
+        <div class="card-actions"><button class="btn-scopri" onclick="openIframe('chatbot.html','Ask GM — AI Assistant')">Prova →</button></div>
       </article>
 
     </div>
