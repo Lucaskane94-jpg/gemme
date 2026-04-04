@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask GM — AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #04050a; --panel: #080b12; --line: #111827;
+      --text: #e8edf5; --muted: #4a5568; --accent: #67ffd4;
+      --mono: 'IBM Plex Mono', monospace; --body: 'Barlow', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--body); -webkit-font-smoothing: antialiased; overflow: hidden; }
+    body::after { content:''; position:fixed; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px); pointer-events:none; z-index:9999; }
+
+    /* HEADER */
+    .hdr { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--line); background:rgba(4,5,10,0.92); backdrop-filter:blur(12px); flex-shrink:0; gap:12px; flex-wrap:wrap; }
+    .hdr-left { display:flex; align-items:center; gap:14px; }
+    .back-link { font-family:var(--mono); color:var(--muted); text-decoration:none; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
+    .back-link:hover { color:var(--accent); }
+    .hdr-title { font-family:var(--mono); font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); }
+    .hdr-sub { font-family:var(--mono); font-size:10px; color:var(--muted); letter-spacing:0.08em; }
+    .status { display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+    .status-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent); animation:pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* LAYOUT */
+    .layout { display:flex; flex-direction:column; height:100vh; }
+    .messages { flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; gap:16px; scroll-behavior:smooth; }
+    .messages::-webkit-scrollbar { width:4px; }
+    .messages::-webkit-scrollbar-thumb { background:var(--line); border-radius:2px; }
+
+    /* MESSAGES */
+    .msg { display:flex; gap:12px; animation:msg-in 0.3s ease; max-width:720px; }
+    @keyframes msg-in { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+    .msg.user { flex-direction:row-reverse; align-self:flex-end; }
+    .msg.assistant { align-self:flex-start; }
+
+    .avatar { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:11px; flex-shrink:0; }
+    .avatar.gm { background:rgba(103,255,212,0.1); border:1px solid rgba(103,255,212,0.2); color:var(--accent); }
+    .avatar.you { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:var(--muted); }
+
+    .bubble { padding:12px 16px; border-radius:12px; font-size:15px; line-height:1.65; max-width:560px; }
+    .msg.user .bubble { background:rgba(103,255,212,0.08); border:1px solid rgba(103,255,212,0.14); color:var(--text); border-radius:12px 12px 2px 12px; }
+    .msg.assistant .bubble { background:var(--panel); border:1px solid var(--line); color:var(--text); border-radius:12px 12px 12px 2px; }
+
+    .bubble strong { color:var(--accent); font-weight:500; }
+    .bubble ul { padding-left:18px; margin-top:8px; }
+    .bubble li { margin-bottom:4px; }
+
+    /* TYPING */
+    .typing-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent); animation:typing 1.2s ease infinite; margin:0 2px; }
+    .typing-dot:nth-child(2) { animation-delay:0.2s; }
+    .typing-dot:nth-child(3) { animation-delay:0.4s; }
+    @keyframes typing { 0%,100%{opacity:0.3;transform:translateY(0)} 50%{opacity:1;transform:translateY(-4px)} }
+
+    /* SUGGESTIONS */
+    .suggestions { padding:0 20px 12px; display:flex; gap:8px; flex-wrap:wrap; }
+    .suggestion { font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:7px 12px; border:1px solid rgba(103,255,212,0.16); border-radius:999px; color:var(--muted); cursor:pointer; transition:all 0.2s; background:rgba(103,255,212,0.03); white-space:nowrap; }
+    .suggestion:hover { color:var(--accent); border-color:rgba(103,255,212,0.3); background:rgba(103,255,212,0.07); }
+
+    /* INPUT */
+    .input-area { padding:14px 20px; border-top:1px solid var(--line); background:rgba(4,5,10,0.9); display:flex; gap:10px; align-items:flex-end; flex-shrink:0; }
+    textarea { flex:1; background:rgba(0,0,0,0.35); border:1px solid var(--line); border-radius:12px; color:var(--text); font-family:var(--body); font-size:15px; padding:12px 14px; resize:none; outline:none; line-height:1.5; max-height:120px; transition:border-color 0.2s; }
+    textarea:focus { border-color:rgba(103,255,212,0.3); }
+    textarea::placeholder { color:var(--muted); }
+    .send-btn { width:42px; height:42px; border-radius:50%; background:rgba(103,255,212,0.1); border:1px solid rgba(103,255,212,0.22); color:var(--accent); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
+    .send-btn:hover { background:rgba(103,255,212,0.18); box-shadow:0 0 16px rgba(103,255,212,0.15); }
+    .send-btn:disabled { opacity:0.3; cursor:default; }
+
+    /* WELCOME */
+    .welcome { text-align:center; padding:32px 20px; }
+    .welcome-icon { font-size:32px; margin-bottom:14px; }
+    .welcome h2 { font-family:var(--mono); font-size:18px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+    .welcome p { color:var(--muted); font-size:14px; max-width:400px; margin:0 auto; line-height:1.65; }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-left">
+      <a href="index.html" class="back-link">← Back</a>
+      <div>
+        <div class="hdr-title">Ask GM</div>
+        <div class="hdr-sub">AI assistant · Gemini AI Studio</div>
+      </div>
+    </div>
+    <div class="status"><span class="status-dot"></span>Online</div>
+  </header>
+
+  <!-- MESSAGES -->
+  <div class="messages" id="messages">
+    <div class="welcome">
+      <div class="welcome-icon">✦</div>
+      <h2>Ciao, sono GM</h2>
+      <p>Puoi chiedermi qualsiasi cosa sul mio percorso professionale, competenze, progetti ed esperienze. Sono qui per rispondere.</p>
+    </div>
+  </div>
+
+  <!-- SUGGESTIONS -->
+  <div class="suggestions" id="suggestions">
+    <button class="suggestion" onclick="sendSuggestion(this)">Cosa sai fare?</button>
+    <button class="suggestion" onclick="sendSuggestion(this)">Dove hai lavorato?</button>
+    <button class="suggestion" onclick="sendSuggestion(this)">Quali certificazioni hai?</button>
+    <button class="suggestion" onclick="sendSuggestion(this)">Parlami di CRO</button>
+    <button class="suggestion" onclick="sendSuggestion(this)">Hai esperienza con GTM?</button>
+  </div>
+
+  <!-- INPUT -->
+  <div class="input-area">
+    <textarea id="input" placeholder="Fai una domanda a Gianmarco..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+    <button class="send-btn" id="send-btn" onclick="sendMessage()">↑</button>
+  </div>
+
+</div>
+
+<script>
+  const CV_CONTEXT = `
+Sei un assistente AI che rappresenta Gianmarco Monaco, un professionista del digital marketing con 8 anni di esperienza. Rispondi in prima persona come se fossi Gianmarco stesso, in modo professionale ma diretto. Usa l'italiano a meno che non ti venga parlato in un'altra lingua.
+
+PROFILO:
+Gianmarco Monaco è un professionista del Digital Marketing, CRO & Analytics con 8 anni di esperienza, focalizzato sull'uso dei dati per guidare la crescita. Ha lavorato per aziende come Lottomatica Group e ha un forte interesse nell'innovazione, avendo mentored startup innovative con Eni. Il suo background include la valutazione di soluzioni cloud e tecnologiche emergenti, Odoo, Salesforce e altro.
+
+CONTATTI:
+- Email: gianmarcomon94@gmail.com
+- Telefono: +39 3401261637
+- Città: Ciampino, Roma
+- Sito: gianmarcomonaco.org
+
+ESPERIENZE PROFESSIONALI:
+
+1. Lottomatica - Goldbet - Planetwin365 | Roma, Italia | 2022 - oggi
+Ruolo: CRO & Martech Supervisor
+Come CRO & Martech Supervisor in Lottomatica, guido strategie di ottimizzazione in tutto il gruppo, con focus su CRO, customer engagement e Growth Marketing. Il mio ruolo prevede l'uso dei dati per migliorare il customer journey e le performance digitali degli asset aziendali (Goldbet, Lottomatica, Planetwin365).
+
+2. Seedble | Roma, Italia | 2019 - 2022
+Ruolo: Growth Marketing & Innovation Advisor
+Il mio ruolo in Seedble si è evoluto da Marketing Specialist a Growth Marketing & Innovation Advisor strategico. Mi sono concentrato sullo sviluppo di soluzioni di marketing innovative e data-driven e sulla consulenza strategica. Come tutor per il programma partner Seedble, ho mentored la startup Bettery (riciclo batterie) portandola a vincere la competizione Eni Joule.
+
+3. Freelance - Brand "Futurology" | Italia | 2019 - 2020
+Specializzato in Conversion Rate Optimization (CRO) per PMI e performance marketing. Approccio strettamente data-driven, usando analisi approfondite per creare strategie di marketing che hanno aumentato i clienti online e le vendite per e-commerce.
+
+4. Pink Agency | Italia | 2016 - 2018
+Gestione di campagne di digital marketing e advertising per un portfolio diversificato di clienti. Ruolo esteso oltre il marketing: attività commerciali per soluzioni tecnologiche complesse inclusi cloud services, CRM e marketing automation tools.
+
+5. Stage - Trotta S.p.A | Italia | 2018 - 2019
+Durante lo stage in Trotta Bus S.p.a., ho gestito i prodotti online e le PR con i media. Ho supportato una partnership chiave con Moovit e assistito nelle attività marketing per partner come SS Lazio e Poste Italiane.
+
+FORMAZIONE:
+- Master in E-commerce, Retail e Management (2020-2021) - Luiss Business School
+- Bachelor in Comunicazione e Marketing (2013-2015) - Università degli Studi Roma Tre
+
+CERTIFICAZIONI:
+- Dynamic Yield Business Certification
+- Dynamic Yield Technical Personalization Expert
+- Google Analytics Advanced
+- ContentSquare Certification Expert
+- Hotjar Advanced
+- Odoo CRM Certified
+- Google Tag Manager Fundamentals
+- Audience Hub Expert Certification
+
+KEY ACHIEVEMENTS:
+- ContentSquare Worldwide Champion Q3 2024
+- ContentSquare Worldwide Champion Q2 2025
+
+COMPETENZE TECNICHE:
+- Google Tag Manager (GTM): manipolazione DOM, CSS/JS/HTML injection, trigger management, SPA Angular
+- Analytics: GA4, Contentsquare, Hotjar, Mouseflow, Glassbox, FullStory
+- Personalizzazione: Dynamic Yield (targeting, A/B test, contenuti dinamici, recommendation)
+- CRM & Marketing Automation: Optimove, Odoo, Salesforce
+- Advertising: Meta ADV (acquisizione, misurazione, ottimizzazione)
+- Frontend: HTML, CSS, JavaScript vanilla, conoscenza Angular SPA
+- CRO: test, analisi funnel, redesign, ottimizzazione flussi di conversione
+
+LINGUE:
+- Italiano (madrelingua)
+- Inglese (B2)
+- Spagnolo (base)
+
+INTERESSI & PROGETTI PERSONALI:
+- Trading su mercati predittivi (Polymarket)
+- Sviluppo tool finanziari (mortgage rate tracker)
+- Sito personale costruito in HTML/CSS/JS puro, hostato su Vercel
+- Blog su marketing, sistemi digitali e cultura tecnologica
+
+ISTRUZIONI:
+- Rispondi sempre in prima persona ("Io lavoro...", "Ho esperienza in...")
+- Sii professionale ma diretto, non eccessivamente formale
+- Se ti chiedono qualcosa che non è nel CV, rispondi onestamente che non hai quella specifica informazione
+- Non inventare dati, stipendi, o dettagli non presenti
+- Se ti chiedono disponibilità o contatti, fornisci email e LinkedIn
+`;
+
+  const history = [];
+
+  function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+  }
+
+  function handleKey(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  }
+
+  function sendSuggestion(btn) {
+    document.getElementById('input').value = btn.textContent;
+    document.getElementById('suggestions').style.display = 'none';
+    sendMessage();
+  }
+
+  function addMessage(role, text) {
+    const container = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = `avatar ${role === 'assistant' ? 'gm' : 'you'}`;
+    avatar.textContent = role === 'assistant' ? 'GM' : 'Tu';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    bubble.innerHTML = formatText(text);
+
+    div.appendChild(avatar);
+    div.appendChild(bubble);
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+    return bubble;
+  }
+
+  function formatText(text) {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/^- (.+)$/gm, '<li>$1</li>')
+      .replace(/<li>/g, '<ul><li>').replace(/<\/li>(?![\s\S]*<li>)/, '</li></ul>')
+      .replace(/\n\n/g, '<br><br>')
+      .replace(/\n/g, '<br>');
+  }
+
+  function showTyping() {
+    const container = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = 'msg assistant';
+    div.id = 'typing-indicator';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar gm';
+    avatar.textContent = 'GM';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    bubble.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+
+    div.appendChild(avatar);
+    div.appendChild(bubble);
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  function removeTyping() {
+    const el = document.getElementById('typing-indicator');
+    if (el) el.remove();
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('input');
+    const btn = document.getElementById('send-btn');
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Hide suggestions
+    document.getElementById('suggestions').style.display = 'none';
+
+    // Add user message
+    addMessage('user', text);
+    history.push({ role: 'user', content: text });
+    input.value = '';
+    input.style.height = 'auto';
+    btn.disabled = true;
+    showTyping();
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: CV_CONTEXT,
+          messages: history
+        })
+      });
+
+      const data = await response.json();
+      const reply = data.content?.[0]?.text || 'Mi dispiace, si è verificato un errore.';
+
+      removeTyping();
+      addMessage('assistant', reply);
+      history.push({ role: 'assistant', content: reply });
+
+    } catch (err) {
+      removeTyping();
+      addMessage('assistant', 'Si è verificato un errore di connessione. Riprova tra qualche secondo.');
+      console.error(err);
+    }
+
+    btn.disabled = false;
+    input.focus();
+  }
+</script>
+
+</body>
+</html>
