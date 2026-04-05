@@ -1,5 +1,5 @@
 ---
-title: Il no vince sempre. E non è una novità
+title: Il no vince sempre. E non è una vittoria
 date: 2026-03-26
 description: Una riflessione sulla stagnazione del sistema politico italiano e
   sul significato reale dei referendum.
