@@ -3,6 +3,7 @@ title: Il no vince sempre. E non è una vittoria
 date: 2026-03-26
 description: Una riflessione sulla stagnazione del sistema politico italiano e
   sul significato reale dei referendum.
+image: /images/uploads/file_0000000082547246a8431d6add751f13.png
 ---
 In Italia non ha vinto il "no". Non ha perso il "sì". Ha vinto di nuovo il sistema.
 
