@@ -6,7 +6,7 @@ description: Un’analisi diretta sull’ingresso dell’intelligenza artificial
 category: Ai, futuro
 image: /images/uploads/file_000000002c80720aacf4579ce4fa085b.png
 ---
-C’è una linea sottile tra visione e semplificazione,e quando si parla di intelligenza artificiale in sanità quella linea viene superata molto velocemente.**L’idea che un ospedale possa sostituire i radiologi con l’AI non è più fantascienza,è già una possibilità discussa apertamente ai livelli più alti**.   
+C’è una linea sottile tra visione e semplificazione,e quando si parla di intelligenza artificiale in sanità quella linea viene superata molto velocemente.**L’idea che un ospedale possa sostituire i radiologi con l’AI non è più fantascienza,è già una possibilità discussa apertamente ai livelli più alti**.  
 E questo,più che rassicurare,dovrebbe far scattare qualche allarme.
 
 ## Quando il problema diventa il costo e non più il paziente
@@ -19,13 +19,17 @@ Sulla carta funziona.Nella realtà,il problema è cosa stai sacrificando per ott
 
 ## L’illusione della sostituibilità
 
-Dire che l’AI può “leggere” una radiografia non significa che può fare il lavoro di un radiologo.Sono due livelli diversi.
+Dire che l’AI può “leggere” una radiografia non significa che può fare il [lavoro di un radiologo](https://www.gehealthcare.it/insights/article/l'intelligenza-artificiale-nei-raggi-x-soluzioni-per-migliorare-il-flusso-di-lavoro-e-la-qualit%C3%A0-dell%E2%80%99assistenza).Sono due livelli diversi.
 
 Il radiologo non guarda solo immagini. Interpreta contesto,storia clinica,interagisce con altri medici,prende decisioni sotto incertezza.
 
 L’AI invece lavora su pattern.Non capisce davvero cosa sta vedendo,riconosce correlazioni.
 
 Ed è qui che nasce la frattura tra narrazione e realtà.
+
+
+
+![Ai e radiologia](/images/uploads/17754250417464107798649480919022.jpg)
 
 ## Il problema che emerge dagli studi: l’AI può sembrare convincente anche quando sbaglia
 
@@ -58,6 +62,10 @@ Nel mondo reale, l'Ai sta già supportando i medici in numerosi ospedali nel Mon
 Anzi,lo rende più critico.
 
 Perché più ti affidi a un sistema automatico,più devi essere sicuro di quando NON fidarti.
+
+
+
+![AI RADIOLOGIA](/images/uploads/17754250599091087817511169481850.jpg)
 
 ## Il cortocircuito decisionale
 
