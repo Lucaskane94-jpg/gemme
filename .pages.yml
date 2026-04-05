@@ -17,6 +17,9 @@ content:
       - name: description
         label: Descrizione
         type: string
+      - name: category
+        label: Categoria
+        type: string
       - name: image
         label: Immagine copertina
         type: image
