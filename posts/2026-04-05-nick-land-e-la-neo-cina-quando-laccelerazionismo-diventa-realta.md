@@ -1,6 +1,8 @@
 ---
 title: "Nick Land e la Neo-Cina: quando l’accelerazionismo diventa realtà"
 date: 2026-04-05
+description: La Cina di oggi è il sogno proibito di Nick Land, il filosofo più
+  cyberpunk di sempre
 category: Nick land, accelerazionismo, Cina
 image: /images/uploads/VF_NickLand.webp
 ---
