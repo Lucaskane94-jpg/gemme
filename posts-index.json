@@ -1,9 +1,18 @@
 [
   {
+    "slug": "2026-04-05-",
+    "title": "Data center nello spazio: quando l’intelligenza artificiale prova a scappare dalla Terra",
+    "description": "Un’analisi senza filtro sul futuro dei data center nello spazio e sul limite dell’intelligenza artificiale.",
+    "date": "2026-04-05",
+    "image": "/images/uploads/ChatGPT Image 5 apr 2026, 20_27_00.png",
+    "category": "Data center, AI"
+  },
+  {
     "slug": "referendum-italia",
     "title": "Il no vince sempre. E non è una vittoria",
     "description": "Una riflessione sulla stagnazione del sistema politico italiano e sul significato reale dei referendum.",
     "date": "2026-03-26",
-    "image": "/images/uploads/file_0000000082547246a8431d6add751f13.png"
+    "image": "/images/uploads/file_0000000082547246a8431d6add751f13.png",
+    "category": ""
   }
 ]
