@@ -18,18 +18,18 @@
   <!-- End Google Tag Manager -->
 
   <title>Gianmarco Monaco | Digital Marketing & Martech</title>
-  <meta name="description" content="Gianmarco Monaco: di giorno lavoro in ambito CRO, Growth Hacking e Martech. Qui condivido riflessioni su tech, esperimenti e sistemi digitali">
+  <meta name="description" content="Portfolio di Gianmarco Monaco: specialista in CRO, analytics, personalizzazione onsite e sistemi martech.">
   <meta name="author" content="Gianmarco Monaco">
   <link rel="canonical" href="https://gianmarcomonaco.org/">
 
   <meta property="og:title" content="Gianmarco Monaco | Digital Marketing & Martech">
-  <meta property="og:description" content="di giorno lavoro in ambito CRO, Growth Hacking e Martech. Qui condivido riflessioni su tech, esperimenti e sistemi digitali">
+  <meta property="og:description" content="Specialista in CRO, analytics, personalizzazione onsite e sistemi martech.">
   <meta property="og:url" content="https://gianmarcomonaco.org/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Gianmarco Monaco">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gianmarco Monaco | Digital Marketing & Martech">
-  <meta name="twitter:description" content="di giorno lavoro in ambito CRO, Growth Hacking e Martech. Qui parlo di tech, esperimenti e sistemi digitali">
+  <meta name="twitter:description" content="Specialista in CRO, analytics, personalizzazione onsite e sistemi martech.">
 
   <link rel="stylesheet" href="style.css">
   <style>
@@ -484,17 +484,11 @@
 
   <!-- BLOG -->
   <section id="blog">
-    <div class="section-heading reveal"><h2 class="section-title">From the blog</h2></div>
-    <p class="blog-lead reveal reveal-delay-1">Una selezione di articoli su marketing, sistemi, tecnologia e cultura digitale. <a href="blog.html">Vai al blog completo &#8594;</a></p>
-    <div class="blog-grid" style="margin-top:20px">
-      <a href="referendum-italia.html" class="card-link reveal reveal-delay-2">
-        <article class="card">
-          <span class="card-tag">Politics / Systems</span>
-          <h3>Il "no" vince sempre. E non è una vittoria</h3>
-          <p>Una riflessione sulla stagnazione del sistema politico italiano e sul significato reale dei referendum.</p>
-        </article>
-      </a>
+    <div class="section-heading reveal">
+      <h2 class="section-title">From the blog</h2>
+      <p class="section-intro">Ultimi articoli su marketing, tecnologia e sistemi digitali. <a href="blog.html" style="color:var(--accent)">Vedi tutti →</a></p>
     </div>
+    <div class="blog-grid" id="homepage-blog" style="margin-top:20px"></div>
   </section>
 
 </main>
@@ -613,6 +607,24 @@
     const cardW = strip.querySelector('.tool-tab').offsetWidth + 14;
     strip.scrollBy({ left: dir * cardW, behavior: 'smooth' });
   }
+  // Load latest 3 posts
+  fetch('posts-index.json')
+    .then(r => r.ok ? r.json() : [])
+    .then(posts => {
+      const grid = document.getElementById('homepage-blog');
+      if (!grid || !posts.length) return;
+      grid.innerHTML = posts.slice(0, 3).map(post => `
+        <a href="${post.slug}.html" class="card-link">
+          <article class="card">
+            <span class="card-tag">${post.category || post.date || ''}</span>
+            <h3>${post.title}</h3>
+            ${post.description ? `<p>${post.description}</p>` : ''}
+          </article>
+        </a>
+      `).join('');
+    })
+    .catch(() => {});
+
   document.addEventListener('keydown', e => {
     if(e.key==='Escape'){ closeLightbox(); closeModal('gallery-modal'); closeModal('iframe-modal'); }
     if(e.key==='ArrowLeft') lbNav(-1);
