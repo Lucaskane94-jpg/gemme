@@ -87,8 +87,6 @@ Con RethinkDNS invece cambi proprio prospettiva: **da utente passivo a qualcuno 
 
 ## Cosa cambia davvero dopo 7 giorni
 
-
-
 ![17756819330844003534802988989130.png](/images/uploads/17756819330844003534802988989130.png)
 
 1. Il **telefono è più “silenzioso”**
