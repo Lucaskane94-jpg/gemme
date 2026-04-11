@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
+
+  <title>Project Glasswing: l’AI di Anthropic che può cambiare per sempre la cybersecurity | Gianmarco Monaco</title>
+  <meta name="description" content="Project Glasswing di Anthropic introduce Claude Mythos, un’AI avanzata capace di scoprire e sfruttare vulnerabilità zero-day. Scopri perché non è stata rilasciata al pubblico e come potrebbe rivoluzionare la cybersecurity globale.">
+  <meta name="author" content="Gianmarco Monaco">
+  <link rel="canonical" href="https://gianmarcomonaco.org/2026-04-11-project-glasswing-lai-di-anthropic-che-puo-cambiare-per-sempre-la-cybersecurity.html">
+
+  <meta property="og:title" content="Project Glasswing: l’AI di Anthropic che può cambiare per sempre la cybersecurity">
+  <meta property="og:description" content="Project Glasswing di Anthropic introduce Claude Mythos, un’AI avanzata capace di scoprire e sfruttare vulnerabilità zero-day. Scopri perché non è stata rilasciata al pubblico e come potrebbe rivoluzionare la cybersecurity globale.">
+  <meta property="og:url" content="https://gianmarcomonaco.org/2026-04-11-project-glasswing-lai-di-anthropic-che-puo-cambiare-per-sempre-la-cybersecurity.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Gianmarco Monaco">
+  <meta property="og:image" content="https://gianmarcomonaco.org/images/uploads/images (3).jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Project Glasswing: l’AI di Anthropic che può cambiare per sempre la cybersecurity">
+  <meta name="twitter:description" content="Project Glasswing di Anthropic introduce Claude Mythos, un’AI avanzata capace di scoprire e sfruttare vulnerabilità zero-day. Scopri perché non è stata rilasciata al pubblico e come potrebbe rivoluzionare la cybersecurity globale.">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="cookie-config.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .post-hero-img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+    }
+    .post-content h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 40px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin: 40px 0 16px;
+      max-width: 700px;
+      line-height: 1.05;
+    }
+    .post-content h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(22px, 4vw, 30px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin: 32px 0 12px;
+      max-width: 700px;
+    }
+    .post-content p {
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.85;
+      color: #e8edf5;
+      margin-bottom: 22px;
+    }
+    .post-content img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--radius-sm);
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .post-content ul, .post-content ol {
+      max-width: 700px;
+      margin-bottom: 22px;
+      padding-left: 26px;
+      color: #e8edf5;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .post-content li { margin-bottom: 8px; }
+    .post-content strong { color: var(--accent); font-weight: 500; }
+    .post-content em { color: #b2bfce; }
+    .post-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 12px 20px;
+      margin: 32px 0;
+      max-width: 700px;
+      color: #b2bfce;
+      font-size: 20px;
+      line-height: 1.7;
+      background: rgba(103,255,212,0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .post-content code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      background: rgba(103,255,212,0.07);
+      border: 1px solid rgba(103,255,212,0.12);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .post-content pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 22px;
+      max-width: 700px;
+    }
+    .post-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      color: #e8edf5;
+    }
+    .post-content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experiments">Experiments</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <article>
+      <section class="post-hero premium-block" style="padding:24px; margin-top:24px;">
+        <span class="card-tag" style="margin-right:8px">Intelligenza Artificiale</span>
+        <span class="card-tag">11 aprile 2026</span>
+        <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(36px,8vw,72px);line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;margin:16px 0;max-width:800px;">Project Glasswing: l’AI di Anthropic che può cambiare per sempre la cybersecurity</h1>
+        <p class="hero-copy" style="margin-top:12px;font-size:18px;color:#b2bfce;max-width:640px;">Project Glasswing di Anthropic introduce Claude Mythos, un’AI avanzata capace di scoprire e sfruttare vulnerabilità zero-day. Scopri perché non è stata rilasciata al pubblico e come potrebbe rivoluzionare la cybersecurity globale.</p>
+        <div class="post-meta" style="margin-top:16px;">
+          <span>11 aprile 2026</span>
+        </div>
+      </section>
+
+      <section class="post-content" style="padding-top:32px;padding-bottom:64px;">
+        <img src="/images/uploads/images (3).jpeg" alt="Project Glasswing: l’AI di Anthropic che può cambiare per sempre la cybersecurity" class="post-hero-img">
+        <p>Anthropic ha appena acceso uno dei dibattiti più importanti del 2026 con il lancio di <strong><a href="https://www.npr.org/2026/04/11/nx-s1-5778508/anthropic-project-glasswing-ai-cybersecurity-mythos-preview">Project Glasswing</a></strong>, un’iniziativa che ruota attorno a Claude Mythos Preview, un modello di intelligenza artificiale così potente da non essere stato rilasciato pubblicamente. Il motivo è semplice: questa AI è in grado non solo di trovare vulnerabilità nei software, ma anche di sfruttarle in modo autonomo.</p>
+<p>Secondo quanto emerso, Mythos è stato testato su larga scala ed è riuscito a <strong>individuare migliaia di falle critiche</strong>, incluse vulnerabilità zero-day presenti nei principali sistemi operativi e browser. In alcuni casi si tratta di bug rimasti nascosti per anni, che nessun team umano aveva mai rilevato.</p>
+<p><img src="blob:https:/app.pagescms.org/c25aa8d6-2d6d-4477-b85b-cd38a04b944e" alt="Project glasswind"></p>
+<h2>COS&#39;È PROJECT GLASSWIND?</h2>
+<p>Project Glasswing è un consorzio creato da Anthropic insieme ad alcune delle aziende più influenti al mondo, tra cui Microsoft, Google, Apple, AWS e altre realtà della cybersecurity. <strong>L’obiettivo è usare questa AI in modo controllato per proteggere le infrastrutture digitali più critiche.</strong></p>
+<p>In pratica, invece di rendere pubblico il modello, Anthropic ha scelto di distribuirlo a un gruppo ristretto di organizzazioni che gestiscono software fondamentali per miliardi di persone. Questo permette ai difensori di avere un vantaggio rispetto agli attaccanti.</p>
+<p>L’azienda ha anche messo sul tavolo oltre 100 milioni di dollari in crediti per incentivare l’uso del modello in ambito difensivo, oltre a finanziamenti diretti per progetti open source legati alla sicurezza.</p>
+<h2>Perché Mythos è diverso dalle altre AI</h2>
+<p>A differenza dei modelli precedenti, Claude Mythos non si limita a suggerire codice o analizzare problemi. <strong>È in grado di eseguire l’intero ciclo della vulnerabilità:</strong></p>
+<ul>
+<li>identificare bug complessi</li>
+<li>costruire exploit multi-step</li>
+<li>proporre o applicare patch</li>
+<li>automatizzare il processo su larga scala</li>
+</ul>
+<p>Questa capacità di gestire catene di attacco complete rappresenta un salto di livello. Alcuni esperti parlano di una vera “soglia superata” nella cybersecurity.</p>
+<p>In altre parole, non è solo uno strumento di supporto: <strong>è un sistema che può agire quasi come un hacker autonomo, ma anche come un difensore.</strong></p>
+<h2>Perché non è stato rilasciato al pubblico</h2>
+<p><a href="https://www.anthropic.com/glasswing">Anthropic</a> <strong>ha deciso di non rendere disponibile Mythos al pubblico per un motivo molto concreto: il rischio di abuso.</strong></p>
+<p>Se un modello del genere finisse nelle mani sbagliate, potrebbe automatizzare attacchi informatici su scala industriale. Non si parla più di singoli hacker, ma di sistemi capaci di individuare e sfruttare vulnerabilità in pochi minuti.</p>
+<p><img src="/images/uploads/17758990386213434482340091737808.jpg" alt="Project glasswind nella lotta contro gli hacker"></p>
+<p>Per questo motivo <strong>l’accesso è limitato a circa 40 organizzazioni selezionate</strong>, mentre governi e istituzioni stanno già monitorando da vicino la situazione</p>
+<h2>Le reazioni: rivoluzione o hype?</h2>
+<p>La community è divisa. Da una parte ci sono esperti che vedono Mythos come una svolta epocale, capace di cambiare completamente il modo in cui viene gestita la sicurezza informatica. Dall’altra, alcuni ricercatori ritengono che l’allarme sia esagerato e che si tratti di un’evoluzione naturale delle AI già esistenti.</p>
+<p>Nel frattempo, il tema è diventato così rilevante da arrivare ai livelli più alti della politica e della finanza, con incontri tra governo USA, big tech e istituzioni per discutere i rischi legati a queste tecnologie</p>
+<h2>Il vero punto: AI contro AI</h2>
+<p>La cosa più interessante di Project Glasswing è il cambio di paradigma. <strong>Non si tratta più solo di difendere sistemi, ma di farlo usando la stessa tecnologia che potrebbe attaccarli</strong>.</p>
+<p>L’idea è chiara: se gli attaccanti avranno AI avanzate, anche i difensori devono averle. Questo porta a uno scenario completamente nuovo, in cui la cybersecurity diventa una battaglia tra sistemi autonomi, con velocità e scala mai viste prima.</p>
+<p><img src="/images/uploads/17758990772572436447193797509853.jpg" alt="17758990772572436447193797509853.jpg"></p>
+<h2>Cosa aspettarsi nei prossimi mesi</h2>
+<p>Anthropic stessa ha dichiarato che <strong>modelli simili potrebbero diffondersi nel giro di pochi mesi, non anni. Questo significa che siamo solo all’inizio.</strong></p>
+<p>Project Glasswing è quindi un primo passo, ma anche un segnale forte: la sicurezza digitale sta entrando in una nuova era, dove l’intelligenza artificiale non è più solo uno strumento, ma un attore centrale.</p>
+<p>E probabilmente, nel giro di poco tempo, sarà impossibile fare cybersecurity senza di lei.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+      </section>
+
+      <section class="post-cta premium-block" style="padding:24px;margin-bottom:48px;">
+        <div>
+          <span class="mini-label">Continue exploring</span>
+          <h3 style="font-family:var(--font-display);font-size:28px;text-transform:uppercase;margin:8px 0;">Altri articoli</h3>
+          <p style="color:#b2bfce;">Esplora altri contenuti o seguimi su LinkedIn.</p>
+        </div>
+        <div class="post-cta-actions">
+          <a class="btn btn-primary" href="blog.html">Vai al blog</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+    </article>
+
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+    <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </footer>
+
+</body>
+</html>
