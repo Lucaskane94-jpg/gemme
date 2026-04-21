@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
+
+  <title>Vibe Coding: perché creare app da soli è un atto di resistenza digitale (e di privacy) | Gianmarco Monaco</title>
+  <meta name="description" content="Vibe coding, no-code e AI app builder: scopri perché creare app da soli è un atto di resistenza digitale e di tutela della privacy. Una guida pratica e strategica su come usare tool come Lovable, Base44 e l’approccio Nothing per costruire strumenti personali senza codice, ridurre il tracking e riprendere il controllo dei propri dati nel web moderno.">
+  <meta name="author" content="Gianmarco Monaco">
+  <link rel="canonical" href="https://gianmarcomonaco.org/2026-04-21-vibe-coding-perche-creare-app-da-soli-e-un-atto-di-resistenza-digitale-e-di-privacy.html">
+
+  <meta property="og:title" content="Vibe Coding: perché creare app da soli è un atto di resistenza digitale (e di privacy)">
+  <meta property="og:description" content="Vibe coding, no-code e AI app builder: scopri perché creare app da soli è un atto di resistenza digitale e di tutela della privacy. Una guida pratica e strategica su come usare tool come Lovable, Base44 e l’approccio Nothing per costruire strumenti personali senza codice, ridurre il tracking e riprendere il controllo dei propri dati nel web moderno.">
+  <meta property="og:url" content="https://gianmarcomonaco.org/2026-04-21-vibe-coding-perche-creare-app-da-soli-e-un-atto-di-resistenza-digitale-e-di-privacy.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Gianmarco Monaco">
+  <meta property="og:image" content="https://gianmarcomonaco.org/images/uploads/ChatGPT Image 21 apr 2026, 11_05_44.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vibe Coding: perché creare app da soli è un atto di resistenza digitale (e di privacy)">
+  <meta name="twitter:description" content="Vibe coding, no-code e AI app builder: scopri perché creare app da soli è un atto di resistenza digitale e di tutela della privacy. Una guida pratica e strategica su come usare tool come Lovable, Base44 e l’approccio Nothing per costruire strumenti personali senza codice, ridurre il tracking e riprendere il controllo dei propri dati nel web moderno.">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="cookie-config.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .post-hero-img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+    }
+    .post-content h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 40px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin: 40px 0 16px;
+      max-width: 700px;
+      line-height: 1.05;
+    }
+    .post-content h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(22px, 4vw, 30px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin: 32px 0 12px;
+      max-width: 700px;
+    }
+    .post-content p {
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.85;
+      color: #e8edf5;
+      margin-bottom: 22px;
+    }
+    .post-content img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--radius-sm);
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .post-content ul, .post-content ol {
+      max-width: 700px;
+      margin-bottom: 22px;
+      padding-left: 26px;
+      color: #e8edf5;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .post-content li { margin-bottom: 8px; }
+    .post-content strong { color: var(--accent); font-weight: 500; }
+    .post-content em { color: #b2bfce; }
+    .post-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 12px 20px;
+      margin: 32px 0;
+      max-width: 700px;
+      color: #b2bfce;
+      font-size: 20px;
+      line-height: 1.7;
+      background: rgba(103,255,212,0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .post-content code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      background: rgba(103,255,212,0.07);
+      border: 1px solid rgba(103,255,212,0.12);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .post-content pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 22px;
+      max-width: 700px;
+    }
+    .post-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      color: #e8edf5;
+    }
+    .post-content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experiments">Experiments</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <article>
+      <section class="post-hero premium-block" style="padding:24px; margin-top:24px;">
+        <span class="card-tag" style="margin-right:8px">vibe coding, intelligenza artificiale, privacy</span>
+        <span class="card-tag">21 aprile 2026</span>
+        <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(36px,8vw,72px);line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;margin:16px 0;max-width:800px;">Vibe Coding: perché creare app da soli è un atto di resistenza digitale (e di privacy)</h1>
+        <p class="hero-copy" style="margin-top:12px;font-size:18px;color:#b2bfce;max-width:640px;">Vibe coding, no-code e AI app builder: scopri perché creare app da soli è un atto di resistenza digitale e di tutela della privacy. Una guida pratica e strategica su come usare tool come Lovable, Base44 e l’approccio Nothing per costruire strumenti personali senza codice, ridurre il tracking e riprendere il controllo dei propri dati nel web moderno.</p>
+        <div class="post-meta" style="margin-top:16px;">
+          <span>21 aprile 2026</span>
+        </div>
+      </section>
+
+      <section class="post-content" style="padding-top:32px;padding-bottom:64px;">
+        <img src="/images/uploads/ChatGPT Image 21 apr 2026, 11_05_44.png" alt="Vibe Coding: perché creare app da soli è un atto di resistenza digitale (e di privacy)" class="post-hero-img">
+        <h2>Cos’è il vibe coding e perché sta esplodendo</h2>
+<p>Il **<a href="https://en.wikipedia.org/wiki/Vibe_coding">vibe coding**</a> è una filosofia prima ancora che una tecnica: significa costruire strumenti digitali seguendo l’intuizione, il bisogno reale e il contesto personale, invece di aderire rigidamente a framework, best practice accademiche o stack complessi. In pratica, è il contrario del coding “corporate”: meno architetture monolitiche, meno dipendenze inutili, più rapidità, più pragmatismo, più controllo. È il modo in cui un utente – anche senza essere sviluppatore – riesce a crearsi una mini-app, un widget, una dashboard o un tool personalizzato usando piattaforme no-code, low-code o AI-assisted coding. <strong>Non serve conoscere React o Kubernetes, serve capire cosa vuoi ottenere e sfruttare strumenti</strong> come generatori AI, builder visuali o micro-framework leggeri per arrivarci. Il vibe coding è sporco, veloce, imperfetto, ma funziona. Ed è proprio questo il punto: togliere il potere a chi ti dice che per creare qualcosa devi passare da infrastrutture complesse, team di sviluppo e piattaforme centralizzate. È una democratizzazione radicale del software, ma anche una forma di disintermediazione.</p>
+<h2>Dal no-code all’AI coding: come chiunque può creare app</h2>
+<p>Negli ultimi anni, l’evoluzione del no-code e dell’AI ha reso possibile costruire applicazioni senza scrivere codice tradizionale. Tool emergenti come <strong><a href="https://lovable.dev/">Lovable</a></strong> o <strong><a href="https://base44.com/lp-it?utm_source=google&utm_medium=cpc&utm_campaign=23495553768%5E194956719729%5Esearch%20-%20wix&experiment_id=base%2044%5Ee%5E799181376443%5E&gad_source=1&gad_campaignid=23495553768&gbraid=0AAAAADwEfwWGpjTgbsJiL65za8sBbXcyM&gclid=CjwKCAjwwJzPBhBREiwAJfHRnRWEX2nOayQu0h-eQ7D861tJPNOgrJ0Q4wdDA3fz_0ylV0UOnWhdBhoC0n8QAvD_BwE">Base44</a></strong> permettono di descrivere un’app in linguaggio naturale e ottenere una versione funzionante in pochi minuti. Allo stesso modo, aziende come <strong><a href="https://www.gianmarcomonaco.org/2026-04-13-nothing-phone-4a-pro-e-carl-pei-quando-la-tecnologia-torna-ad-avere-unanima.html">Nothing Tech</a></strong> stanno spingendo verso un ecosistema in cui l’utente non è più solo consumatore, ma anche creatore, offrendo strumenti per costruire widget personalizzati e interfacce modulari. Questo cambia completamente il paradigma: <strong>non devi più adattarti all’app, è l’app che si adatta a te.</strong> E qui entra il concetto chiave: ogni app che non usi, ma che crei, è un punto di controllo che riprendi.</p>
+<h2>Privacy e controllo: il vero motivo per cui il vibe coding è resistenza</h2>
+<p>Il punto non è solo tecnico, è politico. <strong>Ogni app mainstream che utilizzi oggi è costruita su un modello di estrazione dati</strong>: analytics, tracking, profilazione, behavioral targeting. Che tu stia usando un social, una fintech o un’app di fitness, stai cedendo dati in cambio di funzionalità. Il vibe coding ribalta questo equilibrio. Quando ti crei un tool da solo – anche semplice, anche imperfetto – stai riducendo la superficie di attacco dei tuoi dati. Non c’è SDK di tracciamento, non c’è pixel invisibile, non c’è funnel ottimizzato per monetizzarti. Sei tu che decidi cosa salvare, dove salvarlo, e soprattutto cosa non tracciare. In un mondo dominato da Google Analytics, Contentsquare, Meta Pixel e sistemi di attribution sempre più invasivi, creare app personali significa sottrarsi alla logica della sorveglianza distribuita. È una forma di <strong>privacy by design reale</strong>, non dichiarata nelle policy.</p>
+<h2>Il paradosso delle big tech: più strumenti, meno libertà. Il futuro è open source.</h2>
+<p>Le big tech ti danno strumenti potentissimi, ma all’interno di <strong>ecosistemi chiusi.</strong> Puoi fare tutto, ma solo dentro il loro giardino. Il vibe coding invece spinge verso micro-ecosistemi personali: piccoli tool, spesso hostati su Vercel, GitHub Pages o ambienti locali, che fanno una cosa sola ma la fanno per te. Non c’è lock-in, non c’è vendor dependency forte, non c’è bisogno di API complesse. Questo approccio ricorda il vecchio web: semplice, decentralizzato, controllabile. Ed è qui che <strong>diventa un atto di resistenza</strong>: non stai solo creando un’app, stai scegliendo di non dipendere da sistemi progettati per massimizzare retention e raccolta dati.</p>
+<h2>Esempi concreti: dalla personalizzazione Nothing ai builder AI</h2>
+<p>Prendiamo il caso di <strong>Nothing Tech:</strong> l’idea di permettere agli utenti di costruire widget personalizzati non è solo estetica, è strutturale. Significa spostare il controllo dell’interfaccia dall’azienda all’utente. Oppure tool come Lovable, che trasformano un prompt in un’app funzionante: qui il codice diventa secondario, quello che conta è l’intenzione. Base44 invece rappresenta un’altra direzione: creare micro-prodotti digitali senza passare da stack complessi. <strong>Questi strumenti, presi insieme, stanno costruendo un nuovo layer del web: quello delle app personali, effimere, non monetizzate, non tracciate.</strong> E questo layer è invisibile alle logiche di mercato tradizionali.</p>
+<h2>Come proteggere i propri dati creando app da soli (anche senza codice)</h2>
+<p>Non serve essere sviluppatori per iniziare. <strong>Il primo step è identificare un bisogno concreto</strong>: prendere appunti, tracciare spese, monitorare abitudini, gestire task. Il secondo è scegliere uno strumento: builder AI, no-code o anche semplici fogli avanzati. Il terzo è fondamentale: evitare integrazioni inutili. Ogni API esterna è un potenziale leak di dati. Meglio salvare localmente o su storage controllato. Hosting leggero (tipo Vercel o GitHub), niente tracker, niente script di terze parti. Se serve analytics, meglio usare soluzioni privacy-first o addirittura farne a meno. <strong>L’obiettivo non è scalare, è proteggere</strong>. È costruire un ecosistema digitale personale che rispecchi le tue regole, non quelle del mercato.</p>
+<h2>Vibe coding e cultura digitale: verso un web più libero</h2>
+<p>Il vibe coding non è una moda, è una risposta. Una risposta a un web diventato troppo complesso, troppo centralizzato, troppo orientato al profitto. È il ritorno a un approccio hacker, ma accessibile a tutti: <strong>costruire, testare, distruggere, ricostruire. Senza chiedere permesso.</strong> Senza dover passare da un team di sviluppo o da una piattaforma dominante. In un certo senso, è la versione moderna dell’open web: meno manifesto, più pratica quotidiana. E soprattutto, è una forma di autodifesa digitale. Perché oggi, più che mai, <strong>chi controlla il software controlla i dati. E chi controlla i dati controlla te.</strong></p>
+
+      </section>
+
+      <section class="post-cta premium-block" style="padding:24px;margin-bottom:48px;">
+        <div>
+          <span class="mini-label">Continue exploring</span>
+          <h3 style="font-family:var(--font-display);font-size:28px;text-transform:uppercase;margin:8px 0;">Altri articoli</h3>
+          <p style="color:#b2bfce;">Esplora altri contenuti o seguimi su LinkedIn.</p>
+        </div>
+        <div class="post-cta-actions">
+          <a class="btn btn-primary" href="blog.html">Vai al blog</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+    </article>
+
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+    <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </footer>
+
+</body>
+</html>
