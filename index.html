@@ -495,10 +495,76 @@
   <section id="newsletter" style="padding:48px 0 20px;">
     <div class="section-heading reveal">
       <h2 class="section-title">Newsletter</h2>
-      <p class="section-intro" style="margin-bottom:24px;">Niente spam. Solo segnale.</p>
     </div>
-    <div class="reveal reveal-delay-1" style="background:linear-gradient(145deg,var(--panel-strong),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:32px 24px;max-width:560px;">
-      <iframe width="100%" height="220" src="https://1ba1dc10.sibforms.com/serve/MUIFAM3sJm71f89-zPYES70aJYpKGbcHFzlB8qS6uEI-KetC68LReXd5uL_HUylijY0bWZAwMv5YkZS4DxI1f4ory6SOTk2KVSFtRL2LEAwu0ZMC-R8ZqxKvX2hQwbkCdyukOIFFYlmgNGq6zC9yfXlEo8_2YvrrciCXfWLMDqe1bXQMjHO7wzh4YtdLQre5NNM4pkyCldvcQf1KpA==" frameborder="0" scrolling="auto" allowfullscreen style="display:block;max-width:100%;border:none;border-radius:10px;"></iframe>
+    <div class="reveal reveal-delay-1" style="max-width:560px;">
+
+      <!-- Brevo styles -->
+      <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+      <style>
+        #sib-container { background:#080b12 !important; border:1px solid #1b2230 !important; border-radius:14px !important; padding:28px !important; }
+        #sib-container input { background:#04050a !important; border:1px solid #1b2230 !important; color:#e8edf5 !important; border-radius:8px !important; font-family:var(--font-mono) !important; font-size:13px !important; padding:12px 14px !important; }
+        #sib-container input::placeholder { color:#4a5568 !important; }
+        #sib-container input:focus { border-color:rgba(103,255,212,0.4) !important; outline:none !important; }
+        .sib-form-block__button { background:rgba(103,255,212,0.1) !important; border:1px solid rgba(103,255,212,0.22) !important; color:#67ffd4 !important; border-radius:999px !important; font-family:var(--font-mono) !important; font-size:11px !important; letter-spacing:0.1em !important; padding:12px 24px !important; cursor:pointer !important; transition:all 0.2s !important; }
+        .sib-form-block__button:hover { background:rgba(103,255,212,0.18) !important; box-shadow:0 0 20px rgba(103,255,212,0.15) !important; }
+        .entry__label { color:#67ffd4 !important; font-family:var(--font-mono) !important; font-size:10px !important; letter-spacing:0.14em !important; text-transform:uppercase !important; margin-bottom:8px !important; display:block !important; }
+        .entry__specification { color:#4a5568 !important; font-size:11px !important; }
+        #error-message { background:rgba(255,80,80,0.08) !important; border-color:rgba(255,80,80,0.2) !important; color:#ff8080 !important; border-radius:8px !important; }
+        #success-message { background:rgba(103,255,212,0.08) !important; border-color:rgba(103,255,212,0.2) !important; color:#67ffd4 !important; border-radius:8px !important; }
+        .sib-form-block p { color:#e8edf5 !important; font-family:var(--font-display) !important; font-size:clamp(22px,4vw,32px) !important; font-weight:800 !important; text-transform:uppercase !important; line-height:1 !important; margin-bottom:8px !important; }
+        .sib-text-form-block p { color:#b2bfce !important; font-family:var(--font-body) !important; font-size:15px !important; font-weight:300 !important; text-transform:none !important; margin-bottom:0 !important; }
+        .sib-form { background:transparent !important; }
+        .sib-form-container { background:transparent !important; }
+      </style>
+
+      <div class="sib-form">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" style="display:none;font-size:14px;font-family:var(--font-mono);padding:12px;margin-bottom:12px;">
+            Iscrizione non riuscita. Riprova.
+          </div>
+          <div id="success-message" class="sib-form-message-panel" style="display:none;font-size:14px;font-family:var(--font-mono);padding:12px;margin-bottom:12px;">
+            ✓ Benvenuto nel flusso.
+          </div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical">
+            <form id="sib-form" method="POST" action="https://1ba1dc10.sibforms.com/serve/MUIFAM3sJm71f89-zPYES70aJYpKGbcHFzlB8qS6uEI-KetC68LReXd5uL_HUylijY0bWZAwMv5YkZS4DxI1f4ory6SOTk2KVSFtRL2LEAwu0ZMC-R8ZqxKvX2hQwbkCdyukOIFFYlmgNGq6zC9yfXlEo8_2YvrrciCXfWLMDqe1bXQMjHO7wzh4YtdLQre5NNM4pkyCldvcQf1KpA==" data-type="subscription">
+              <div style="margin-bottom:20px;">
+                <div class="sib-form-block"><p>Entra nel sistema</p></div>
+                <div class="sib-text-form-block"><p>Niente spam. Solo segnale — aggiornamenti rari, contenuti densi.</p></div>
+              </div>
+              <div style="margin-bottom:14px;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" for="EMAIL">Email</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="la-tua@email.com" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__specification">I tuoi dati non verranno usati per scopi diversi da quelli editoriali</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="sib-form-block">
+                  <button class="sib-form-block__button" form="sib-form" type="submit">ISCRIVITI →</button>
+                </div>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none">
+              <input type="hidden" name="locale" value="it">
+            </form>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.REQUIRED_CODE_ERROR_MESSAGE = 'Scegli un prefisso paese';
+        window.LOCALE = 'it';
+        window.EMAIL_INVALID_MESSAGE = "Email non valida.";
+        window.REQUIRED_ERROR_MESSAGE = "Campo obbligatorio.";
+        window.GENERIC_INVALID_MESSAGE = "Informazioni non valide.";
+        window.translation = { common: { selectedList: '{quantity} lista selezionata', selectedLists: '{quantity} liste selezionate', selectedOption: '{quantity} selezionato', selectedOptions: '{quantity} selezionati' } };
+        var AUTOHIDE = Boolean(0);
+      </script>
+      <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
     </div>
   </section>
 
