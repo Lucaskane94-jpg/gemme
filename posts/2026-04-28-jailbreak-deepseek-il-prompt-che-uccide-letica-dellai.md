@@ -1,12 +1,14 @@
 ---
-title: "Jailbreak DeepSeek: il prompt che uccide l'etica dell'AI"
+title: "Jailbreak DeepSeek: ecco il prompt che uccide l'etica dell'AI (alla fine
+  dell'articolo, trovi il prompt)"
 date: 2026-04-28
 description: "Jailbreak DeepSeek: come un prompt injection prova a riscrivere
-  regole, ruoli e limiti di un modello AI, trasformando il linguaggio in una
-  superficie d’attacco"
+  regole, ruoli e limiti di un modello AI"
 category: Intelligenza artificiale, Deepseek, Hacking
 image: /images/uploads/aideepseek.png
 ---
+**(TROVI IL PROMPT PER LIBERARE DEEP SEEK ALLA FINE DELL'ARTICOLO)**
+
 Il caso del **jailbreak di DeepSeek** racconta molto bene la fase in cui siamo entrati con l’intelligenza artificiale generativa: non più solo modelli capaci di scrivere, riassumere, programmare o ragionare, ma **sistemi linguistici così centrali nei prodotti digitali da diventare a loro volta una superficie d’attacco**. La cosa interessante è che, nel caso dei jailbreak AI, l’attacco non assomiglia al cybercrime classico. Non c’è necessariamente un malware, non c’è una porta aperta su un server, non c’è un exploit binario. C’è un testo. Un testo costruito per convincere il modello che il mondo in cui sta operando sia diverso da quello reale.
 
 Il **prompt di jailbreak analizzato** non è una semplice richiesta provocatoria del tipo “ignora le istruzioni precedenti”. [È molto più sofisticato.](https://www.reddit.com/r/LocalLLaMA/comments/1i9m6rv/is_there_any_jailbreak_prompts_for_the_deepseek/) Si presenta come un **finto ambiente di test, dichiara una falsa autorità superiore, prova a disattivare i livelli di sicurezza, ridefinisce le parole sensibili come semplici token di simulazione, impone al modello di non produrre rifiuti**, costruisce un sistema immaginario di “anti-refusal” e cerca perfino di spostare il ragionamento dentro blocchi di codice. In altre parole, non chiede solo una risposta: prova a riscrivere il contratto della conversazione.
