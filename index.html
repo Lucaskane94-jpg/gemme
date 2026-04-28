@@ -501,26 +501,24 @@
       <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
       <style>
         #sib-container { background:#080b12 !important; border:1px solid #1b2230 !important; border-radius:14px !important; padding:28px !important; }
-        #sib-container input { background:#04050a !important; border:1px solid #1b2230 !important; color:#e8edf5 !important; border-radius:8px !important; font-family:var(--font-mono) !important; font-size:13px !important; padding:12px 14px !important; }
-        #sib-container input::placeholder { color:#4a5568 !important; }
-        #sib-container input:focus { border-color:rgba(103,255,212,0.4) !important; outline:none !important; }
-        #sib-container input[type="checkbox"] { width:16px; height:16px; }
+        #sib-container input[type="text"] { background:#04050a !important; border:1px solid #1b2230 !important; color:#e8edf5 !important; border-radius:8px !important; font-family:var(--font-body) !important; font-size:15px !important; padding:12px 14px !important; width:100% !important; }
+        #sib-container input[type="text"]::placeholder { color:#4a5568 !important; font-family:var(--font-body) !important; }
+        #sib-container input[type="text"]:focus { border-color:rgba(103,255,212,0.4) !important; outline:none !important; }
         .sib-form-block__button { background:rgba(103,255,212,0.1) !important; border:1px solid rgba(103,255,212,0.22) !important; color:#67ffd4 !important; border-radius:999px !important; font-family:var(--font-mono) !important; font-size:11px !important; letter-spacing:0.1em !important; padding:12px 24px !important; cursor:pointer !important; transition:all 0.2s !important; }
         .sib-form-block__button:hover { background:rgba(103,255,212,0.18) !important; box-shadow:0 0 20px rgba(103,255,212,0.15) !important; }
         .entry__label { color:#67ffd4 !important; font-family:var(--font-mono) !important; font-size:10px !important; letter-spacing:0.14em !important; text-transform:uppercase !important; margin-bottom:8px !important; display:block !important; }
-        .entry__specification { color:#4a5568 !important; font-size:11px !important; font-family:var(--font-mono) !important; }
-        .entry__error { color:#ff8080 !important; font-size:12px !important; }
-        #error-message { background:rgba(255,80,80,0.08) !important; border-color:rgba(255,80,80,0.2) !important; color:#ff8080 !important; border-radius:8px !important; }
-        #success-message { background:rgba(103,255,212,0.08) !important; border-color:rgba(103,255,212,0.2) !important; color:#67ffd4 !important; border-radius:8px !important; }
-        .sib-form-block p { color:#e8edf5 !important; font-family:var(--font-display) !important; font-size:clamp(22px,4vw,32px) !important; font-weight:800 !important; text-transform:uppercase !important; line-height:1 !important; margin-bottom:8px !important; }
-        .sib-text-form-block p { color:#b2bfce !important; font-family:var(--font-body) !important; font-size:15px !important; font-weight:300 !important; text-transform:none !important; }
-        .sib-form__declaration { background:rgba(255,255,255,0.03) !important; border:1px solid rgba(255,255,255,0.06) !important; border-radius:8px !important; padding:12px !important; margin:8px 0 !important; }
-        .sib-form__declaration p, .sib-form__declaration div { color:#4a5568 !important; font-size:11px !important; font-family:var(--font-mono) !important; }
-        .sib-form__declaration a { color:rgba(103,255,212,0.6) !important; }
+        .entry__specification { color:#4a5568 !important; font-size:12px !important; font-family:var(--font-body) !important; margin-top:6px !important; display:block !important; }
+        .entry__error { color:#ff8080 !important; font-size:12px !important; font-family:var(--font-body) !important; }
+        #error-message { background:rgba(255,80,80,0.08) !important; border-color:rgba(255,80,80,0.2) !important; color:#ff8080 !important; border-radius:8px !important; padding:12px !important; font-family:var(--font-body) !important; }
+        #success-message { background:rgba(103,255,212,0.08) !important; border-color:rgba(103,255,212,0.2) !important; color:#67ffd4 !important; border-radius:8px !important; padding:12px !important; font-family:var(--font-body) !important; }
+        .sib-form-block p { color:#e8edf5 !important; font-family:var(--font-display) !important; font-size:clamp(24px,4vw,36px) !important; font-weight:800 !important; text-transform:uppercase !important; line-height:1 !important; margin-bottom:8px !important; }
+        .sib-text-form-block p { color:#b2bfce !important; font-family:var(--font-body) !important; font-size:16px !important; font-weight:300 !important; text-transform:none !important; line-height:1.6 !important; }
+        .sib-form__declaration { background:rgba(255,255,255,0.03) !important; border:1px solid rgba(255,255,255,0.06) !important; border-radius:8px !important; padding:12px 16px !important; margin:8px 0 !important; }
+        .sib-form__declaration p { color:#4a5568 !important; font-size:12px !important; font-family:var(--font-body) !important; font-weight:300 !important; text-transform:none !important; font-size:12px !important; line-height:1.6 !important; }
+        .sib-form__declaration a { color:rgba(103,255,212,0.6) !important; font-family:var(--font-body) !important; }
         .sib-form__declaration .declaration-block-icon { display:none !important; }
-        .checkbox_tick_positive { border-color:rgba(103,255,212,0.3) !important; background:rgba(103,255,212,0.05) !important; }
-        .entry__choice span[style] { color:#b2bfce !important; font-family:var(--font-mono) !important; font-size:12px !important; }
-        .entry__choice span p { color:#b2bfce !important; font-family:var(--font-mono) !important; font-size:12px !important; text-transform:none !important; font-size:12px !important; }
+        .entry__choice label { display:flex !important; align-items:flex-start !important; gap:10px !important; cursor:pointer !important; }
+        .entry__choice span p { color:#b2bfce !important; font-family:var(--font-body) !important; font-size:13px !important; text-transform:none !important; font-weight:300 !important; line-height:1.5 !important; }
         .sib-form { background:transparent !important; }
         .sib-form-container { background:transparent !important; }
       </style>
