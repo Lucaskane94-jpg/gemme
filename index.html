@@ -212,6 +212,30 @@
     }
     .tools-arrow:hover { background:rgba(103,255,212,0.14); }
     .tools-arrow:disabled { opacity:0.25; cursor:default; }
+    /* CRO Funnel visual */
+    .cv-cro{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+    .cro-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+    .cro-label{font-size:9px;color:rgba(103,255,212,0.5);letter-spacing:0.16em;text-transform:uppercase}
+    .cro-live{font-size:9px;color:rgba(103,255,212,0.6);display:flex;align-items:center;gap:5px}
+    .cro-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent);animation:ping-dot 1.5s ease infinite}
+    .cro-steps{display:flex;flex-direction:column;gap:6px}
+    .cro-step{display:flex;align-items:center;gap:8px}
+    .cro-step-label{font-size:9px;color:rgba(255,255,255,0.35);width:52px;flex-shrink:0;letter-spacing:0.06em;text-transform:uppercase}
+    .cro-step-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,0.04);border-radius:2px;overflow:hidden}
+    .cro-step-bar{height:100%;border-radius:2px}
+    .csb-1{background:rgba(103,255,212,0.8);animation:csb1 4s ease-in-out infinite}
+    .csb-2{background:rgba(103,255,212,0.6);animation:csb2 4s ease-in-out infinite}
+    .csb-3{background:rgba(103,255,212,0.4);animation:csb3 4s ease-in-out infinite}
+    .csb-4{background:rgba(103,255,212,0.9);box-shadow:0 0 8px rgba(103,255,212,0.3);animation:csb4 4s ease-in-out infinite}
+    @keyframes csb1{0%,100%{width:100%}50%{width:100%}}
+    @keyframes csb2{0%,100%{width:71%}50%{width:75%}}
+    @keyframes csb3{0%,100%{width:48%}50%{width:53%}}
+    @keyframes csb4{0%,100%{width:24%}50%{width:29%}}
+    .cro-step-val{font-size:9px;color:rgba(255,255,255,0.4);width:28px;text-align:right;flex-shrink:0;font-family:var(--font-mono)}
+    .cro-accent{color:var(--accent) !important;animation:val-pulse 2s ease-in-out infinite}
+    .cro-footer{display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px solid rgba(103,255,212,0.07);font-size:9px;color:rgba(103,255,212,0.4);letter-spacing:0.12em;text-transform:uppercase;margin-top:2px}
+    .cro-delta{color:var(--accent);animation:val-pulse 2s ease-in-out infinite}
+
 
     /* Chatbot visual */
     .cv-chat { padding: 10px 14px; display:flex; flex-direction:column; gap:6px; }
@@ -283,7 +307,7 @@
 
     <div class="disclaimer reveal reveal-delay-1">
       <span class="disclaimer-icon">&#9432;</span>
-      <span>Questa sezione raccoglie esclusivamente <strong style="color:#c8d4e0">progetti personali e sperimentazioni indipendenti</strong>. Il lavoro svolto in ambito professionale — campagne, strategie e attivazioni per i clienti — è coperto da accordi di riservatezza e non è qui rappresentato. I risultati mostrati nella sezione ADV si riferiscono ad attività condotte in contesti non coperti da NDA.</span>
+      <span>Quello che vedi qui è solo una parte di ciò che ho fatto. La maggior parte del lavoro svolto — in ambito professionale e con clienti precedenti — è coperto da <strong style="color:#c8d4e0">accordi di riservatezza che vietano la diffusione di loghi, brand, strategie e risultati</strong>. I progetti esposti sono quelli che posso mostrare liberamente. I risultati ADV si riferiscono ad attività personali non coperte da NDA.</span>
     </div>
 
     <div class="projects-grid">
@@ -363,7 +387,47 @@
         <div class="card-actions"><button class="btn-scopri" onclick="openGallery()">Scopri &#8594;</button></div>
       </article>
 
-      <!-- Chatbot card -->
+      <!-- CRO Professionale card -->
+      <article class="card reveal reveal-delay-5">
+        <div class="card-visual cv-cro">
+          <div class="cro-header">
+            <span class="cro-label">Funnel optimization</span>
+            <span class="cro-live"><span class="cro-dot"></span>ACTIVE</span>
+          </div>
+          <div class="cro-steps">
+            <div class="cro-step">
+              <div class="cro-step-bar-wrap"><div class="cro-step-bar csb-1"></div></div>
+              <span class="cro-step-label">Landing</span>
+              <span class="cro-step-val">100%</span>
+            </div>
+            <div class="cro-step">
+              <div class="cro-step-bar-wrap"><div class="cro-step-bar csb-2"></div></div>
+              <span class="cro-step-label">Step 1</span>
+              <span class="cro-step-val">71%</span>
+            </div>
+            <div class="cro-step">
+              <div class="cro-step-bar-wrap"><div class="cro-step-bar csb-3"></div></div>
+              <span class="cro-step-label">Step 2</span>
+              <span class="cro-step-val">48%</span>
+            </div>
+            <div class="cro-step">
+              <div class="cro-step-bar-wrap"><div class="cro-step-bar csb-4"></div></div>
+              <span class="cro-step-label">Converted</span>
+              <span class="cro-step-val cro-accent">24%</span>
+            </div>
+          </div>
+          <div class="cro-footer">
+            <span>Conversion rate</span>
+            <span class="cro-delta">&#8593; +38% vs baseline</span>
+          </div>
+        </div>
+        <span class="card-tag">CRO / Growth / NDA</span>
+        <h3>Ottimizzazione funnel & metriche business</h3>
+        <p>Lavoro su funnel di registrazione, percorsi di acquisizione e ottimizzazione di metriche chiave come i primi depositi, i tassi di conversione e il comportamento degli utenti lungo il percorso d'acquisto — in ambito gaming, e-commerce e digital.</p>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px;font-family:var(--font-mono);letter-spacing:0.05em;">&#128274; Dettagli coperti da NDA.</p>
+      </article>
+
+            <!-- Chatbot card -->
       <article class="card reveal reveal-delay-5">
         <div class="card-visual cv-chat">
           <div class="chat-msg">
@@ -646,4 +710,3 @@
 </script>
 </body>
 </html>
- 
