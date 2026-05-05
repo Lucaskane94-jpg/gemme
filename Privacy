@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="cookie-config.js"></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
+
+  <title>Privacy Policy | Gianmarco Monaco</title>
+  <meta name="description" content="Informativa sulla privacy di gianmarcomonaco.org">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://gianmarcomonaco.org/privacy.html">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-content { max-width: 720px; padding: 48px 0 80px; }
+    .legal-content h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 6vw, 64px); text-transform: uppercase; line-height: 0.9; margin-bottom: 8px; }
+    .legal-content .meta { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .legal-content h2 { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.02em; margin: 36px 0 12px; color: var(--text); }
+    .legal-content p { font-size: 15px; line-height: 1.8; color: #8a9ab0; margin-bottom: 14px; }
+    .legal-content ul { padding-left: 20px; margin-bottom: 14px; }
+    .legal-content ul li { font-size: 15px; line-height: 1.8; color: #8a9ab0; margin-bottom: 6px; }
+    .legal-content a { color: var(--accent); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+    .legal-content strong { color: var(--text); font-weight: 500; }
+    .legal-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 13px; }
+    .legal-table th { text-align: left; font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); border-bottom: 1px solid var(--line); padding: 8px 12px 8px 0; }
+    .legal-table td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); color: #8a9ab0; vertical-align: top; }
+    .legal-table td:first-child { color: var(--text); font-family: var(--font-mono); font-size: 12px; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experiments">Experiments</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="legal-content">
+      <h1>Privacy<br>Policy</h1>
+      <p class="meta">Ultimo aggiornamento: Maggio 2026 · gianmarcomonaco.org</p>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>Il titolare del trattamento dei dati personali è <strong>Gianmarco Monaco</strong>, contattabile all'indirizzo email: <a href="mailto:gianmarcomon94@gmail.com">gianmarcomon94@gmail.com</a>.</p>
+
+      <h2>2. Tipologie di dati raccolti</h2>
+      <p>Questo sito raccoglie le seguenti categorie di dati:</p>
+      <ul>
+        <li><strong>Dati di navigazione</strong> — indirizzo IP parziale, tipo di browser, sistema operativo, pagine visitate, durata della sessione. Raccolti automaticamente da Google Analytics 4.</li>
+        <li><strong>Dati forniti volontariamente</strong> — indirizzo email, fornito dall'utente in caso di iscrizione alla newsletter tramite il form Brevo.</li>
+      </ul>
+      <p>Non vengono raccolti dati sensibili, dati relativi a minori né informazioni di pagamento.</p>
+
+      <h2>3. Finalità e basi giuridiche del trattamento</h2>
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Finalità</th>
+            <th>Base giuridica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Analisi statistica del traffico</td>
+            <td>Consenso (art. 6.1.a GDPR)</td>
+          </tr>
+          <tr>
+            <td>Invio newsletter</td>
+            <td>Consenso (art. 6.1.a GDPR)</td>
+          </tr>
+          <tr>
+            <td>Sicurezza e funzionamento del sito</td>
+            <td>Legittimo interesse (art. 6.1.f GDPR)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Il consenso per i cookie analitici è raccolto tramite il banner presente sul sito. L'iscrizione alla newsletter è volontaria e richiede il doppio opt-in (conferma via email).</p>
+
+      <h2>4. Analisi statistica</h2>
+      <p>Questo sito utilizza strumenti di analisi per monitorare il traffico in forma aggregata e anonimizzata.</p>
+      <p>Le misure di protezione attive:</p>
+      <ul>
+        <li>Gli indirizzi IP vengono anonimizzati prima dell'elaborazione</li>
+        <li>I cookie analitici vengono attivati solo previo consenso esplicito tramite il banner</li>
+        <li>I dati non vengono condivisi con terze parti a fini pubblicitari</li>
+        <li>Non viene effettuato remarketing o profilazione comportamentale</li>
+      </ul>
+
+      <h2>5. Newsletter</h2>
+      <p>L'iscrizione alla newsletter è completamente volontaria. I dati raccolti (indirizzo email) sono utilizzati esclusivamente per l'invio di comunicazioni editoriali relative ai contenuti pubblicati su questo sito.</p>
+      <ul>
+        <li>Il servizio di invio è affidato a un provider esterno con sede in Francia, soggetto a GDPR</li>
+        <li>I dati non vengono ceduti a terzi né utilizzati per finalità commerciali</li>
+        <li>È possibile annullare l'iscrizione in qualsiasi momento tramite il link di disiscrizione presente in ogni email</li>
+        <li>In alternativa, è possibile richiedere la cancellazione scrivendo a <a href="mailto:gianmarcomon94@gmail.com">gianmarcomon94@gmail.com</a></li>
+      </ul>
+
+      <h2>6. Hosting e infrastruttura</h2>
+      <p>Il sito è ospitato su infrastrutture cloud con sede negli USA. Il trasferimento di dati avviene nel rispetto delle garanzie previste dal GDPR (Standard Contractual Clauses). I provider di hosting possono raccogliere log di accesso per motivi di sicurezza.</p>
+
+      <h2>7. Diritti dell'interessato</h2>
+      <p>Ai sensi del GDPR (artt. 15-22), hai diritto di:</p>
+      <ul>
+        <li><strong>Accesso</strong> — sapere quali dati ti riguardano sono trattati</li>
+        <li><strong>Rettifica</strong> — correggere dati inesatti</li>
+        <li><strong>Cancellazione</strong> — chiedere l'eliminazione dei tuoi dati</li>
+        <li><strong>Limitazione</strong> — richiedere la limitazione del trattamento</li>
+        <li><strong>Portabilità</strong> — ricevere i tuoi dati in formato strutturato</li>
+        <li><strong>Opposizione</strong> — opporti al trattamento basato su legittimo interesse</li>
+        <li><strong>Revoca del consenso</strong> — in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente</li>
+      </ul>
+      <p>Per esercitare i tuoi diritti scrivi a: <a href="mailto:gianmarcomon94@gmail.com">gianmarcomon94@gmail.com</a>. Risposta entro 30 giorni.</p>
+      <p>Hai inoltre diritto di proporre reclamo al <strong>Garante per la protezione dei dati personali</strong>: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">garanteprivacy.it</a>.</p>
+
+      <h2>8. Conservazione dei dati</h2>
+      <ul>
+        <li><strong>Dati analytics</strong> — conservati per un massimo di 14 mesi</li>
+        <li><strong>Dati newsletter</strong> — conservati fino alla disiscrizione o richiesta di cancellazione</li>
+        <li><strong>Log di accesso</strong> — conservati da Vercel secondo le proprie politiche (tipicamente 30 giorni)</li>
+      </ul>
+
+      <h2>9. Modifiche alla presente informativa</h2>
+      <p>Questa informativa può essere aggiornata. La data di ultimo aggiornamento è indicata in cima al documento. L'uso continuato del sito dopo le modifiche costituisce accettazione della nuova versione.</p>
+    </div>
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+    <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+    <a href="index.html">← Home</a>
+  </footer>
+</body>
+</html>
