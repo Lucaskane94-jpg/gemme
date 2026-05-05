@@ -6,16 +6,16 @@
   --bg-soft:      #07080f;
   --text:         #e8edf5;
   --muted:        #5a6475;
-  --line:         #111827;
+  --line:         #1e2535;
   --accent:       #67ffd4;
   --accent-dim:   rgba(103, 255, 212, 0.12);
   --accent-glow:  rgba(103, 255, 212, 0.28);
   --purple-glow:  rgba(120, 80, 255, 0.18);
-  --panel:        rgba(255, 255, 255, 0.022);
-  --panel-strong: rgba(255, 255, 255, 0.042);
+  --panel:        rgba(255, 255, 255, 0.035);
+  --panel-strong: rgba(255, 255, 255, 0.06);
   --shadow:       0 24px 80px rgba(0, 0, 0, 0.5);
-  --radius:       18px;
-  --radius-sm:    12px;
+  --radius:       4px;
+  --radius-sm:    2px;
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body:    'Barlow', sans-serif;
   --font-mono:    'IBM Plex Mono', monospace;
@@ -94,7 +94,7 @@ body::after {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   background: rgba(4, 5, 10, 0.82);
-  border-bottom: 1px solid rgba(103, 255, 212, 0.06);
+  border-bottom: 2px solid rgba(103, 255, 212, 0.15);
 }
 
 .topbar-inner {
@@ -117,7 +117,7 @@ body::after {
 }
 
 /* Glitch on brand hover */
-.brand:hover { animation: glitch 0.4s steps(2) 1; }
+.brand:hover { letter-spacing: 0.32em; }
 
 @keyframes glitch {
   0%   { text-shadow: none; transform: none; }
@@ -151,9 +151,9 @@ nav a {
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 nav a:hover, nav a.active {
-  color: var(--accent);
-  border-color: var(--accent-dim);
-  background: var(--accent-dim);
+  color: var(--bg);
+  border-color: var(--accent);
+  background: var(--accent);
 }
 
 .header-cta {
@@ -240,7 +240,7 @@ nav a:hover, nav a.active {
 .blog-hero h1 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(58px, 13vw, 128px);
+  font-size: clamp(64px, 15vw, 148px);
   line-height: 0.90;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -288,12 +288,12 @@ nav a:hover, nav a.active {
 
 .btn-primary {
   color: var(--accent);
-  border-color: rgba(103,255,212,0.24);
-  background: var(--accent-dim);
+  border-color: var(--accent);
+  background: transparent;
 }
 .btn-primary:hover {
-  background: rgba(103,255,212,0.12);
-  box-shadow: 0 0 24px var(--accent-glow);
+  background: var(--accent);
+  color: var(--bg);
 }
 
 .btn-secondary {
@@ -338,6 +338,8 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 11px;
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
 }
 
 .section-intro, .blog-lead, .about-copy p {
@@ -353,8 +355,8 @@ section {
 section::before {
   content: '';
   display: block;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent-dim), transparent 60%);
+  height: 2px;
+  background: var(--line);
   margin-bottom: 48px;
 }
 .hero::before { display: none; }
@@ -412,17 +414,16 @@ section::before {
 .tool-tab {
   scroll-snap-align: start;
   border: 1px solid var(--line);
-  background: linear-gradient(145deg, var(--panel-strong), var(--panel));
+  background: var(--bg-soft);
   border-radius: var(--radius);
   padding: 24px;
   min-height: 280px;
-  box-shadow: var(--shadow);
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: border-color 0.2s, transform 0.15s;
 }
 .tool-tab:hover {
-  border-color: rgba(103,255,212,0.2);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow), 0 0 40px rgba(103,255,212,0.06);
+  border-color: var(--accent);
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--accent);
 }
 
 .tool-label {
@@ -499,29 +500,29 @@ section::before {
 
 .card {
   border: 1px solid var(--line);
-  background: linear-gradient(145deg, var(--panel-strong), var(--panel));
+  background: var(--bg-soft);
   border-radius: var(--radius);
   padding: 24px;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: border-color 0.2s, transform 0.15s;
 }
 .card:hover {
-  border-color: rgba(103,255,212,0.22);
-  transform: translateY(-5px);
-  box-shadow: 0 0 40px rgba(103,255,212,0.07), var(--shadow);
+  border-color: var(--accent);
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--accent);
 }
 
 .card-tag {
   display: inline-block;
   margin-bottom: 12px;
-  color: var(--accent);
+  color: var(--bg);
   font-family: var(--font-mono);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  border: 1px solid rgba(103,255,212,0.14);
+  border: 1px solid var(--accent);
   padding: 3px 8px;
-  border-radius: 4px;
-  background: var(--accent-dim);
+  border-radius: 0;
+  background: var(--accent);
 }
 
 .card h3 {
@@ -573,7 +574,7 @@ section::before {
 .footer {
   margin-top: 48px;
   padding: 28px 0 52px;
-  border-top: 1px solid rgba(103,255,212,0.06);
+  border-top: 2px solid var(--line);
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 11px;
@@ -615,7 +616,7 @@ section::before {
   max-width: 700px;
   font-size: 19px;
   line-height: 1.8;
-  color: #bbc6d3;
+  color: #e8edf5;
   margin-bottom: 24px;
 }
 
@@ -729,3 +730,7 @@ section::before {
   .blog-layout { grid-template-columns: 1.5fr 0.55fr; align-items: start; }
   .blog-grid-premium { grid-template-columns: repeat(2, 1fr); }
 }
+
+
+/* Hide empty about sidebar */
+.about-side-card:empty { display: none; }
