@@ -21,8 +21,6 @@ Da fuori sembra il sogno perfetto: una carriera più grande, un riconoscimento m
 
 ## Il vero cuore di Dark Matter sono gli affetti
 
-
-
 Il cuore emotivo di Dark Matter non è la fisica quantistica, non è la scatola, non è il meccanismo narrativo del multiverso. Il cuore è la famiglia. Sono gli affetti. Sono le persone che Jason ha accanto nella sua vita originaria e che, nel momento in cui rischia di perderle, diventano improvvisamente tutto.
 
 
@@ -33,8 +31,6 @@ Ed è qui che la serie smette di essere solo un thriller sci-fi e diventa quasi 
 
 ## Il multiverso come metafora della vita che non stiamo vivendo
 
-
-
 Questa è la parte più bella e più crudele di Dark Matter: mostra che il grande nemico non è un altro universo, ma l’incapacità di riconoscere il valore del nostro. La serie costruisce un mondo di possibilità infinite, ma più aumentano le possibilità più cresce l’angoscia. Perché se tutto è possibile, allora niente sembra mai abbastanza. Se esistono infinite versioni di noi, allora quella che stiamo vivendo può sembrarci sempre incompleta, sbagliata, mediocre, provvisoria.
 
 
@@ -42,8 +38,6 @@ Questa è la parte più bella e più crudele di Dark Matter: mostra che il grand
 È un pensiero molto contemporaneo. Viviamo immersi in feed, carriere altrui, vite esibite, vacanze perfette, corpi migliori, case migliori, lavori migliori, relazioni apparentemente migliori. Il multiverso di Dark Matter assomiglia molto al nostro algoritmo quotidiano: una galleria infinita di ciò che potremmo essere, possedere, desiderare, invidiare. Ma più guardiamo altrove, più rischiamo di diventare fantasmi dentro la nostra stessa vita.
 
 ## Dark Matter e il prezzo dell’ambizione
-
-
 
 Il messaggio più forte di Dark Matter è che l’ambizione non è il problema. Volere di più non è sbagliato. Cercare una vita piena, intensa, costruita sulle proprie capacità, è umano. Il problema nasce quando quel “di più” diventa una religione, quando tutto il resto diventa secondario, quando gli affetti diventano una cornice e non più il centro.
 
@@ -66,8 +60,6 @@ La serie colpisce perché dietro la sua architettura da thriller c’è una doma
 
 
 ## Jason e Daniela: la normalità come miracolo privato
-
-
 
 La bellezza del rapporto tra Jason e Daniela, il personaggio interpretato da Jennifer Connelly, sta proprio in questa fragilità. Non è l’amore perfetto da cartolina. È qualcosa di più credibile: una vita costruita insieme, fatta di scelte, compromessi, stanchezze, mancanze, ricordi, responsabilità.
 
@@ -98,8 +90,6 @@ Avere ambizione, sì, ma non al prezzo di diventare irriconoscibili agli occhi d
 
 
 ## Perché Dark Matter è una delle serie sci-fi più umane degli ultimi anni
-
-
 
 Per questo Dark Matter è una delle serie sci-fi più interessanti degli ultimi anni: non perché inventi il multiverso, tema ormai ovunque, ma perché lo usa per riportarci brutalmente alla terra. Ci dice che l’infinito può essere una trappola, che le possibilità possono diventare veleno, che il rimpianto è una macchina capace di divorare il presente.
 
