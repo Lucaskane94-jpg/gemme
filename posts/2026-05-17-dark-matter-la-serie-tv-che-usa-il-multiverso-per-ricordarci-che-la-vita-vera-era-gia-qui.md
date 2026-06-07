@@ -6,6 +6,7 @@ description: "Una riflessione su Dark Matter, la serie Apple TV che usa il
   multiverso per raccontare rimpianti, scelte mancate e il valore degli affetti
   nella vita reale. "
 category: Serie TV. Fantascienza
+image: /images/uploads/17789713057078768442615658150429.jpg
 ---
 Ci sono serie che usano la fantascienza per mostrarci mondi impossibili, tecnologie fuori scala, universi alternativi e teorie fisiche che sembrano uscite da un laboratorio quantistico più che da una sceneggiatura. Poi c’è [Dark Matter](https://it.wikipedia.org/wiki/Dark_Matter_(serie_televisiva_2024)), la serie TV Apple TV tratta dal romanzo di Blake Crouch, che parte esattamente da lì, dal multiverso, dalle vite non vissute, dalle scelte mancate, dalle porte che si aprono su versioni alternative di noi stessi, ma arriva in un punto molto più semplice, molto più umano e molto più doloroso: alla fine non conta quante vite avremmo potuto vivere, conta se siamo stati davvero presenti in quella che avevamo.
 
