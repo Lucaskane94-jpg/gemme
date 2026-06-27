@@ -12,11 +12,11 @@ image: /images/uploads/EMMA_Ok5-2-1.jpg
 ---
 Negli ultimi giorni si è parlato molto di **Emma, il nuovo modello di intelligenza artificiale presentato come una risposta italiana alla supremazia americana nel settore.** Titoli entusiastici, celebrazioni patriottiche, interviste e rilanci sui social hanno dipinto l'arrivo di Emma come un momento storico per l'innovazione nazionale. Peccato che, al di là della narrativa, poi alla prova dei fatti emergano alcuni **limiti che rendono difficile considerarlo un vero concorrente dei principali modelli internazionali.** A dirla tutta, rimane proprio difficile considerarlo un modello AI a tutto tondo, ma questo è un altro discorso. Il problema non è che Emma sia italiana. Anzi, avere iniziative europee nel campo dell'intelligenza artificiale è fondamentale. Il problema è la tendenza tutta europea, e in particolare italiana, a confondere la comunicazione e l'hype con il progresso tecnologico. 
 
-### UNA FINESTRA DI CONTESTO LONTANA DAI PRINCIPALI PLAYER
+## **UNA FINESTRA DI CONTESTO LONTANA DAI PRINCIPALI PLAYER**
 
 Uno degli aspetti che ha fatto discutere è la **dimensione del contesto gestibile dal modello**. In un momento storico in cui i principali sistemi AI stanno ampliando enormemente le loro finestre di contesto, [Emma](https://amp.today.it/attualita/emma-prima-ai-sovranista-italiana.html) arriva con numeri che appaiono modesti. La capacità di elaborare grandi quantità di informazioni contemporaneamente è diventata uno degli elementi chiave per valutare la competitività di un modello moderno. Se il contesto disponibile è limitato, **diminuiscono le possibilità di utilizzo in ambito professionale**, nella ricerca, nell'analisi documentale e nello sviluppo software.
 
-### **L'EUROPA DOVREBBE IMPARARE DALLA CINA**
+## **L'EUROPA DOVREBBE IMPARARE DALLA CINA**
 
 Il confronto con quanto avviene in Cina è impietoso. Mentre in Europa si discute soprattutto di regolamentazione, comunicazione istituzionale e sovranità digitale, le aziende cinesi stanno costruendo modelli che competono realmente con i leader americani. [DeepSeek](https://www.gianmarcomonaco.org/2026-04-28-jailbreak-deepseek-il-prompt-che-uccide-letica-dellai.html) è probabilmente il caso più noto. Nel giro di pochi anni è passata dall'essere quasi sconosciuta a diventare uno dei nomi più importanti del settore, attirando l'attenzione mondiale grazie a **prestazioni elevate e costi estremamente competitivi.**
 
