@@ -4,6 +4,7 @@ date: 2026-06-29
 description: Da Pechino a Shanghai passando per Pingyao, viaggio in una Cina che
   unisce tradizione, intelligenza artificiale e ambizione tecnologica.
 category: Cina, Viaggi, Tecnologia
+image: /images/uploads/Screenshot_2026-06-29-17-37-24-29_965bbf4d18d205f782c6b8409c5773a4-1.jpg
 ---
 Quando sono arrivato in Cina, la prima impressione che ho avuto è stata quella di non trovarmi in un **Paese del pianeta Terra.** Forse perché la percezione che avevo, sia delle cose che delle persone, era infinitamente diversa rispetto a qualsiasi posto io abbia mai visitato in passato. La prima cosa che noti, da occidentale, è il **dimenticarsi completamente dello spazio in cui ti trovi**, questo perché il sistema di sicurezza messo in piedi riesce a farti sentire sicuro ovunque, a qualsiasi ora del giorno.
 
@@ -21,7 +22,7 @@ Yuexin 月心, la prima guida che ho conosciuto a Pechino, mi ha spiegato propri
 
 La libertà cinese parte da un assioma diverso: **non esiste piacere individuale se prima non c'è un piacere collettivo.** Se non si sta bene insieme, non si può stare bene da soli. È una differenza culturale enorme, che si percepisce in ogni aspetto della vita quotidiana e che stravolge tutto quello che hai imparato, dalla scuola, dai film, dai libri e dalle tradizioni. 
 
-### UN PONTE TRA L'IDENTITÀ DI IERI E QUELLA DI DOMANI 
+### UN PONTE TRA L'IDENTITÀ DI IERI E QUELLA DI DOMANI
 
 ![Due anziani signori passeggiano nella città antica di Pingyao](/images/uploads/FB_IMG_1782747632543.jpg)
 
@@ -35,7 +36,7 @@ Eppure, basta attraversare qualche strada per ritrovarsi in vicoli dove anziani 
 
 
 
-## PER ANDARE DOVE VUOI ANDARE, DEVI SAPERE DA DOVE VIENI. 
+## PER ANDARE DOVE VUOI ANDARE, DEVI SAPERE DA DOVE VIENI.
 
 ![](/images/uploads/20240806_152141.jpg)
 
@@ -57,7 +58,11 @@ Lo stesso vale per - appunto -  la tecnologia. In Occidente parliamo molto di in
 
 ![](/images/uploads/17825701174703188167431666276548.jpg)
 
-Molti europei continuano a guardare alla Cina come alla fabbrica del mondo. In realtà, la Cina che ho visto io vuole essere il laboratorio del mondo. Non punta soltanto a produrre ciò che viene progettato altrove; **vuole progettare le tecnologie che utilizzeremo tra dieci o vent'anni.** Questa ambizione si percepisce ovunque. Nei campus universitari, nei centri di ricerca, nelle aziende tecnologiche e perfino nelle conversazioni quotidiane, negli occhi delle persone. **C'è una fiducia quasi contagiosa nel fatto che il futuro possa essere costruito e non semplicemente subito**, c'e una energia incredibile che prova a trasmettere a chi osserva il fatto che un nuovo modello di società che attinge dall'anima più dinamica del capitalismo occidentale e che utilizza l'anima migliore del socialismo può coesistere, con sicuramente un prezzo da pagare, ma il compromesso sociale e di vita lo stiamo pagando anche noi in occidente, in modo diverso ma sicuramente in maniera similare.  Non significa che tutto sia perfetto. Significa però che, mentre in Europa discutiamo spesso di ciò che non possiamo fare, in Cina si discute soprattutto di ciò che si può ancora costruire. Ed è forse questa la lezione più importante che mi porto a casa dal mio viaggio: la Cina non è il paradiso che alcuni raccontano e nemmeno l'inferno descritto da altri. È un Paese complesso, pieno di contraddizioni, che però ha una caratteristica sempre più rara nel mondo contemporaneo: **crede profondamente nel proprio futuro.**
+Molti europei continuano a guardare alla Cina come alla fabbrica del mondo. In realtà, la Cina che ho visto io vuole essere il laboratorio del mondo. Non punta soltanto a produrre ciò che viene progettato altrove; **vuole progettare le tecnologie che utilizzeremo tra dieci o vent'anni.** Questa ambizione si percepisce ovunque. Nei campus universitari, nei centri di ricerca, nelle aziende tecnologiche e perfino nelle conversazioni quotidiane, negli occhi delle persone. **C'è una fiducia quasi contagiosa nel fatto che il futuro possa essere costruito e non semplicemente subito**, c'e una energia incredibile che prova a trasmettere a chi osserva il fatto che un nuovo modello di società che attinge dall'anima più dinamica del capitalismo occidentale e che utilizza l'anima migliore del socialismo può coesistere, con sicuramente un prezzo da pagare, ma il compromesso sociale e di vita lo stiamo pagando anche noi in occidente, in modo diverso ma sicuramente in maniera similare.  
+
+![](/images/uploads/20240806_171741.jpg)
+
+Non significa che tutto sia perfetto. Significa però che, mentre in Europa discutiamo spesso di ciò che non possiamo fare, in Cina si discute soprattutto di ciò che si può ancora costruire. Ed è forse questa la lezione più importante che mi porto a casa dal mio viaggio: la Cina non è il paradiso che alcuni raccontano e nemmeno l'inferno descritto da altri. È un Paese complesso, pieno di contraddizioni, che però ha una caratteristica sempre più rara nel mondo contemporaneo: **crede profondamente nel proprio futuro.**
 
 ![Foto sulla muraglia cinese](/images/uploads/20240807_154315.jpg)
 
