@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
+
+  <title>DeepSeek DSpark accelera l’AI fino all’85%: il framework open source che riduce i costi dell’inferenza | Gianmarco Monaco</title>
+  <meta name="description" content="DeepSeek DSpark è un framework open source che accelera fino all’85% l’inferenza dei modelli di intelligenza artificiale senza nuovi modelli, senza retraining e senza hardware aggiuntivo. Una svolta nell’efficienza dei LLM basata su speculative decoding che riduce i costi e aumenta la velocità delle risposte AI.">
+  <meta name="author" content="Gianmarco Monaco">
+  <link rel="canonical" href="https://gianmarcomonaco.org/2026-07-01-deepseek-dspark-accelera-lai-fino-all85percent-il-framework-open-source-che-riduce-i-costi-dellinferenza.html">
+
+  <meta property="og:title" content="DeepSeek DSpark accelera l’AI fino all’85%: il framework open source che riduce i costi dell’inferenza">
+  <meta property="og:description" content="DeepSeek DSpark è un framework open source che accelera fino all’85% l’inferenza dei modelli di intelligenza artificiale senza nuovi modelli, senza retraining e senza hardware aggiuntivo. Una svolta nell’efficienza dei LLM basata su speculative decoding che riduce i costi e aumenta la velocità delle risposte AI.">
+  <meta property="og:url" content="https://gianmarcomonaco.org/2026-07-01-deepseek-dspark-accelera-lai-fino-all85percent-il-framework-open-source-che-riduce-i-costi-dellinferenza.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Gianmarco Monaco">
+  <meta property="og:image" content="https://gianmarcomonaco.org/images/uploads/Untitled_1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeepSeek DSpark accelera l’AI fino all’85%: il framework open source che riduce i costi dell’inferenza">
+  <meta name="twitter:description" content="DeepSeek DSpark è un framework open source che accelera fino all’85% l’inferenza dei modelli di intelligenza artificiale senza nuovi modelli, senza retraining e senza hardware aggiuntivo. Una svolta nell’efficienza dei LLM basata su speculative decoding che riduce i costi e aumenta la velocità delle risposte AI.">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="cookie-config.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .post-hero-img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+    }
+    .post-content h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 40px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin: 40px 0 16px;
+      max-width: 700px;
+      line-height: 1.05;
+    }
+    .post-content h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(22px, 4vw, 30px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin: 32px 0 12px;
+      max-width: 700px;
+    }
+    .post-content p {
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.85;
+      color: #e8edf5;
+      margin-bottom: 22px;
+    }
+    .post-content img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--radius-sm);
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .post-content ul, .post-content ol {
+      max-width: 700px;
+      margin-bottom: 22px;
+      padding-left: 26px;
+      color: #e8edf5;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .post-content li { margin-bottom: 8px; }
+    .post-content strong { color: var(--accent); font-weight: 500; }
+    .post-content em { color: #b2bfce; }
+    .post-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 12px 20px;
+      margin: 32px 0;
+      max-width: 700px;
+      color: #b2bfce;
+      font-size: 20px;
+      line-height: 1.7;
+      background: rgba(103,255,212,0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .post-content code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      background: rgba(103,255,212,0.07);
+      border: 1px solid rgba(103,255,212,0.12);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .post-content pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 22px;
+      max-width: 700px;
+    }
+    .post-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      color: #e8edf5;
+    }
+    .post-content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experiments">Experiments</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <article>
+      <section class="post-hero premium-block" style="padding:24px; margin-top:24px;">
+        <span class="card-tag" style="margin-right:8px">Deepseek, intelligenza artificiale</span>
+        <span class="card-tag">01 luglio 2026</span>
+        <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(36px,8vw,72px);line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;margin:16px 0;max-width:800px;">DeepSeek DSpark accelera l’AI fino all’85%: il framework open source che riduce i costi dell’inferenza</h1>
+        <p class="hero-copy" style="margin-top:12px;font-size:18px;color:#b2bfce;max-width:640px;">DeepSeek DSpark è un framework open source che accelera fino all’85% l’inferenza dei modelli di intelligenza artificiale senza nuovi modelli, senza retraining e senza hardware aggiuntivo. Una svolta nell’efficienza dei LLM basata su speculative decoding che riduce i costi e aumenta la velocità delle risposte AI.</p>
+        <div class="post-meta" style="margin-top:16px;">
+          <span>01 luglio 2026</span>
+        </div>
+      </section>
+
+      <section class="post-content" style="padding-top:32px;padding-bottom:64px;">
+        <img src="/images/uploads/Untitled_1.jpg" alt="DeepSeek DSpark accelera l’AI fino all’85%: il framework open source che riduce i costi dell’inferenza" class="post-hero-img">
+        <p>DeepSeek <a href="https://www.dday.it/redazione/57902/deepseek-lancia-dspark-la-tecnica-che-accelera-le-risposte-dei-modelli-linguistici-senza-alterarle">DSpark</a> cambia le regole del gioco nell&#39;intelligenza artificiale senza creare un nuovo modello. Nel settore dell&#39;intelligenza artificiale c&#39;è un&#39;abitudine ormai consolidata. <strong>Ogni settimana si parla del prossimo modello rivoluzionario, del benchmark più elevato o della nuova AI che promette di superare tutte le altre</strong>. DeepSeek ha appena dimostrato che esiste un altro modo di innovare. </p>
+<p>L&#39;azienda cinese ha rilasciato <a href="https://venturebeat.com/infrastructure/how-deepseeks-radical-architecture-is-shattering-silicon-valleys-token-moat">DSpark</a>, un framework open source che accelera l&#39;inferenza dei modelli linguistici fino all&#39;85% senza modificare il modello originale, senza richiedere nuovo hardware e senza alcun riaddestramento, mica male vero?</p>
+<p>Una novità che potrebbe avere un impatto economico persino superiore a quello di molti nuovi modelli AI presentati negli ultimi mesi, dalle stime sembrerebbe <strong>superiori anche ai recenti modelli rilasciati da OpenAI.</strong> </p>
+<p><img src="/images/uploads/17829365389407616600051021920731.jpg" alt="17829365389407616600051021920731.jpg"></p>
+<h2>Cos&#39;è DSpark e perché è importante</h2>
+<p>DSpark non è un nuovo modello linguistico. L&#39;intelligenza artificiale sottostante rimane esattamente la stessa, quei modelli di Deepseek che tanto hanno fatto parlare media e addetti ai lavori negli ultimi mesi. Cambia invece il modo in cui il modello genera le risposte. <strong>Il framework utilizza una tecnica chiamata speculative decoding</strong>. In pratica un modello più leggero anticipa una sequenza di token che il modello principale verifica successivamente in blocco. In questo modo <strong>si riduce il numero di operazioni necessarie per produrre una risposta completa e si sfruttano meglio le risorse hardware disponibili</strong>. Il risultato è semplice da comprendere. L&#39;utente riceve la stessa risposta, con la stessa qualità e lo stesso contenuto, ma molto più velocemente.</p>
+<h2>Fino all&#39;85% di velocità in più senza cambiare hardware</h2>
+<p><img src="/images/uploads/17829365571326175706927294832261.jpg" alt="17829365571326175706927294832261.jpg"></p>
+<p>Secondo i dati pubblicati da <a href="https://www.gianmarcomonaco.org/2026-04-28-jailbreak-deepseek-il-prompt-che-uccide-letica-dellai.html">DeepSeek</a>, DSpark permette di aumentare la velocità di generazione <strong>dal 60% all&#39;85% sul modello DeepSeek-V4 Flash e dal 57% al 78% sul modello DeepSeek-V4 Pro.</strong> Tutto questo mantenendo invariati i pesi del modello e senza aggiungere nuove GPU all&#39;infrastruttura. È un dettaglio fondamentale. Negli ultimi anni la crescita dell&#39;intelligenza artificiale è stata legata alla disponibilità di enormi quantità di potenza computazionale. Più GPU significava più capacità. DSpark suggerisce che una parte significativa dei <strong>miglioramenti futuri potrebbe arrivare dall&#39;ottimizzazione del software</strong> anziché dall&#39;acquisto di nuovo hardware.</p>
+<h2>Il vero problema dell&#39;AI oggi non è l&#39;addestramento</h2>
+<p><img src="/images/uploads/1782936589866352725423493323255.jpg" alt="1782936589866352725423493323255.jpg"></p>
+<p>Quando si parla di intelligenza artificiale l&#39;attenzione si concentra spesso sui costi di addestramento.In realtà molte aziende stanno scoprendo che il problema più grande arriva dopo. <strong>Una volta addestrato un modello, bisogna servirlo a milioni di utenti</strong> ogni giorno. Questo processo si chiama inferenza e rappresenta una delle principali voci di costo per qualsiasi piattaforma AI moderna. Ogni domanda inviata a un chatbot consuma risorse. Ogni risposta richiede tempo di calcolo, ridurre questi costi anche solo del 20% o del 30% sarebbe già significativo per una azienda che punta si ad innovare, ma che vede anche nell&#39;efficienza un fulcro fondamentale della propria strategia di mercato. Se i numeri dichiarati da DeepSeek verranno confermati su larga scala, <strong>DSpark potrebbe portare benefici molto più consistenti, migliorando contemporaneamente costi, velocità e capacità di gestire grandi volumi</strong> di utenti.</p>
+<h2>Non funziona solo con DeepSeek</h2>
+<p>Uno degli aspetti più interessanti del progetto riguarda la sua natura aperta. <strong>DeepSeek non ha progettato DSpark esclusivamente per i propri modelli</strong>. I test pubblicati mostrano risultati positivi anche su altre famiglie di modelli open source, tra cui <strong>Qwen di Alibaba e Gemma di Google.</strong> Questo significa che startup, aziende e sviluppatori che utilizzano modelli open weight potrebbero adottare la tecnologia senza dover cambiare completamente il proprio stack AI. In un settore sempre più competitivo, ottenere prestazioni superiori utilizzando la stessa infrastruttura rappresenta un vantaggio enorme.</p>
+<h2>DeepSpec potrebbe essere la vera notizia</h2>
+<p><img src="/images/uploads/17829366060653859871731123838068.jpg" alt="17829366060653859871731123838068.jpg"></p>
+<p>Insieme a DSpark è stato rilasciato anche <strong>DeepSpec</strong>, un framework open source che consente di addestrare, valutare e ottimizzare modelli draft utilizzati nel processo di speculative decoding. Per gli sviluppatori significa avere accesso non soltanto alla tecnologia finale ma anche agli <strong>strumenti necessari per adattarla alle proprie esigenze.</strong> L&#39;intero ecosistema è stato distribuito con licenza MIT, una delle licenze open source più permissive disponibili. Questo favorisce l&#39;adozione commerciale e accelera la diffusione della tecnologia all&#39;interno della comunità AI. <strong>Una direzione che potrebbe influenzare tutto il settore.</strong> Per anni il progresso dell&#39;intelligenza artificiale è stato associato a modelli sempre più grandi, la cosiddetta AI con gli steroidi, più parametri, più GPU e più potenza. DSpark racconta una storia diversa, un approccio nuovo. La prossima fase della competizione potrebbe essere dominata dall&#39;efficienza. <strong>Chi riuscirà a generare la stessa qualità spendendo meno risorse avrà un vantaggio enorme</strong>. Non soltanto perché offrirà risposte più rapide agli utenti, ma perché potrà sostenere costi inferiori e scalare più facilmente. È anche per questo che il rilascio di DSpark merita attenzione, non introduce una nuova AI rivoluzionaria, ma affronta uno dei problemi più concreti dell&#39;intero settore. Spesso le innovazioni più importanti non sono quelle che cambiano ciò che un modello sa fare. Sono quelle che cambiano quanto costa farlo funzionare.</p>
+
+      </section>
+
+      <section class="post-cta premium-block" style="padding:24px;margin-bottom:48px;">
+        <div>
+          <span class="mini-label">Continue exploring</span>
+          <h3 style="font-family:var(--font-display);font-size:28px;text-transform:uppercase;margin:8px 0;">Altri articoli</h3>
+          <p style="color:#b2bfce;">Esplora altri contenuti o seguimi su LinkedIn.</p>
+        </div>
+        <div class="post-cta-actions">
+          <a class="btn btn-primary" href="blog.html">Vai al blog</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+    </article>
+
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+    <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </footer>
+
+</body>
+</html>
