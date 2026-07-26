@@ -18,7 +18,7 @@ Chi ha iniziato a usare Internet tra la fine degli anni Novanta e i primi Duemil
 
 Per un’intera generazione, **eMule e [aMule](https://www.amule.org/) non sono stati semplicemente due programmi per scaricare file.** Erano quasi un rituale. Si lasciava il computer acceso durante la notte, si controllava il numero delle fonti e si sperava che quel file rarissimo, magari fermo al 98,7%, tornasse finalmente disponibile. **È stata letteralmente la mia prima crush col web**, a dieci anni, con il mio primo computer mi sembrava di poter accedere a qualsiasi cosa, un pò come avere le chiavi dell'universo. Sembrava un mondo scomparso. E invece aMule è tornato. Dopo più di cinque anni senza una nuova versione principale, **il progetto open source ha pubblicato aMule 3.0.0**. Il nome scelto dagli sviluppatori dice già tutto: “The alive again version”, cioè la versione tornata in vita. Poche settimane dopo è arrivato anche aMule 3.0.1, che corregge alcuni problemi e aggiunge ulteriori miglioramenti. Il punto importante, però, è un altro: il Mulo non è stato semplicemente recuperato da un vecchio archivio. È tornato a essere un progetto attivo.
 
-### [SCARICA AMULE](https://www.amule.org/)
+### [SCARICA AMULE](https://amule-org.github.io/download)
 
 ### Non è soltanto nostalgia
 
@@ -84,5 +84,5 @@ E, per chi ricorda quella vecchia icona nella barra delle applicazioni, sapere c
 
 
 
-### [PER SCARICARE AMULE CLICCA QUI](https://www.amule.org/)
+### [PER SCARICARE AMULE CLICCA QUI](https://amule-org.github.io/download)
 
