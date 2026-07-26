@@ -6,7 +6,7 @@ description: aMule 3.0.1 riporta in vita lo storico client P2P. Scopri novità,
 category: Amule, peer to peer
 image: /images/uploads/file_000000009b80820a9afadfa399e8d651.png
 ---
-# Il Mulo è tornato davvero: cosa cambia con aMule 3.0
+
 
 > RIASSUNTO: aMule 3.0.1 può essere scaricato dal nuovo sito ufficiale del progetto. Sono disponibili installer e versioni portatili per Windows 10 e Windows 11, un pacchetto universale per Mac Intel e Apple Silicon e pacchetti AppImage e Flatpak per Linux.
 >
@@ -17,8 +17,6 @@ Chi ha iniziato a usare Internet tra la fine degli anni Novanta e i primi Duemil
 ![17850809779516224831683687186632.png](/images/uploads/17850809779516224831683687186632.png)
 
 Per un’intera generazione, **eMule e [aMule](https://www.amule.org/) non sono stati semplicemente due programmi per scaricare file.** Erano quasi un rituale. Si lasciava il computer acceso durante la notte, si controllava il numero delle fonti e si sperava che quel file rarissimo, magari fermo al 98,7%, tornasse finalmente disponibile. **È stata letteralmente la mia prima crush col web**, a dieci anni, con il mio primo computer mi sembrava di poter accedere a qualsiasi cosa, un pò come avere le chiavi dell'universo. Sembrava un mondo scomparso. E invece aMule è tornato. Dopo più di cinque anni senza una nuova versione principale, **il progetto open source ha pubblicato aMule 3.0.0**. Il nome scelto dagli sviluppatori dice già tutto: “The alive again version”, cioè la versione tornata in vita. Poche settimane dopo è arrivato anche aMule 3.0.1, che corregge alcuni problemi e aggiunge ulteriori miglioramenti. Il punto importante, però, è un altro: il Mulo non è stato semplicemente recuperato da un vecchio archivio. È tornato a essere un progetto attivo.
-
-### [SCARICA AMULE](https://amule-org.github.io/download)
 
 ### Non è soltanto nostalgia
 
