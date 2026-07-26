@@ -20,11 +20,7 @@ Per un’intera generazione, **eMule e [aMule](https://www.amule.org/) non sono 
 
 ### [SCARICA AMULE](https://www.amule.org/)
 
-
-
 ### Non è soltanto nostalgia
-
-
 
 La prima tentazione è considerare **aMule 3.0** come un’operazione nostalgica. Un software resuscitato per strappare un sorriso a chi ricorda i modem rumorosi, i forum pieni di link e i computer lasciati accesi per giorni.In realtà, sotto l’interfaccia volutamente familiare, è stato svolto un lavoro tecnico piuttosto importante. È una dinamica che stiamo osservando anche in altri settori: spesso l’innovazione non richiede necessariamente hardware più potente, ma può nascere dall’ottimizzazione del software. Lo dimostra anche il [caso di DeepSeek DSpark, il framework open source che accelera l’intelligenza artificiale⁠](https://www.gianmarcomonaco.org/2026-07-01-deepseek-dspark-accelera-lai-fino-all85percent-il-framework-open-source-che-riduce-i-costi-dellinferenza.html)
 
@@ -50,8 +46,6 @@ Questo non significa che qualsiasi vecchio file presente sulla rete eD2k verrà 
 
 ### Migliora anche la gestione delle librerie più grandi
 
-
-
 Uno dei problemi più fastidiosi delle precedenti versioni emergeva quando si condividevano molti file. Con librerie particolarmente grandi, l’interfaccia poteva diventare lenta e alcune operazioni richiedevano parecchio tempo. Era un limite importante soprattutto per chi utilizzava aMule su un server domestico o su una macchina dedicata alla condivisione. La versione 3.0 introduce algoritmi più efficienti e nuovi sistemi di cache. Il programma evita così di elaborare continuamente informazioni che non sono cambiate. Gli sviluppatori hanno lavorato pensando anche a raccolte con oltre 100.000 file condivisi. Non sarà il caso dell’utente medio, ma è un segnale interessante: il progetto non si limita a mantenere in funzione il vecchio codice, sta cercando di renderlo adatto a utilizzi più moderni. Anche le cartelle condivise vengono controllate automaticamente. Quando un file viene aggiunto o eliminato, la libreria può aggiornarsi senza richiedere ogni volta una scansione manuale.
 
 ### Una versione per quasi ogni sistema operativo
@@ -73,8 +67,6 @@ Il vecchio responsabile dell’organizzazione GitHub era diventato irraggiungibi
 ![17850869840802626807289603763272.jpg](/images/uploads/17850869840802626807289603763272.jpg)
 
 ### Ha ancora senso usare aMule nel 2026?
-
-
 
 La risposta dipende molto da ciò che si cerca.Per scaricare una distribuzione Linux, un software moderno o un file molto diffuso, BitTorrent e i download diretti sono generalmente più semplici e veloci. Per musica, film e serie esistono ormai servizi in abbonamento che richiedono pochi secondi e nessuna configurazione.La rete eD2k conserva però qualcosa che le piattaforme moderne non hanno: un archivio costruito nell’arco di oltre vent’anni.Tra le librerie degli utenti possono ancora sopravvivere vecchi programmi, documenti, registrazioni distribuite legalmente, materiale non più presente sui siti originali e file particolarmente rari.Naturalmente bisogna distinguere la tecnologia dall’uso che se ne fa. aMule è un software legale, così come lo sono le reti peer-to-peer. Scaricare o condividere senza autorizzazione opere protette dal diritto d’autore può invece rappresentare una violazione della legge.Il punto non è quindi tornare a scaricare qualsiasi cosa come nel 2004. È constatare che una rete decentralizzata può continuare a esistere anche quando il resto di Internet sembra essersi spostato definitivamente verso piattaforme chiuse, servizi cloud e abbonamenti.
 
