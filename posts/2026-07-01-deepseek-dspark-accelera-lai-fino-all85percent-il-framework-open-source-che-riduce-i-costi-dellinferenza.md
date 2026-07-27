@@ -10,6 +10,10 @@ description: DeepSeek DSpark è un framework open source che accelera fino
 category: Deepseek, intelligenza artificiale
 image: /images/uploads/Untitled_1.jpg
 ---
+> **RIASSUNTO:** DeepSeek DSpark è un framework open source progettato per rendere più veloce ed economica l’inferenza dei modelli di intelligenza artificiale. Grazie allo speculative decoding, promette incrementi di velocità fino all’85% senza modificare i modelli, effettuare un nuovo addestramento o acquistare hardware aggiuntivo. Un approccio che potrebbe spostare la competizione nel settore AI dalla potenza bruta all’efficienza del software. 
+
+
+
 DeepSeek [DSpark](https://www.dday.it/redazione/57902/deepseek-lancia-dspark-la-tecnica-che-accelera-le-risposte-dei-modelli-linguistici-senza-alterarle) cambia le regole del gioco nell'intelligenza artificiale senza creare un nuovo modello. Nel settore dell'intelligenza artificiale c'è un'abitudine ormai consolidata. **Ogni settimana si parla del prossimo modello rivoluzionario, del benchmark più elevato o della nuova AI che promette di superare tutte le altre**. DeepSeek ha appena dimostrato che esiste un altro modo di innovare. 
 
 L'azienda cinese ha rilasciato [DSpark](https://venturebeat.com/infrastructure/how-deepseeks-radical-architecture-is-shattering-silicon-valleys-token-moat), un framework open source che accelera l'inferenza dei modelli linguistici fino all'85% senza modificare il modello originale, senza richiedere nuovo hardware e senza alcun riaddestramento, mica male vero?
@@ -20,8 +24,6 @@ Una novità che potrebbe avere un impatto economico persino superiore a quello d
 
 ## Cos'è DSpark e perché è importante
 
-
-
 DSpark non è un nuovo modello linguistico. L'intelligenza artificiale sottostante rimane esattamente la stessa, quei modelli di Deepseek che tanto hanno fatto parlare media e addetti ai lavori negli ultimi mesi. Cambia invece il modo in cui il modello genera le risposte. **Il framework utilizza una tecnica chiamata speculative decoding**. In pratica un modello più leggero anticipa una sequenza di token che il modello principale verifica successivamente in blocco. In questo modo **si riduce il numero di operazioni necessarie per produrre una risposta completa e si sfruttano meglio le risorse hardware disponibili**. Il risultato è semplice da comprendere. L'utente riceve la stessa risposta, con la stessa qualità e lo stesso contenuto, ma molto più velocemente.
 
 
@@ -30,7 +32,7 @@ DSpark non è un nuovo modello linguistico. L'intelligenza artificiale sottostan
 
 ![17829365571326175706927294832261.jpg](/images/uploads/17829365571326175706927294832261.jpg)
 
-Secondo i dati pubblicati da [DeepSeek](https://www.gianmarcomonaco.org/2026-04-28-jailbreak-deepseek-il-prompt-che-uccide-letica-dellai.html), DSpark permette di aumentare la velocità di generazione **dal 60% all'85% sul modello DeepSeek-V4 Flash e dal 57% al 78% sul modello DeepSeek-V4 Pro.** Tutto questo mantenendo invariati i pesi del modello e senza aggiungere nuove GPU all'infrastruttura. È un dettaglio fondamentale. Negli ultimi anni la crescita dell'intelligenza artificiale è stata legata alla disponibilità di enormi quantità di potenza computazionale. Più GPU significava più capacità. DSpark suggerisce che una parte significativa dei **miglioramenti futuri potrebbe arrivare dall'ottimizzazione del software** anziché dall'acquisto di nuovo hardware.
+Secondo i dati pubblicati da [DeepSeek](https://www.gianmarcomonaco.org/2026-04-28-jailbreak-deepseek-il-prompt-che-uccide-letica-dellai.html), DSpark permette di aumentare la velocità di generazione **dal 60% all'85% sul modello DeepSeek-V4 Flash e dal 57% al 78% sul modello DeepSeek-V4 Pro.** Tutto questo mantenendo invariati i pesi del modello e senza aggiungere nuove GPU all'infrastruttura. È un dettaglio fondamentale. Negli ultimi anni la crescita dell'intelligenza artificiale è stata legata alla disponibilità di enormi quantità di potenza computazionale. Più GPU significava più capacità. DSpark suggerisce che una parte significativa dei **miglioramenti futuri potrebbe arrivare dall'ottimizzazione del software** anziché dall'acquisto di nuovo hardware. Un vero salto in avanti per Deep seek, nonostante alcune problematiche legate alla sicurezza e al [recente jailbreak che ne ha minato la credibilità.](https://www.gianmarcomonaco.org/2026-04-28-jailbreak-deepseek-il-prompt-che-uccide-letica-dellai.html)
 
 
 
@@ -43,8 +45,6 @@ Quando si parla di intelligenza artificiale l'attenzione si concentra spesso sui
 
 
 ## Non funziona solo con DeepSeek
-
-
 
 Uno degli aspetti più interessanti del progetto riguarda la sua natura aperta. **DeepSeek non ha progettato DSpark esclusivamente per i propri modelli**. I test pubblicati mostrano risultati positivi anche su altre famiglie di modelli open source, tra cui **Qwen di Alibaba e Gemma di Google.** Questo significa che startup, aziende e sviluppatori che utilizzano modelli open weight potrebbero adottare la tecnologia senza dover cambiare completamente il proprio stack AI. In un settore sempre più competitivo, ottenere prestazioni superiori utilizzando la stessa infrastruttura rappresenta un vantaggio enorme.
 
