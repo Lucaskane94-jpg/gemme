@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMD97R2M');</script>
+
+  <title>Apple ha già vinto la prossima guerra dell’AI? Il vantaggio su NVIDIA che pochi vedono | Gianmarco Monaco</title>
+  <meta name="description" content="Apple potrebbe avere un vantaggio decisivo nella prossima fase dell’AI grazie a memoria unificata, MLX e inferenza locale. NVIDIA deve davvero preoccuparsi?">
+  <meta name="author" content="Gianmarco Monaco">
+  <link rel="canonical" href="https://gianmarcomonaco.org/2026-08-12-apple-ha-gia-vinto-la-prossima-guerra-dellai-il-vantaggio-su-nvidia-che-pochi-vedono.html">
+
+  <meta property="og:title" content="Apple ha già vinto la prossima guerra dell’AI? Il vantaggio su NVIDIA che pochi vedono">
+  <meta property="og:description" content="Apple potrebbe avere un vantaggio decisivo nella prossima fase dell’AI grazie a memoria unificata, MLX e inferenza locale. NVIDIA deve davvero preoccuparsi?">
+  <meta property="og:url" content="https://gianmarcomonaco.org/2026-08-12-apple-ha-gia-vinto-la-prossima-guerra-dellai-il-vantaggio-su-nvidia-che-pochi-vedono.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Gianmarco Monaco">
+  <meta property="og:image" content="https://gianmarcomonaco.org/images/uploads/Tim-Cook.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apple ha già vinto la prossima guerra dell’AI? Il vantaggio su NVIDIA che pochi vedono">
+  <meta name="twitter:description" content="Apple potrebbe avere un vantaggio decisivo nella prossima fase dell’AI grazie a memoria unificata, MLX e inferenza locale. NVIDIA deve davvero preoccuparsi?">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="cookie-config.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .post-hero-img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+    }
+    .post-content h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 40px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin: 40px 0 16px;
+      max-width: 700px;
+      line-height: 1.05;
+    }
+    .post-content h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(22px, 4vw, 30px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin: 32px 0 12px;
+      max-width: 700px;
+    }
+    .post-content p {
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.85;
+      color: #e8edf5;
+      margin-bottom: 22px;
+    }
+    .post-content img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--radius-sm);
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .post-content ul, .post-content ol {
+      max-width: 700px;
+      margin-bottom: 22px;
+      padding-left: 26px;
+      color: #e8edf5;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .post-content li { margin-bottom: 8px; }
+    .post-content strong { color: var(--accent); font-weight: 500; }
+    .post-content em { color: #b2bfce; }
+    .post-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 12px 20px;
+      margin: 32px 0;
+      max-width: 700px;
+      color: #b2bfce;
+      font-size: 20px;
+      line-height: 1.7;
+      background: rgba(103,255,212,0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .post-content code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      background: rgba(103,255,212,0.07);
+      border: 1px solid rgba(103,255,212,0.12);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .post-content pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 22px;
+      max-width: 700px;
+    }
+    .post-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      color: #e8edf5;
+    }
+    .post-content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD97R2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">GM</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experiments">Experiments</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+      <a class="header-cta" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <article>
+      <section class="post-hero premium-block" style="padding:24px; margin-top:24px;">
+        <span class="card-tag" style="margin-right:8px">Intelligenza artificiale</span>
+        <span class="card-tag">12 agosto 2026</span>
+        <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(36px,8vw,72px);line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;margin:16px 0;max-width:800px;">Apple ha già vinto la prossima guerra dell’AI? Il vantaggio su NVIDIA che pochi vedono</h1>
+        <p class="hero-copy" style="margin-top:12px;font-size:18px;color:#b2bfce;max-width:640px;">Apple potrebbe avere un vantaggio decisivo nella prossima fase dell’AI grazie a memoria unificata, MLX e inferenza locale. NVIDIA deve davvero preoccuparsi?</p>
+        <div class="post-meta" style="margin-top:16px;">
+          <span>12 agosto 2026</span>
+        </div>
+      </section>
+
+      <section class="post-content" style="padding-top:32px;padding-bottom:64px;">
+        <img src="/images/uploads/Tim-Cook.jpg" alt="Apple ha già vinto la prossima guerra dell’AI? Il vantaggio su NVIDIA che pochi vedono" class="post-hero-img">
+        <blockquote>
+<p><strong>Riassunto</strong>: La tesi è semplice: mentre il mercato guarda alla potenza dei modelli e ai data center pieni di GPU NVIDIA, Apple potrebbe avere costruito un vantaggio molto più importante per la prossima fase dell’AI. Memoria unificata, MLX, consumi ridotti e possibilità di eseguire modelli enormi in locale rendono i Mac una piattaforma sorprendentemente competitiva per l’inferenza privata.</p>
+<p><em>Questo non significa che NVIDIA sia “finita”: resta dominante nel training e nel cloud. Ma se una parte crescente dell’AI si sposterà dai data center ai dispositivi, Apple potrebbe essere molto più avanti di quanto oggi sembri.</em></p>
+</blockquote>
+<p>&nbsp;</p>
+<p><strong>Mentre tutti guardano ai modelli di OpenAI, Anthropic e alle GPU NVIDIA che alimentano enormi data center, Apple potrebbe aver costruito quasi in silenzio uno dei vantaggi più interessanti della prossima fase dell’intelligenza artificiale: far girare modelli enormi direttamente sulle macchine degli utenti. E se il futuro dell’AI fosse molto meno cloud di quanto immaginiamo?</strong></p>
+<p>Qualche settimana fa mi sono imbattuto in un articolo decisamente provocatorio pubblicato su Substack da Limited Edition Jonathan. Il titolo lascia poco spazio alle interpretazioni: <a href="https://limitededitionjonathan.substack.com/p/apple-is-the-king-of-ai-and-nobody">“Apple Is the King of AI and Nobody Knows It”</a>.</p>
+<p>La tesi di Jonathan è ancora più estrema del titolo: Apple sarebbe già il vero vincitore della corsa all’intelligenza artificiale e NVIDIA, nonostante numeri impressionanti e una posizione dominante nel mercato delle GPU, sarebbe una sorta di gigante con una data di scadenza.</p>
+<p>Dire che <strong>NVIDIA sia un “dead man walking” mi sembra francamente eccessivo</strong>. Ma andando oltre la provocazione c’è un ragionamento molto interessante, perché mette in discussione il modo in cui stiamo raccontando la competizione nell’intelligenza artificiale.</p>
+<p>Forse stiamo guardando la classifica sbagliata.</p>
+<h2>LA GUERRA DELL’AI NON È SOLO UNA GARA AL MODELLO PIÙ POTENTE</h2>
+<p><img src="/images/uploads/file_000000003a3881f49d809515186dbb9a.png" alt=""></p>
+<p>Negli ultimi anni abbiamo misurato quasi tutto attraverso due parametri: chi possiede il modello migliore e chi dispone della maggiore potenza di calcolo.</p>
+<p>OpenAI presenta un nuovo GPT, Anthropic risponde con Claude, Google aggiorna Gemini, le aziende cinesi rilasciano modelli sempre più competitivi e NVIDIA vende le GPU utilizzate per addestrarli e farli funzionare.</p>
+<p>Sembra una struttura di mercato quasi perfetta per NVIDIA.</p>
+<p>Più cresce l’intelligenza artificiale, più servono GPU. Più i modelli diventano grandi, più servono data center. Più utenti utilizzano l’AI, maggiore è la quantità di inferenza da gestire nel cloud.</p>
+<p>Ma questo ragionamento contiene un presupposto enorme: <strong>che l’AI del futuro continuerà necessariamente a vivere nei data center</strong>.</p>
+<p>E se non fosse così?</p>
+<p>Ne avevo già parlato affrontando il caso <a href="https://www.gianmarcomonaco.org/2026-07-01-deepseek-dspark-accelera-lai-fino-all85percent-il-framework-open-source-che-riduce-i-costi-dellinferenza.html">DeepSeek DSpark e la riduzione dei costi dell’inferenza</a>. L’aspetto più interessante dell’attuale evoluzione dell’AI non è più soltanto costruire modelli più intelligenti. Sta diventando altrettanto importante riuscire a far funzionare la stessa intelligenza utilizzando meno risorse.</p>
+<p><strong>Il costo dell’inferenza potrebbe diventare una delle vere battaglie dei prossimi anni.</strong></p>
+<p>E proprio qui Apple entra in gioco.</p>
+<h2>IL VANTAGGIO NASCOSTO DI APPLE SI CHIAMA UNIFIED MEMORY</h2>
+<p>Per capire il punto bisogna dimenticare per un momento i benchmark tradizionali.</p>
+<p><img src="/images/uploads/file_0000000023b481f8ba28e78cb679cdc8.png" alt=""></p>
+<p>Quando dobbiamo eseguire localmente un Large Language Model molto grande, uno dei problemi principali è avere abbastanza memoria veloce per mantenerne i parametri disponibili durante l’inferenza.</p>
+<p>Le GPU tradizionali NVIDIA utilizzano memoria dedicata. È velocissima, ma la quantità disponibile sulle singole schede rimane necessariamente limitata e salire verso configurazioni con centinaia di gigabyte significa entrare rapidamente nel mondo delle workstation professionali o dei sistemi server.</p>
+<p>Apple ha seguito una strada completamente differente.</p>
+<p>Con Apple Silicon CPU e GPU condividono una <strong>unified memory</strong>, un unico pool di memoria accessibile dai diversi componenti del SoC. Apple ha costruito intorno a questa architettura anche <a href="https://github.com/ml-explore/mlx">MLX</a>, il proprio framework open source pensato specificamente per il machine learning su Apple Silicon.</p>
+<p>Non si tratta semplicemente di una diversa maniera di chiamare la RAM.</p>
+<p>Per l’inferenza locale dei grandi modelli questa architettura può diventare un vantaggio enorme, perché permette di destinare una quantità molto elevata della memoria del computer direttamente al modello senza dover continuamente spostare dati tra RAM di sistema e VRAM della GPU. Apple stessa spiega che MLX permette alle operazioni di utilizzare CPU e GPU sfruttando la memoria condivisa senza la necessità di copiare continuamente i dati tra dispositivi.</p>
+<p>Ed è qui che un computer apparentemente normale come un Mac Studio comincia a diventare molto interessante.</p>
+<h2>QUEL MAC STUDIO DA 512 GB ERA MOLTO PIÙ IMPORTANTE DI QUANTO SEMBRASSE</h2>
+<p>Quando Apple presentò il Mac Studio con M3 Ultra nel 2025, la configurazione massima arrivava a <strong>512 GB di unified memory</strong>, con una bandwidth dichiarata di <strong>819 GB/s</strong>.</p>
+<p>Un numero quasi assurdo per un personal computer.</p>
+<p>Il punto non era soltanto poter aprire contemporaneamente Photoshop, Final Cut e qualche centinaio di tab di Chrome. Una macchina del genere disponeva di una quantità di memoria condivisa che improvvisamente permetteva agli sviluppatori di lavorare localmente con modelli che normalmente associamo a infrastrutture molto più costose.</p>
+<p>Apple non ha nemmeno bisogno di battere le GPU NVIDIA sulla potenza computazionale pura perché il vantaggio è differente.</p>
+<p><strong>Deve riuscire a far entrare il modello nella macchina.</strong></p>
+<p>Ed è una distinzione fondamentale.</p>
+<p>Uno studio pubblicato nel 2026 sull’inferenza LLM su hardware consumer ha evidenziato proprio questo trade-off: NVIDIA mantiene un vantaggio enorme in compute density e nell&#39;ecosistema software, mentre l’architettura Apple aggira molti dei problemi legati al cosiddetto “VRAM wall” quando i modelli diventano molto grandi.</p>
+<p>Non significa che un Mac sia improvvisamente diventato un sostituto di un cluster NVIDIA.</p>
+<p>Significa qualcosa di forse più interessante: <strong>esistono workload AI per i quali Apple Silicon sta diventando una categoria hardware a sé</strong>.</p>
+<h2>IL DETTAGLIO PIÙ DIVERTENTE? NVIDIA HA CREATO DGX SPARK</h2>
+<p><img src="/images/uploads/file_00000000de6c81f4b0f9f6f782be1029.png" alt=""></p>
+<p>Qui la storia prende una piega interessante.</p>
+<p>NVIDIA ha realizzato <a href="https://docs.nvidia.com/dgx/dgx-spark/">DGX Spark</a>, un piccolo computer AI da scrivania basato su Grace Blackwell.</p>
+<p>Forma compatta. CPU e GPU integrate. Consumi relativamente contenuti. <strong>128 GB di memoria unificata.</strong> Possibilità di eseguire localmente modelli molto grandi.</p>
+<p>Ricorda qualcosa?</p>
+<p>Per anni il mondo NVIDIA è stato sinonimo di GPU discrete con la propria VRAM. DGX Spark segue invece una filosofia molto più vicina a quella resa popolare da Apple Silicon: grande memoria condivisa, computer compatto e intelligenza artificiale direttamente sulla scrivania.</p>
+<p>Questo non dimostra che NVIDIA abbia copiato Apple e certamente non significa che abbia ammesso la sconfitta. NVIDIA rimane avanti anni luce in numerosi workload professionali e soprattutto dispone dell’ecosistema CUDA, un vantaggio software enorme costruito in quasi vent&#39;anni.</p>
+<p>Dimostra però qualcosa di diverso.</p>
+<p><strong>Anche NVIDIA pensa che una parte importante dell’AI possa uscire dal data center.</strong></p>
+<p>E questa per me è la parte più interessante dell’intera storia.</p>
+<h2>I MODELLI OPEN POSSONO CAMBIARE COMPLETAMENTE IL MERCATO</h2>
+<p>C’è poi un secondo elemento.</p>
+<p>I modelli open weight stanno migliorando con una velocità impressionante.</p>
+<p>DeepSeek, Qwen, Kimi e molti altri progetti hanno dimostrato che il divario tra i modelli proprietari americani e quelli che possono essere scaricati, modificati ed eseguiti su infrastrutture private può ridursi molto rapidamente.</p>
+<p>Ne ho parlato anche nell&#39;articolo dedicato a <a href="https://www.gianmarcomonaco.org/2026-06-27-emma-e-la-lezione-che-litalia-dovrebbe-imparare-dalla-cina-sullintelligenza-artificiale.html">Emma e alla differenza tra l’approccio europeo e quello cinese all’intelligenza artificiale</a>: mentre una parte dell’Occidente continua a concentrare l’attenzione sulla costruzione dei modelli frontier più grandi possibili, in Asia la competizione si sta giocando moltissimo anche su efficienza, apertura e costi.</p>
+<p>Se tra qualche anno avremo modelli open capaci di risolvere il 90 o 95% delle esigenze quotidiane di un’azienda, la domanda cambia completamente.</p>
+<p>Non sarà più soltanto:</p>
+<p><strong>“Qual è la migliore AI?”</strong></p>
+<p>Potrebbe diventare:</p>
+<p><strong>“Perché dovrei inviare i miei dati a un server esterno se posso far girare una AI abbastanza potente direttamente nella mia azienda?”</strong></p>
+<p>È qui che la tesi di Jonathan smette di sembrare soltanto clickbait.</p>
+<h2>L’AI LOCALE HA UN VANTAGGIO CHE I BENCHMARK NON MISURANO: LA PRIVACY</h2>
+<p><img src="/images/uploads/structured_4_3_05bd41_P1211610.jpg" alt=""></p>
+<p>Immaginiamo uno studio legale.</p>
+<p>Oppure una società finanziaria, un ospedale, una pubblica amministrazione, un reparto R&amp;D o semplicemente un&#39;azienda con documenti estremamente riservati.</p>
+<p>Utilizzare un modello cloud significa necessariamente creare un rapporto con un&#39;infrastruttura esterna. Anche quando esistono API enterprise, policy di zero retention e sistemi estremamente sicuri, rimane sempre un’infrastruttura intermedia.</p>
+<p>Un modello locale modifica radicalmente il paradigma.</p>
+<p>Documenti, prompt, database e informazioni aziendali possono restare fisicamente all’interno della rete.</p>
+<p>Apple stessa ha storicamente investito moltissimo nell&#39;elaborazione on-device, anche per motivi di privacy. Per determinate applicazioni questa potrebbe diventare una caratteristica molto più importante di qualche punto percentuale guadagnato in un benchmark.</p>
+<p>Il tema si incrocia anche con quello della sicurezza dei modelli di cui avevo parlato analizzando il <a href="https://www.gianmarcomonaco.org/2026-04-28-jailbreak-deepseek-il-prompt-che-uccide-letica-dellai.html">jailbreak di DeepSeek e le vulnerabilità dei sistemi AI</a>. Più l’intelligenza artificiale entra nei processi aziendali e accede a documenti, CRM, analytics e sistemi operativi, più diventa fondamentale capire non soltanto <strong>quanto sia intelligente</strong>, ma anche dove vengono elaborati i dati e chi può accedervi.</p>
+<p>L’AI locale non risolve automaticamente i problemi di sicurezza, ma elimina almeno una parte della superficie di esposizione.</p>
+<h2>QUINDI NVIDIA È DAVVERO IN PERICOLO?</h2>
+<p>Qui mi allontano dalla tesi originale di Limited Edition Jonathan.</p>
+<p>No, <strong>NVIDIA non mi sembra affatto un morto che cammina</strong>.</p>
+<p>Pensare che qualche Mac Studio possa sostituire l’infrastruttura necessaria per addestrare i modelli frontier o servire contemporaneamente milioni di utenti sarebbe semplicemente sbagliato.</p>
+<p>Training e inferenza locale sono due problemi molto diversi.</p>
+<p>NVIDIA dispone di CUDA, Tensor Core, networking ad altissime prestazioni, sistemi DGX, tecnologie per il distributed computing e un ecosistema utilizzato da praticamente tutto il settore. Quando bisogna addestrare modelli giganteschi o generare output AI per milioni di persone contemporaneamente, il vantaggio NVIDIA rimane enorme.</p>
+<p>La domanda interessante è un&#39;altra.</p>
+<p><strong>Quanto dell’inferenza futura avrà davvero bisogno di finire in quei data center?</strong></p>
+<p>Se oggi immaginiamo che praticamente ogni interazione con l’intelligenza artificiale debba attraversare un&#39;infrastruttura cloud, basta che una parte significativa di quelle richieste venga spostata localmente perché il mercato hardware cominci ad assumere una forma diversa.</p>
+<p>Non serve che il cloud muoia.</p>
+<p>Non morirà.</p>
+<p>Esattamente come il cloud computing non ha fatto sparire i computer personali e gli smartphone non hanno fatto sparire i server.</p>
+<p>Potremmo semplicemente arrivare a una nuova divisione del lavoro: <strong>training e workload enormi nel cloud, inferenza personale e aziendale sempre più vicina all’utente.</strong></p>
+<p>E in questo scenario Apple è posizionata molto meglio di quanto suggerisca la narrativa secondo cui sarebbe rimasta indietro nell’intelligenza artificiale.</p>
+<h2>APPLE POTREBBE NON AVER PERSO LA CORSA ALL’AI, POTREBBE AVER SCELTO UN’ALTRA GARA</h2>
+<p>Questa è la parte che trovo più affascinante.</p>
+<p>Per anni abbiamo criticato Apple perché Siri sembrava preistorica rispetto a ChatGPT, perché Apple Intelligence arrivava lentamente e perché Cupertino non aveva un proprio modello frontier capace di competere apertamente con OpenAI, Google o Anthropic.</p>
+<p>Tutte critiche legittime.</p>
+<p>Ma forse abbiamo commesso l’errore di identificare <strong>l’intelligenza artificiale con il chatbot</strong>.</p>
+<p>Apple controlla il chip, il sistema operativo, l’hardware, il framework di machine learning e centinaia di milioni di dispositivi.</p>
+<p>Soprattutto controlla una delle architetture consumer più interessanti in assoluto per l’elaborazione AI locale.</p>
+<p>Non significa che abbia già vinto.</p>
+<p>Significa che potrebbe avere in mano una carta che diventerà molto più importante nel momento in cui i modelli smetteranno di essere la risorsa rara dell’equazione.</p>
+<p>Perché se i modelli continueranno a diventare più economici, più efficienti e più aperti, il vantaggio competitivo potrebbe spostarsi.</p>
+<p><strong>Dal modello all’hardware.</strong></p>
+<p><strong>Dal training all’inferenza.</strong></p>
+<p><strong>Dal cloud al dispositivo.</strong></p>
+<p>Ed è forse questa la domanda che vale davvero la pena farsi dopo aver letto l’articolo di Jonathan: se tra qualche anno potremo scaricare gratuitamente un modello abbastanza intelligente per svolgere la maggior parte delle nostre attività, <strong>su quale macchina vorremo farlo girare?</strong></p>
+<p>Oggi la risposta di Apple è molto più convincente di quanto molti pensino.</p>
+<p>NVIDIA non è morta.</p>
+<p>Ma per la prima volta potrebbe non essere necessario comprare una GPU NVIDIA per partecipare seriamente alla prossima fase dell’intelligenza artificiale.</p>
+<p>E questa, più di qualsiasi titolo provocatorio, è la parte della storia che NVIDIA farebbe bene a non sottovalutare.</p>
+
+      </section>
+
+      <section class="post-cta premium-block" style="padding:24px;margin-bottom:48px;">
+        <div>
+          <span class="mini-label">Continue exploring</span>
+          <h3 style="font-family:var(--font-display);font-size:28px;text-transform:uppercase;margin:8px 0;">Altri articoli</h3>
+          <p style="color:#b2bfce;">Esplora altri contenuti o seguimi su LinkedIn.</p>
+        </div>
+        <div class="post-cta-actions">
+          <a class="btn btn-primary" href="blog.html">Vai al blog</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+    </article>
+
+  </main>
+
+  <footer class="container footer">
+    <div>© 2026 Gianmarco Monaco</div>
+    <span class="footer-badge"><span class="footer-badge-icon">✦</span>No WordPress. No Webflow. Just code.</span>
+    <a href="https://www.linkedin.com/in/gianmarco-m-58ba71167/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </footer>
+
+</body>
+</html>
