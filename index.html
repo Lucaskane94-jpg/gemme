@@ -36,33 +36,6 @@
     /* ── CARD VISUALS shared ── */
     .card-visual{height:155px;border-radius:10px;margin-bottom:18px;overflow:hidden;background:rgba(0,0,0,0.32);border:1px solid rgba(103,255,212,0.08);position:relative;font-family:var(--font-mono);font-size:12px}
 
-    /* ── TERMINAL (Questo sito) ── */
-    .term-bar{display:flex;align-items:center;gap:5px;padding:8px 12px;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.05)}
-    .tdot{width:9px;height:9px;border-radius:50%;display:inline-block}
-    .tfile{margin-left:auto;color:rgba(103,255,212,0.42);font-size:10px;letter-spacing:0.05em}
-    .term-body{padding:10px 14px 0}
-    .tline{line-height:1.75;color:rgba(255,255,255,0.28);white-space:nowrap}
-    .t-indent{padding-left:14px}
-    .t-tag{color:rgba(103,255,212,0.82)}.t-attr{color:rgba(255,210,100,0.72)}.t-str{color:rgba(255,150,100,0.82)}.t-fn{color:rgba(160,190,255,0.88)}
-    .t-cursor{display:inline-block;color:var(--accent);animation:blink 0.8s step-end infinite}
-    @keyframes blink{50%{opacity:0}}
-    .term-foot{position:absolute;bottom:0;left:0;right:0;padding:5px 12px;font-size:9px;color:rgba(103,255,212,0.52);letter-spacing:0.15em;text-transform:uppercase;display:flex;align-items:center;gap:7px;border-top:1px solid rgba(103,255,212,0.07)}
-    .tping{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px var(--accent);animation:ping-dot 1.5s ease infinite}
-    @keyframes ping-dot{0%,100%{opacity:1}50%{opacity:0.25}}
-
-    /* ── CHART (Mortgage) ── */
-    .cv-chart svg{width:100%;height:130px;display:block}
-    .chart-grid line{stroke:rgba(103,255,212,0.06);stroke-width:1}
-    .chart-grid-v line{stroke:rgba(255,255,255,0.03);stroke-width:1}
-    .chart-area{fill:url(#areaGrad);animation:area-breathe 4s ease-in-out infinite}
-    @keyframes area-breathe{0%,100%{opacity:.55}50%{opacity:1}}
-    .chart-line{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:700;stroke-dashoffset:700;animation:draw-chart 4.5s cubic-bezier(0.4,0,0.2,1) infinite}
-    @keyframes draw-chart{0%{stroke-dashoffset:700;opacity:0}12%{opacity:1}65%{stroke-dashoffset:0;opacity:1}85%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
-    .chart-dot{fill:var(--accent);filter:drop-shadow(0 0 4px rgba(103,255,212,0.75));animation:dot-in 4.5s ease infinite}
-    @keyframes dot-in{0%,42%{r:0;opacity:0}58%{r:3.5;opacity:1}85%{r:3.5;opacity:1}100%{r:0;opacity:0}}
-    .chart-labels{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:4px 12px;font-size:9px;color:rgba(103,255,212,0.42);letter-spacing:0.12em;text-transform:uppercase}
-    .cl-val{color:var(--accent);font-size:11px;animation:val-pulse 2s ease-in-out infinite}
-    @keyframes val-pulse{0%,100%{opacity:.5}50%{opacity:1}}
 
     /* ── MARKET (Polymarket) ── */
     .cv-market{padding:10px 14px;display:flex;flex-direction:column}
@@ -341,48 +314,6 @@
     </div>
 
     <div class="projects-grid">
-
-      <!-- Questo sito -->
-      <article class="card reveal reveal-delay-1">
-        <div class="card-visual cv-terminal">
-          <div class="term-bar">
-            <span class="tdot" style="background:#ff5f57"></span>
-            <span class="tdot" style="background:#febc2e"></span>
-            <span class="tdot" style="background:#28c840"></span>
-            <span class="tfile">index.html</span>
-          </div>
-          <div class="term-body">
-            <div class="tline"><span class="t-tag">&lt;html</span> <span class="t-attr">lang</span>=<span class="t-str">"it"</span><span class="t-tag">&gt;</span></div>
-            <div class="tline t-indent"><span class="t-tag">&lt;link</span> <span class="t-attr">href</span>=<span class="t-str">"style.css"</span><span class="t-tag">/&gt;</span></div>
-            <div class="tline t-indent"><span class="t-fn">fetch</span>(<span class="t-str">'/api/posts'</span>)</div>
-            <div class="tline t-indent"><span class="t-fn">parseFrontmatter</span>(raw)<span class="t-cursor">&#9611;</span></div>
-          </div>
-          <div class="term-foot"><span class="tping"></span>DEPLOYED ON VERCEL</div>
-        </div>
-        <span class="card-tag">Web / Static site</span>
-        <h3>Questo sito</h3>
-        
-
-      </article>
-
-      <!-- Mortgage tracker -->
-      <article class="card reveal reveal-delay-2">
-        <div class="card-visual cv-chart">
-          <svg viewBox="0 0 280 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#67ffd4" stop-opacity="0.2"/><stop offset="100%" stop-color="#67ffd4" stop-opacity="0"/></linearGradient></defs>
-            <g class="chart-grid"><line x1="0" y1="30" x2="280" y2="30"/><line x1="0" y1="65" x2="280" y2="65"/><line x1="0" y1="100" x2="280" y2="100"/></g>
-            <g class="chart-grid-v"><line x1="70" y1="0" x2="70" y2="130"/><line x1="140" y1="0" x2="140" y2="130"/><line x1="210" y1="0" x2="210" y2="130"/></g>
-            <path class="chart-area" d="M0,108 C30,100 55,90 85,82 S125,58 155,50 S205,32 245,26 L280,24 L280,130 L0,130 Z"/>
-            <path class="chart-line" d="M0,108 C30,100 55,90 85,82 S125,58 155,50 S205,32 245,26 L280,24"/>
-            <circle class="chart-dot" cx="155" cy="50" r="3.5"/><circle class="chart-dot" cx="245" cy="26" r="3.5" style="animation-delay:.18s"/>
-          </svg>
-          <div class="chart-labels"><span>Euribor 3M</span><span class="cl-val">3.2% &#8595;</span></div>
-        </div>
-        <span class="card-tag">Finance / Tool</span>
-        <h3>Mortgage rate tracker</h3>
-        <p>Applicazione browser-based per monitoraggio tassi ipotecari. Calcolo ammortamento alla francese, scenari Euribor multipli e tab di confronto. Persistenza via localStorage, zero dipendenze.</p>
-        <div class="card-actions"><button class="btn-scopri" onclick="openIframe('mortgage-tracker.html','Mortgage Rate Tracker')">Scopri &#8594;</button></div>
-      </article>
 
       <!-- Advertising & E-commerce -->
       <article class="card reveal reveal-delay-4">
