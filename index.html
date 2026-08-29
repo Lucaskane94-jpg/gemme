@@ -237,6 +237,36 @@
     .cro-delta{color:var(--accent);animation:val-pulse 2s ease-in-out infinite}
 
 
+    /* Instagram Growth visual */
+    .cv-instagram{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+    .ig-top{display:flex;align-items:center;justify-content:space-between}
+    .ig-label,.ig-year{font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+    .ig-label{color:rgba(103,255,212,.5)}
+    .ig-year{color:var(--accent)}
+    .ig-growth-line{display:flex;align-items:center;gap:7px;margin:2px 0 1px}
+    .ig-line-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px rgba(103,255,212,.45);animation:ping-dot 1.8s ease infinite}
+    .ig-line-bar{height:1px;flex:1;background:linear-gradient(90deg,rgba(103,255,212,.15),rgba(103,255,212,.85),rgba(103,255,212,.15));position:relative;overflow:hidden}
+    .ig-line-bar::after{content:'';position:absolute;top:0;left:-25%;width:25%;height:100%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:ig-scan 2.6s linear infinite}
+    @keyframes ig-scan{from{left:-25%}to{left:100%}}
+    .ig-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .ig-metric{background:rgba(0,0,0,.28);border:1px solid rgba(103,255,212,.08);border-radius:7px;padding:9px 10px}
+    .ig-metric span{display:block;font-size:8px;color:rgba(103,255,212,.42);letter-spacing:.14em;margin-bottom:4px}
+    .ig-metric strong{font-size:17px;color:#dce8f5;font-family:var(--font-mono)}
+    .ig-foot{margin-top:auto;padding-top:5px;border-top:1px solid rgba(103,255,212,.07);font-size:9px;color:rgba(103,255,212,.34);letter-spacing:.14em;text-transform:uppercase}
+
+    /* Affiliate visual */
+    .cv-affiliate{padding:10px 14px;display:flex;flex-direction:column;gap:5px}
+    .aff-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+    .aff-label{font-size:9px;color:rgba(103,255,212,.45);letter-spacing:.15em;text-transform:uppercase}
+    .aff-live{font-size:8px;color:rgba(103,255,212,.4);display:flex;align-items:center;gap:5px;letter-spacing:.08em}
+    .aff-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px rgba(103,255,212,.45);animation:ping-dot 1.5s ease infinite}
+    .aff-network{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:9px}
+    .aff-network span{color:rgba(255,255,255,.45);letter-spacing:.08em}
+    .aff-network strong{font-size:8px;color:rgba(103,255,212,.58);letter-spacing:.1em;font-weight:500}
+    .aff-total{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;padding-top:5px}
+    .aff-total span{font-size:8px;color:rgba(103,255,212,.35);letter-spacing:.12em}
+    .aff-total strong{font-size:19px;color:var(--accent);font-family:var(--font-mono);line-height:1}
+
     /* Chatbot visual */
     .cv-chat { padding: 10px 14px; display:flex; flex-direction:column; gap:6px; }
     .chat-msg { display:flex; gap:8px; align-items:flex-start; }
@@ -354,7 +384,7 @@
         <div class="card-actions"><button class="btn-scopri" onclick="openIframe('mortgage-tracker.html','Mortgage Rate Tracker')">Scopri &#8594;</button></div>
       </article>
 
-      <!-- ADV Results -->
+      <!-- Advertising & E-commerce -->
       <article class="card reveal reveal-delay-4">
         <div class="card-visual" style="cursor:pointer" onclick="openGallery()">
           <div class="cv-results">
@@ -366,9 +396,56 @@
           <div class="gallery-hint" id="gallery-hint"><span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;">Visualizza risultati &#8594;</span></div>
         </div>
         <span class="card-tag">Advertising / E-commerce</span>
-        <h3>Risultati e-commerce</h3>
-        <p>Campagne Meta ADV su store e-commerce: ottimizzazione ROAS, scaling budget, struttura inserzioni e misurazione conversioni. Risultati da campagne non coperte da NDA.</p>
+        <h3>Advertising &amp; E-commerce</h3>
+        <p>Campagne Meta ADV su store e-commerce: ottimizzazione ROAS, scaling budget, struttura inserzioni e misurazione conversioni. Risultati da campagne personali non coperte da NDA.</p>
         <div class="card-actions"><button class="btn-scopri" onclick="openGallery()">Scopri &#8594;</button></div>
+      </article>
+
+      <!-- Instagram Growth -->
+      <article class="card reveal reveal-delay-5">
+        <div class="card-visual cv-instagram">
+          <div class="ig-top">
+            <span class="ig-label">INSTAGRAM GROWTH</span>
+            <span class="ig-year">2020</span>
+          </div>
+          <div class="ig-growth-line">
+            <span class="ig-line-dot"></span>
+            <span class="ig-line-bar"></span>
+            <span class="ig-line-dot"></span>
+          </div>
+          <div class="ig-metrics">
+            <div class="ig-metric">
+              <span>FATTURATO</span>
+              <strong>50K&#8364;+</strong>
+            </div>
+            <div class="ig-metric">
+              <span>PERIODO</span>
+              <strong>12 MESI</strong>
+            </div>
+          </div>
+          <div class="ig-foot">DIGITAL PRODUCT BUSINESS</div>
+        </div>
+        <span class="card-tag">Growth Hacking / Instagram</span>
+        <h3>Crescita Instagram &amp; Digital Products</h3>
+        <p>Ho creato e gestito un sito dedicato alla vendita di prodotti legati alla crescita Instagram. Nel corso del 2020 il progetto ha generato oltre 50.000&#8364; di fatturato in 12 mesi, combinando acquisizione, gestione del traffico e monetizzazione del progetto.</p>
+      </article>
+
+      <!-- Affiliate Marketing -->
+      <article class="card reveal reveal-delay-5">
+        <div class="card-visual cv-affiliate">
+          <div class="aff-header">
+            <span class="aff-label">AFFILIATE NETWORKS</span>
+            <span class="aff-live"><span class="aff-dot"></span>PERFORMANCE</span>
+          </div>
+          <div class="aff-network"><span>ADVERTEN</span><strong>COMMISSION</strong></div>
+          <div class="aff-network"><span>ADCOMBO</span><strong>COMMISSION</strong></div>
+          <div class="aff-network"><span>LOSPOLLOS</span><strong>COMMISSION</strong></div>
+          <div class="aff-network"><span>WORLDFILIA</span><strong>COMMISSION</strong></div>
+          <div class="aff-total"><span>GENERATE IN 1 ANNO</span><strong>12.000&#8364;+</strong></div>
+        </div>
+        <span class="card-tag">Affiliate Marketing</span>
+        <h3>Performance &amp; Affiliate Marketing</h3>
+        <p>Ho lavorato come affiliato indipendente su diversi network di affiliazione, tra cui Adverten, AdCombo, LosPollos e Worldfilia. L'attività mi ha permesso di generare oltre 12.000&#8364; di commissioni in un anno attraverso acquisizione, testing delle offerte e ottimizzazione delle performance.</p>
       </article>
 
       <!-- CRO Professionale card -->
@@ -577,7 +654,7 @@
 <div class="modal-overlay" id="gallery-modal">
   <div class="modal-box">
     <div class="modal-hdr">
-      <span class="modal-title">Risultati e-commerce &#8212; ADV</span>
+      <span class="modal-title">Advertising &amp; E-commerce &#8212; ADV</span>
       <button class="modal-close" onclick="closeModal('gallery-modal')">&#10005;</button>
     </div>
     <div class="modal-body">
